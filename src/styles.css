@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background-color: #f2f2f2;
+    line-height: 1.45;
+    font-family: "Playfair Display", serif;
+}
+
+header {
+    background-color: black;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    min-height: 50px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+#flex-item {
+    margin: 0 20px 0 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#flex-item ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+#flex-item h1 {
+    font-weight: 400;
+    font-size: 2rem;
+    text-align: left;
+}
+
+#flex-item h2 {
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-align: right;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+} 
+
+.tab-button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+#imageBox {
+    background-image: url('https://nelliesplacenj.com/wp-content/uploads/2020/06/bar-fb.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#imageBox h1 {
+    transform: rotate(-12deg);
+}
+
+h1 {
+    color: white;
+}
+
+#nelliesName {
+    font-size: 6rem;
+    font-weight: 600;
+    text-shadow: 2px 2px 2px black;
+    color: white;
+    letter-spacing: 0.1ch;
+}
+
+footer div {
+    background-color: #AE9A64;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+footer div div {
+    width: 33.33%;
+    float: left;
+    min-height: 1px;
+    margin-top: 30px;
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    #flex-item h1 {
+        font-size: 1.5rem;
+    }
+
+    #flex-item h2 {
+        font-size: 1.25rem;
+    }
+
+}
+
+@media (max-width: 480px) {
+    #flex-item h1 {
+        font-size: 0.75rem;
+    }
+
+    #flex-item h2 {
+        font-size: 0.5rem;
+    }
+
+}
+
+

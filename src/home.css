@@ -1,0 +1,161 @@
+
+
+#imageBox h1 {
+    color: white; 
+    transform: rotate(-12deg);
+}
+
+#imageBox {
+    background-image: url('https://nelliesplacenj.com/wp-content/uploads/2020/06/bar-fb.jpg');
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    #imageBox {
+        padding-left: 0;
+        padding-right: 0;
+        height: 300px;
+    }
+
+    span {
+        font-size: 3rem;
+    }
+
+}
+
+@media (max-width: 480px) {
+    span {
+        font-size: 2rem;
+    }
+
+    #imageBox h1 {
+        transform: rotate(0deg);
+    }
+}
+
+#para2 {
+    margin-top: 40px;
+}
+
+#descriptionBox {
+    color: #000000;
+    font-size: 2.25rem;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 50px;
+    margin: 0 60px 0 60px;
+}
+
+#contactBox {
+    margin-top: 50px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    color: black;
+    font-size: 1.1rem;
+}
+
+#contactInfo {
+    margin: 0 0 10px;
+}
+
+#contactRef {
+    text-decoration: underline;
+}
+
+.flex-layout {
+    display: flex;
+}
+
+#first-row .imageGallery:first-of-type {
+    background-color: #ae9a64;
+}
+
+#first-row .imageGallery:nth-child(2) {
+    background-image: url('./pizza-dough.jpg');
+}
+
+#first-row .imageGallery:nth-child(3) {
+    background-image: url('./thin-crust-pizza.jpg');
+}
+
+#first-row .imageGallery:nth-child(2),
+#first-row .imageGallery:nth-child(3) {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+.imageGallery {
+    flex: 1;
+    margin: 0;
+    padding: 0;
+}
+
+.imageGallery img {
+    width: 100%;
+    height: auto;
+}
+
+.parallax-outer {
+    overflow: hidden;
+    height: 100vh;
+}
+
+.parallax-bg {
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.text-container {
+    text-align: center;
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin-top: 200px;
+    font-size: 55px;
+    text-shadow: 2px 2px 2px black;
+}
+
+/*
+.parallax-outer {
+    height: 100vh;
+    overflow: hidden;
+    width: 100%;
+}
+
+.parallax-bg {
+    position: absolute;
+    background-size: cover;
+    background-position: center 0;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+}
+
+.text-container {
+    color: #ffffff;
+    width: 100%;
+    font-weight: 400;
+    margin-top: 200px;
+    font-size: 55px;
+    text-align: center;
+    text-shadow: 2px 2px 2px #000000;
+}
+*/

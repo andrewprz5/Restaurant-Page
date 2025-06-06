@@ -1,0 +1,138 @@
+#storyHeader {
+    margin: 20px;
+}
+
+#storyHeader h2 {
+    font-size: 40px;
+    text-align: center;
+}
+
+#containerDiv {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 0;
+}
+
+#flexDiv {
+    display: flex;
+    min-height: 0;
+    min-width: 0;
+}
+
+.a-flex-item {
+    width: 50%;
+    float: left;
+    min-height: 1px;
+    padding: 20px 30px;
+}
+
+.history-para {
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    margin: 0 0 15px;
+}
+
+#staffImage {
+    height: auto;
+    max-width: 100%;
+    display: inline;
+    vertical-align: middle;
+    border: 0;
+}
+
+#orderMenuDiv {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 0;
+    padding: 20px;
+}
+
+.b-flex-item {
+    width: 100%;
+    float: left;
+    min-height: 1px;
+    padding: 20px;
+    text-align: center;
+}
+
+#placeOrderPara {
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 35px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 0 10px;
+    font-weight: 600;
+}
+
+#menuLink {
+    text-align: center;
+    border: 2px solid #9f1b24;
+    font-style: italic;
+    color: #9f1b24;
+    display: inline-block;
+    font-weight: normal;
+    line-height: 18px;
+    padding: 12px 24px;
+}
+
+#menuLink:visited {
+    border: 1px solid #f3f3f3;
+    background-color: #2b7bb9;
+}
+
+#imgGllryRow1,
+#imgGllryRow2 {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0;
+    max-width: 100%;
+}
+
+.photo-about-gallery {
+    flex: 1 1 auto;
+    display: flex;
+    width: 20%;
+    min-height: 300px;
+    margin: 0 0 80px 0;
+}
+
+.photo-about-gallery img {
+    height: auto;
+}
+
+#imgGllryRow2 > .photo-about-gallery {
+    display: flex;
+    min-height: 300px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+}
+
+.photo-about-gallery:nth-child(1) {
+    background-image: url('https://nelliesplacenj.com/wp-content/uploads/2020/06/wings.jpg');
+}
+
+.photo-about-gallery:nth-child(2) {
+    background-image: url('https://nelliesplacenj.com/wp-content/uploads/2020/09/empty-pizza-pan.png');
+}
+
+.photo-about-gallery:nth-child(3) {
+    background-image: url('https://nelliesplacenj.com/wp-content/uploads/2020/09/nachos.png');
+}
+
+.photo-about-gallery:nth-child(4) {
+    background-image: url('https://nelliesplacenj.com/wp-content/uploads/2020/09/making-pizza-3.png');
+}
+
+.photo-about-gallery:nth-child(5) {
+    background-image: url('https://nelliesplacenj.com/wp-content/uploads/2020/09/pizza-boxes.png');
+}
