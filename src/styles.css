@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: #f2f2f2;
+    background-color: white;
     line-height: 1.45;
     font-family: "Playfair Display", serif;
 }
@@ -80,9 +80,6 @@ a {
 
 #imageBox h1 {
     transform: rotate(-12deg);
-}
-
-h1 {
     color: white;
 }
 

@@ -3,6 +3,7 @@ import "./styles.css";
 import home from "./home.js";
 import about from "./about.js";
 import menu from "./menu.js";
+import findUs from "./findus.js";
 
 const content = document.querySelector("#content");
 
@@ -18,6 +19,8 @@ function switchTab(container) {
                     about(content);
                 } else if (index === 2) {
                     menu(content);
+                } else {
+                    findUs(content);
                 }
             }
         })
