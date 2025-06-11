@@ -4,11 +4,17 @@
 * {
     box-sizing: border-box;
     margin: 0;
+    padding: 0;
 }
 
 body {
+<<<<<<< HEAD
     background-color: white;
     line-height: 1.45;
+=======
+    background-color: #fffefe;
+    line-height: 1.75;
+>>>>>>> 3afc9f9 (Files Upload)
     font-family: "Playfair Display", serif;
 }
 
@@ -75,7 +81,6 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
 #imageBox h1 {

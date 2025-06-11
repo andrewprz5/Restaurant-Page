@@ -109,7 +109,7 @@ export default function homePage(container) {
 
     const parallaxEl = document.createElement("div");
     parallaxEl.className = 'parallax-outer';
-    parallaxEl.setAttribute('data-parallax-speed', '0.4');
+    parallaxEl.setAttribute('data-parallax-speed', '0.01');
     parallaxEl.setAttribute('data-parallax-image', `${sloganPizza}`);
 
     const sloganBox = document.createElement("div");
@@ -137,10 +137,8 @@ export default function homePage(container) {
 
     window.addEventListener('scroll', () => {
         const speed = parseFloat(parallaxEl.getAttribute('data-parallax-speed')) || 1;
-        const offset = -750 + (window.scrollY * speed);
+        const offset = -100 + (window.scrollY * speed);
         sloganBox.style.backgroundPosition = `center ${offset}px`;
     });
-
-
 };
 
