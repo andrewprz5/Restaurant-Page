@@ -1,5 +1,5 @@
 import "./menu.css";
-import {viewMenuText2, containerFee, goIntoHeader} from "./content.js";
+import {viewMenuText, viewMenuText2, containerFee, goIntoHeader} from "./content.js";
 
 export default function menuPage(container) {
     goIntoHeader();
@@ -8,9 +8,10 @@ export default function menuPage(container) {
     menuHeader.id = "menuHeader";
 
     const menuTopHeader = document.createElement("div");
+    menuTopHeader.id = "menuTopHeader";
 
     const nelliesName = document.createElement("div");
-    nelliesName.id = "nelliesName";
+    nelliesName.id = "nelliesMenuName";
     nelliesName.className = "menu-header-item";
     const viewMenuContainer = document.createElement("div");
     viewMenuContainer.className = "menu-header-item";
@@ -42,6 +43,7 @@ export default function menuPage(container) {
     menuSource.setAttribute("width", "150");
 
     const menuBottomHeader = document.createElement("div");
+    menuBottomHeader.id = "menuBottomHeader";
 
     const sectionLine = document.createElement("div");
     sectionLine.className = "menu-header-item";
@@ -54,7 +56,7 @@ export default function menuPage(container) {
     menuTitle.id = "menuTitle";
     const menuTextHeader = document.createElement("h2");
     const menuText = document.createElement("span");
-    menuText.textContent = viewMenuText2;
+    menuText.textContent = "Menu";
 
     const subtitle = document.createElement("div");
     subtitle.className = "menu-header-item";
@@ -101,12 +103,13 @@ export default function menuPage(container) {
     const additionalItemsPara2 = document.createElement("p");
     additionalItemsPara2.textContent = "Add Shrimp to a Salad $6.00 ~ Add Salmon to a Salad $8.00 ~ Add Avocado to a Salad $2.50";
     additionalItemsContainer.append(additionalItemsPara, additionalItemsPara2);
+    additionalItemsContainer.className = "additional-items-container";
 
     container.appendChild(additionalItemsContainer);
 
     const burgers = new menuSection(
         "Burgers",
-        "https://nelliesplacenj.com/wp-content/uploads/2020/10/salads-cropped-scaled.jpg"
+        "https://nelliesplacenj.com/wp-content/uploads/2020/06/bacon-cheeseburger-2560x1380-1.jpg"
     )
 
     burgers.addSection();
@@ -117,6 +120,7 @@ export default function menuPage(container) {
     const lettuceTomatoPara = document.createElement("p");
     lettuceTomatoPara.textContent = "Lettuce and Tomato upon request";
     lettuceTomatoContainer.appendChild(lettuceTomatoPara);
+    lettuceTomatoContainer.className = "additional-items-container";
 
     container.appendChild(lettuceTomatoContainer);
 
@@ -133,6 +137,7 @@ export default function menuPage(container) {
     const breadOptionsPara = document.createElement("p");
     breadOptionsPara .textContent = "Gluten free wraps or Round Rolls available for $3.00 additional";
     breadOptions.appendChild(breadOptionsPara);
+    breadOptions.className = "additional-items-container";
 
     container.appendChild(breadOptions);
 
@@ -153,6 +158,7 @@ export default function menuPage(container) {
     const xtraOptionsPara3 = document.createElement("p");
     xtraOptionsPara3.textContent = "Substitute Waffle Fries, Sweet Potato Fries, Onion Rings or Sauteed Spinach for $3.00 ~ with Side Salad $3.00 additional";
     xtraOptions.append(xtraOptionsPara, xtraOptionsPara2, xtraOptionsPara3);
+    xtraOptions.className = "additional-items-container";
 
     container.appendChild(xtraOptions);
 
@@ -171,6 +177,7 @@ export default function menuPage(container) {
     const meatOptionsPara2 = document.createElement("p");
     meatOptionsPara2.textContent = "Substitute Waffle Fries, Sweet Potato Fries, Onion Rings or Sauteed Spinach for $3.00";
     meatOptions.append(meatOptionsPara, meatOptionsPara2);
+    meatOptions.className = "additional-items-container";
 
     container.appendChild(meatOptions);
 
@@ -189,6 +196,7 @@ export default function menuPage(container) {
     const fishOptionsPara2 = document.createElement("p");
     fishOptionsPara2.textContent = "Substitute Waffle Fries, Sweet Potato Fries, Onion Rings or Sauteed Spinach for $3.00";
     fishOptions.append(fishOptionsPara, fishOptionsPara2);
+    fishOptions.className = "additional-items-container";
 
     container.appendChild(fishOptions);
 
@@ -205,6 +213,7 @@ export default function menuPage(container) {
     const italianOptionsPara = document.createElement("p");
     italianOptionsPara.textContent = "Above servied with Side Salad";
     italianOptions.appendChild(italianOptionsPara);
+    italianOptions.className = "additional-items-container";
 
     container.appendChild(italianOptions);
 
@@ -232,6 +241,7 @@ export default function menuPage(container) {
     const pizzaToppingsPara2 = document.createElement("p");
     pizzaToppingsPara2.textContent = "Sausage ~ Pepperoni ~ Fresh Mushroom ~ Green Pepper ~ Garlic ~ Onion ~ Black Olive ~ Anchovy ~ Broccoli ~ Meatball ~ Salami ~ Bacon ~ Extra Cheese ~ Fra Diablo ~ Sliced Hot Cherry Peppers";
     pizzaToppings.append(pizzaToppingsPara, pizzaToppingsPara2);
+    pizzaToppings.className = "additional-items-container";
 
     const gourmetToppings = document.createElement("div");
     const gourmetToppingsPara = document.createElement("p");
@@ -239,6 +249,7 @@ export default function menuPage(container) {
     const gourmetToppingsPara2 = document.createElement("p");
     gourmetToppingsPara2.textContent = "Eggplant ~ Sun-Dried Tomato ~ Spinach ~ Fresh Tomato Slices ~ Artichokes ~ Pineapple ~ Roasted Red Pepper ~ Fresh Basil ~ Hot Honey";
     gourmetToppings.append(gourmetToppingsPara, gourmetToppingsPara2);
+    gourmetToppings.className = "additional-items-container";
 
     container.appendChild(gourmetToppings);
 
@@ -257,6 +268,7 @@ export default function menuPage(container) {
     const specialtyPiePara2 = document.createElement("p");
     specialtyPiePara2.textContent = "Gluten Free available for $4.00 extra";
     specialtyPieOptions.append(specialtyPiePara, specialtyPiePara2);
+    specialtyPieOptions.className = "additional-items-container";
 
     container.appendChild(specialtyPieOptions);
 
@@ -275,6 +287,7 @@ export default function menuPage(container) {
     const allergensPara2 = document.createElement("p");
     allergensPara2.textContent = "Please speak to a manager for allergen questions.";
     allergens.append(allergensPara, allergensPara2);
+    allergens.className = "additional-items-container";
 
     container.appendChild(allergens);
 
@@ -291,6 +304,7 @@ export default function menuPage(container) {
     const guestsScript = document.createElement("p");
     guestsScript.textContent = "For Guests Under 10";
     guestsAge.appendChild(guestsScript);
+    guestsAge.className = "additional-items-container";
 
     container.appendChild(guestsAge);
 };
@@ -373,6 +387,7 @@ class menuSection {
 
         const section = document.createElement("div");
         section.id = `${this.category}-section`;
+        section.className = "food-section";
         content.appendChild(section);
     }
 }

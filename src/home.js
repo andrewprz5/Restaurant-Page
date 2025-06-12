@@ -109,12 +109,11 @@ export default function homePage(container) {
 
     const parallaxEl = document.createElement("div");
     parallaxEl.className = 'parallax-outer';
-    parallaxEl.setAttribute('data-parallax-speed', '0.4');
+    parallaxEl.setAttribute('data-parallax-speed', '0.3');
     parallaxEl.setAttribute('data-parallax-image', `${sloganPizza}`);
 
-    const sloganBox = document.createElement("div");
-    sloganBox.className = 'parallax-bg';
-    sloganBox.style.backgroundImage = `url(${sloganPizza})`;
+    const parallaxBg = document.createElement("div");
+    parallaxBg.className = 'parallax-bg';
 
     const textContainer = document.createElement("div");
     textContainer.className = 'text-container';
@@ -131,15 +130,25 @@ export default function homePage(container) {
         textContainer.appendChild(h2);
     };
 
-    sloganBox.appendChild(textContainer);
-    parallaxEl.appendChild(sloganBox);
+    parallaxEl.append(parallaxBg, textContainer);
     container.appendChild(parallaxEl);
 
     window.addEventListener('scroll', () => {
-        const speed = parseFloat(parallaxEl.getAttribute('data-parallax-speed')) || 1;
-        const offset = -750 + (window.scrollY * speed);
-        sloganBox.style.backgroundPosition = `center ${offset}px`;
-    });
+        const section = document.querySelector('.parallax-outer');
+        const bg = section.querySelector('.parallax-bg');
+        const speed = parseFloat(section.getAttribute('data-parallax-speed')) || 0.3;
+
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const scrollY = window.scrollY;
+        const windowHeight = window.innerHeight;
+
+        if (scrollY + windowHeight >= sectionTop && scrollY <= sectionTop + sectionHeight) {
+            const scrollProgress = scrollY - sectionTop;
+            bg.style.transform = `translateY(${scrollProgress * speed}px)`;
+            }
+        }
+    );
 
 
 };
