@@ -23,6 +23,7 @@ function switchTab(container) {
                     menu(content);
                 } else {
                     findUs(content);
+                   
                 }
             }
         })
@@ -50,6 +51,22 @@ function goIntoContent() {
     }
 };
 
-
 home(content);
 switchTab(content);
+
+window.addEventListener("DOMContentLoaded", () => {
+    const tabs = document.querySelectorAll('.tab-button');
+
+    function activeTab(tabId) {
+        tabs.forEach(btn => btn.classList.remove('active'));
+
+        document.getElementById(tabId).classList.add('active');
+    }
+   
+
+    tabs.forEach(btn => {
+        btn.addEventListener('click', () => activeTab(btn.id));
+    });
+    
+    activeTab("home");
+});

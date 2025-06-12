@@ -109,7 +109,7 @@ export default function homePage(container) {
 
     const parallaxEl = document.createElement("div");
     parallaxEl.className = 'parallax-outer';
-    parallaxEl.setAttribute('data-parallax-speed', '0.3');
+    parallaxEl.setAttribute('data-parallax-speed', '0.5');
     parallaxEl.setAttribute('data-parallax-image', `${sloganPizza}`);
 
     const parallaxBg = document.createElement("div");
@@ -135,21 +135,19 @@ export default function homePage(container) {
 
     window.addEventListener('scroll', () => {
         const section = document.querySelector('.parallax-outer');
-        const bg = section.querySelector('.parallax-bg');
-        const speed = parseFloat(section.getAttribute('data-parallax-speed')) || 0.3;
+        const bg = document.querySelector('.parallax-bg');
+        if (section) {
+            const speed = parseFloat(section.getAttribute('data-parallax-speed')) || 0.3;
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const scrollY = window.scrollY;
+            const windowHeight = window.innerHeight;
 
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-        const scrollY = window.scrollY;
-        const windowHeight = window.innerHeight;
-
-        if (scrollY + windowHeight >= sectionTop && scrollY <= sectionTop + sectionHeight) {
-            const scrollProgress = scrollY - sectionTop;
-            bg.style.transform = `translateY(${scrollProgress * speed}px)`;
+            if (scrollY + windowHeight >= sectionTop && scrollY <= sectionTop + sectionHeight) {
+                const scrollProgress = scrollY - sectionTop;
+                bg.style.transform = `translateY(${scrollProgress * speed}px)`;
             }
         }
-    );
-
-
+    });
 };
 

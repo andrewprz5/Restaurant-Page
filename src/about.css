@@ -55,7 +55,6 @@
 
 .b-flex-item {
     width: 100%;
-    float: left;
     min-height: 1px;
     padding: 20px;
     text-align: center;

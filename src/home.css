@@ -96,10 +96,12 @@
     background-size: cover;
 }
 
+#second-row {
+    background-color: black;
+}
+
 .imageGallery {
     flex: 1;
-    margin: 0;
-    padding: 0;
 }
 
 .imageGallery img {
@@ -118,7 +120,7 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 150%;
+    height: 170%;
     background-image: url('https://nelliesplacenj.com/wp-content/uploads/2020/06/pizza_img_9237.jpg');
     background-size: cover;
     background-attachment: fixed;

@@ -20,16 +20,17 @@
     width: 80%;
 }
 
-
 #nelliesHeadline {
-    font-weight: 400;
     font-size: 49px;
     text-align: left;
     margin-top: 0px;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
     color: black;
 }
 
+.menu-header-item span {
+    font-weight: 400;
+}
 
 #viewMenuContainer {
     margin-top: 20px;
@@ -43,7 +44,7 @@
 #viewMenu {
     color: #721212;
     font-family: "Open Sans", sans-serif;
-    font-weight: 400;
+    font-weight: 600;
     text-align: right;
     margin: 0 0 10px;
 }
@@ -115,7 +116,6 @@
     padding: 20px;
     margin-top: 30px;
     width: 100%;
-    float: left;
 }
 
 
@@ -127,7 +127,6 @@
 
 
 .food-background-img {
-    margin: 150px auto 30px auto;
     width: 100%;
     padding-top: 200px;
     padding-bottom: 200px;
@@ -213,3 +212,8 @@
     margin-bottom: 20px;
     grid-row: 1 / 1
 }
+
+.additional-items-container:last-child {
+    margin-bottom: 30px;
+}
+

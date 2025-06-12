@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400..900&display=swap');
 
 * {
     box-sizing: border-box;
@@ -8,14 +8,9 @@
 }
 
 body {
-<<<<<<< HEAD
     background-color: white;
-    line-height: 1.45;
-=======
-    background-color: #fffefe;
     line-height: 1.75;
->>>>>>> 3afc9f9 (Files Upload)
-    font-family: "Playfair Display", serif;
+    font-family: "Cinzel Decorative", serif;
 }
 
 header {
@@ -23,29 +18,37 @@ header {
     position: sticky;
     top: 0;
     z-index: 10;
-    min-height: 50px;
 }
 
 nav {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-around;
+    align-items: stretch;
     color: white;
+    padding-left: 15px;
+    padding-right: 15px;
+    min-height: 50px;
 }
 
 #flex-item {
-    margin: 0 20px 0 20px;
-    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
     display: flex;
-    justify-content: center;
     align-items: center;
+   
 }
 
 #flex-item ul {
     display: flex;
-    justify-content: center;
-    align-items: center;
     list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+#flex-item ul li {
+    height: 100%;
+    display: flex;
 }
 
 #flex-item h1 {
@@ -63,13 +66,39 @@ nav {
 a {
     text-decoration: none;
     color: inherit;
+    font-weight: 700;
 } 
+
+a[title="Nellie's Place"] {
+    letter-spacing: 0.1ch;
+}
+
+a span {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
 
 .tab-button {
     background: none;
-    border: none;
-    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: white;
+    border: none;
+    padding: 0 16px;
+    height: 100%;
+    margin: 1px;
+}
+
+.tab-button:hover {
+    background: #9e000a;
+}
+
+.tab-button.active{
+    background: #9e000a;
 }
 
 #imageBox {
