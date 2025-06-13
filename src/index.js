@@ -56,17 +56,20 @@ switchTab(content);
 
 window.addEventListener("DOMContentLoaded", () => {
     const tabs = document.querySelectorAll('.tab-button');
+    const listItems = document.querySelectorAll('.list');
 
-    function activeTab(tabId) {
+    function activeTab(tabId, listId) {
         tabs.forEach(btn => btn.classList.remove('active'));
+        listItems.forEach(item => item.classList.remove('active'));
 
         document.getElementById(tabId).classList.add('active');
+        document.getElementById(listId).classList.add('active');
     }
    
 
     tabs.forEach(btn => {
-        btn.addEventListener('click', () => activeTab(btn.id));
+        btn.addEventListener('click', () => activeTab(btn.id, listItems[Array.from(tabs).indexOf(btn)].id));
     });
     
-    activeTab("home");
+    activeTab("home", "home-list");
 });

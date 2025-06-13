@@ -31,22 +31,6 @@ nav {
     min-height: 50px;
 }
 
-#menu + span {
-    width: 50px;
-    border: 1px solid white;
-    height: 50px;
-    transform: rotate(45deg);
-    display: flex;
-}
-
-#flex-item {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    display: flex;
-    align-items: center;
-   
-}
-
 #flex-item ul {
     display: flex;
     list-style: none;
@@ -55,9 +39,93 @@ nav {
     height: 100%;
 }
 
+.list {
+    position: relative;
+}
+
 #flex-item ul li {
     height: 100%;
     display: flex;
+    align-items: center;
+    margin: 1px;
+}
+
+#flex-item ul li:hover {
+    background-color: #9e000a;
+}
+
+#flex-item ul li.active {
+     background-color: #9e000a;
+}
+
+li > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+li > div:hover {
+    background: #9e000a;
+}
+
+#menu + span {
+    width: 10px;
+    border-bottom: 2.5px solid white;
+    border-right: 2.5px solid white;
+    height: 10px;
+    transform: rotate(45deg);
+    margin-right:10px;
+    position: relative;
+    bottom: 2px;
+}
+
+.submenu {
+    font-family: "Lato", sans-serif;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 10;
+    visibility: hidden;
+    opacity: 0;
+    text-align: left;
+}
+
+.submenu.focus {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    flex-direction: column;
+    height: max-content !important;
+    width: max-content !important;
+    background-color: black;
+}
+
+.submenu > li a {
+    text-decoration: none;
+    margin-top: 5px;
+    font-size: 1.1rem;
+}
+
+.subcategory {
+    font-size: 16px;
+    line-height: 1;
+    border: none;
+}
+
+.subcategory {
+    width: 100%;
+    padding: 5px;
+}
+
+.subcategory:hover {
+    background-color: #9e000a;
+}
+
+#flex-item {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
 }
 
 #flex-item h1 {
@@ -97,9 +165,10 @@ a span {
     font-weight: 700;
     color: white;
     border: none;
-    padding: 0 16px;
+    padding: 0 12px;
     height: 100%;
     margin: 1px;
+    text-transform: uppercase;
 }
 
 .tab-button:hover {
