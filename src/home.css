@@ -3,6 +3,7 @@
 #imageBox h1 {
     color: white; 
     transform: rotate(-12deg);
+    text-align: center;
 }
 
 #imageBox {
@@ -23,19 +24,25 @@
         height: 300px;
     }
 
-    span {
-        font-size: 3rem;
+    #nelliesName {
+        font-size: 3.5rem;
+    }
+
+    #imageBox h1 {
+        text-align: center;
+        transform: rotate(0deg);
     }
 
 }
 
 @media (max-width: 480px) {
-    span {
-        font-size: 2rem;
+    #nelliesName {
+        font-size: 3rem;
     }
 
     #imageBox h1 {
         transform: rotate(0deg);
+        text-align: center;
     }
 }
 
@@ -46,7 +53,7 @@
 #descriptionBox {
     color: #000000;
     font-size: 2.25rem;
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Lato", sans-serif;
     font-weight: 700;
     letter-spacing: 1px;
     text-align: center;
@@ -57,7 +64,7 @@
 
 #contactBox {
     margin-top: 50px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Lato", sans-serif;
     font-weight: 700;
     text-align: center;
     color: black;

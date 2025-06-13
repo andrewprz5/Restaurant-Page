@@ -130,7 +130,6 @@ export default function aboutPage(container) {
         const photoDiv = document.createElement("div");
         photoDiv.className = "photo-about-gallery";
         const paImg = document.createElement("div");
-        photoDiv.appendChild(paImg);
         imgGllryRow2.appendChild(photoDiv);
     }
 
