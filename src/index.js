@@ -53,7 +53,6 @@ function goIntoContent() {
 
 function updateNavMenu() {
     const navMenu = document.getElementById("nav-menu");
-    const 
         if(window.innerWidth <= 768) {
         navMenu.innerHTML = `
         <div class="menu-toggle-container">
@@ -74,6 +73,84 @@ function updateNavMenu() {
         menuToggleBtn.addEventListener("click", () => {
         menuToggleBtn.classList.toggle("active");
         
+        const existing = document.querySelector(".mobile-menu");
+        if (existing) {
+            existing.remove();
+        } else {
+            const newFlexItem = document.createElement("div");
+            newFlexItem.classList.add('flex-item', 'mobile-menu');
+            newFlexItem.innerHTML = `
+            <div id="mobile-menu">    
+                <ul>
+                    <li>
+                        <a href="https://nelliesplacenj.com/">Home</a>
+                    </li>
+                    <li>
+                        <a href="https://nelliesplacenj.com/about-nellies-place/">About</a>
+                    </li>
+                    <li id="mobile-menu-list">
+                        <div class="mobile-submenu-container">
+                            <a href="https://nelliesplacenj.com/menu/" id="mobile-menu-link"aria-haspopup="true">Menu</a>
+                            <span></span>
+                        </div>
+                        <ul class="submenu mobile">
+                            <li class="subcategory">
+                                <a href="/menu#appetizers">Appetizers</a>
+                            </li>
+                            <li class="subcategory">
+                                <a href="/menu#soup_and_salad">Soup and Salad</a>
+                            </li>
+                            <li class="subcategory">
+                                <a href="/menu#burgers">Burgers</a>
+                            </li>
+                            <li class="subcategory">
+                                <a href="/menu#sandwiches">Sandwiches</a>
+                            </li>
+                            <li class="subcategory">
+                                <a href="/menu#specialty_sandwiches">Specialty Sandwiches</a>
+                            </li>
+                            <li class="subcategory">
+                                <a href="/menu#meats">Meats</a>
+                            </li>
+                            <li class="subcategory">
+                                <a href="/menu#fish">Fish</a>   
+                            </li>
+                            <li class="subcategory">
+                                <a href="/menu#italian">Italian</a>
+                            </li>
+                            <li class="subcategory">
+                                <a href="/menu#sides">Sides</a>
+                            </li>
+                            <li class="subcategory">
+                                <a href="/menu#pizza">Pizza</a>
+                            </li>
+                            <li class="subcategory">
+                                <a href="/menu#specialty_pie">Specialty Pie</a>
+                            </li>
+                            <li class="subcategory">
+                                <a href="/menu#gluten_free">Gluten Free</a>
+                            </li>
+                            <li class="subcategory">
+                                <a href="/menu#kids">Kids</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="https://nelliesplacenj.com/find-us/">Find Us</a>
+                    </li>
+                </ul>
+            </div>
+            `;
+
+            const flexItems = document.querySelectorAll('.flex-item');
+
+            if (flexItems.length >= 2) {
+                flexItems[2].parentNode.insertBefore(newFlexItem, flexItems[2]);
+            } else {
+                const nav = document.querySelector('nav');
+                nav.appendChild(newFlexItem);
+            }
+        }
         
         });
     }
@@ -139,7 +216,11 @@ function updateNavMenu() {
                     </li>
                 </ul>
         `
+        const existing = document.querySelector(".mobile-menu");
+        if (existing) {
+            existing.remove();
         }
+     } 
 };
 
 home(content);

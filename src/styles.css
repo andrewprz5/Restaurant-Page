@@ -8,6 +8,10 @@
     padding: 0;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 body {
     background-color: white;
     line-height: 1.75;
@@ -37,6 +41,61 @@ nav {
     margin: 0;
     padding: 0;
     height: 100%;
+}
+
+.mobile-menu {
+    order: 2;
+    width: 100%;
+    text-align: right;
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#mobile-menu {
+    width: 100%;
+}
+
+#mobile-menu ul {
+    list-style-type: none;
+    font-family: "Lato", sans-serif;
+    text-transform: uppercase;
+}
+
+#mobile-menu ul li {
+    line-height: 1;
+}
+
+#mobile-menu > ul li a {
+    text-decoration: none;
+    padding-right: 14px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 14px;
+    display: block;
+}
+
+.mobile-submenu-container {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
+
+#mobile-menu span {
+    position: absolute;
+    top: 30%;
+    right: 0;
+    width: 9px;
+    height: 9px;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: translateX(-10px) rotate(45deg);
+    cursor: pointer;
+}
+
+#mobile-menu-link {
+    padding-right: 26px !important;
 }
 
 .list {
@@ -90,6 +149,10 @@ li > div:hover {
     text-align: left;
 }
 
+.submenu.mobile {
+    display: block;
+}
+
 .submenu.focus {
     display: block;
     visibility: visible;
@@ -119,6 +182,10 @@ li > div:hover {
 
 .subcategory:hover {
     background-color: #9e000a;
+}
+
+#push-right {
+    margin-left: auto;
 }
 
 .flex-item {
