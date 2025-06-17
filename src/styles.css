@@ -35,7 +35,7 @@ nav {
     min-height: 50px;
 }
 
-#flex-item ul {
+.flex-item ul {
     display: flex;
     list-style: none;
     margin: 0;
@@ -47,27 +47,25 @@ nav {
     order: 2;
     width: 100%;
     text-align: right;
-    opacity: 0;
-    transform: translateY(-20px);
-    pointer-events: none;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.4s ease-in-out;
 }
 
-#mobile-menu {
-    width: 100%;
+.mobile-menu.open {
+    display: block;
+    height: 150px;
 }
 
-#mobile-menu ul {
+.mobile-menu ul {
     list-style-type: none;
-    font-family: "Lato", sans-serif;
-    text-transform: uppercase;
 }
 
-#mobile-menu ul li {
+.mobile-menu ul li {
     line-height: 1;
 }
 
-#mobile-menu > ul li a {
+.mobile-menu > ul li a {
     text-decoration: none;
     padding-right: 14px;
     padding-top: 10px;
@@ -82,7 +80,7 @@ nav {
     position: relative;
 }
 
-#mobile-menu span {
+.mobile-menu span {
     position: absolute;
     top: 30%;
     right: 0;
@@ -186,6 +184,11 @@ li > div:hover {
 
 #push-right {
     margin-left: auto;
+}
+
+#push-right a {
+    text-decoration: none;
+    margin-right: 20px;
 }
 
 .flex-item {
