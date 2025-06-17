@@ -1,5 +1,5 @@
 import "./menu.css";
-import {viewMenuText, viewMenuText2, containerFee, goIntoHeader} from "./content.js";
+import { containerFee, goIntoHeader} from "./content.js";
 
 export default function menuPage(container) {
     goIntoHeader();

@@ -69,6 +69,10 @@ function updateNavMenu() {
             `;
 
             const menuToggleBtn = document.getElementById("menu-toggle");
+            const separatorLine = document.querySelectorAll('.separator-line');
+            separatorLine.forEach(line => {
+                line.remove();
+            });
             if (menuToggleBtn) {
                 menuToggleBtn.addEventListener("click", () => {
                 menuToggleBtn.classList.toggle("active");
@@ -83,6 +87,13 @@ function updateNavMenu() {
         }
         
      } else {
+        const existingToggle = document.querySelector('.menu-toggle-container');
+        if (existingToggle) {
+            existingToggle.remove();
+        } else {
+            return;
+        }
+
         if (navMenu.dataset.originalHtml) {
             navMenu.innerHTML = navMenu.dataset.originalHtml;
         }

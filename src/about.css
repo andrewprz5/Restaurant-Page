@@ -112,22 +112,54 @@
     margin: 0;
 }
 
-.photo-about-gallery:nth-child(1) {
+#imgGllryRow2 .photo-about-gallery:nth-child(1) {
     background-image: url('https://nelliesplacenj.com/wp-content/uploads/2020/06/wings.jpg');
 }
 
-.photo-about-gallery:nth-child(2) {
+#imgGllryRow2 .photo-about-gallery:nth-child(2) {
     background-image: url('https://nelliesplacenj.com/wp-content/uploads/2020/09/empty-pizza-pan.png');
 }
 
-.photo-about-gallery:nth-child(3) {
+#imgGllryRow2 .photo-about-gallery:nth-child(3) {
     background-image: url('https://nelliesplacenj.com/wp-content/uploads/2020/09/nachos.png');
 }
 
-.photo-about-gallery:nth-child(4) {
+#imgGllryRow2 .photo-about-gallery:nth-child(4) {
     background-image: url('https://nelliesplacenj.com/wp-content/uploads/2020/09/making-pizza-3.png');
 }
 
-.photo-about-gallery:nth-child(5) {
+#imgGllryRow2 .photo-about-gallery:nth-child(5) {
     background-image: url('https://nelliesplacenj.com/wp-content/uploads/2020/09/pizza-boxes.png');
+}
+
+@media (max-width: 768px) {
+    #flexDiv {
+        flex-direction: column;
+    }
+
+    .a-flex-item {
+        margin: auto;
+        width: 100%;
+        padding: 20px 100px;
+    }
+
+    #imgGllryRow1,
+    #imgGllryRow2 {
+        flex-direction: column;
+        align-content: center;
+        background: none;
+    }
+
+    #imgGllryRow2 {
+        display: none;
+    }
+
+    .photo-about-gallery {
+        margin: 0;
+        width: 100%;
+    }
+
+    .photo-about-gallery img {
+        margin: auto;
+    }
 }

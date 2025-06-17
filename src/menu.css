@@ -217,3 +217,33 @@
     margin-bottom: 30px;
 }
 
+@media (max-width: 768px) {
+    #menuTopHeader {
+        flex-direction: column;
+    }
+
+    #viewMenuContainer {
+        width: auto;
+    }
+
+    #menuImg {
+        width: auto !important;
+    }
+
+    #menuBottomHeader {
+        margin-top: 45px;
+    }
+
+    .food-background-img {
+        background-attachment: unset;
+    }
+
+    .food-section {
+        grid-template-columns: 1fr;
+    }
+
+    .additional-items-container {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
