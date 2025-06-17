@@ -134,20 +134,23 @@ export default function homePage(container) {
     container.appendChild(parallaxEl);
 
     window.addEventListener('scroll', () => {
-        const section = document.querySelector('.parallax-outer');
-        const bg = document.querySelector('.parallax-bg');
-        if (section) {
-            const speed = parseFloat(section.getAttribute('data-parallax-speed')) || 0.3;
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            const scrollY = window.scrollY;
-            const windowHeight = window.innerHeight;
+        if (window.innerWidth > 768) {
+            const section = document.querySelector('.parallax-outer');
+            const bg = document.querySelector('.parallax-bg');
+            if (section) {
+                const speed = parseFloat(section.getAttribute('data-parallax-speed')) || 0.3;
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const scrollY = window.scrollY;
+                const windowHeight = window.innerHeight;
 
-            if (scrollY + windowHeight >= sectionTop && scrollY <= sectionTop + sectionHeight) {
-                const scrollProgress = scrollY - sectionTop;
-                bg.style.transform = `translateY(${scrollProgress * speed}px)`;
+                if (scrollY + windowHeight >= sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    const scrollProgress = scrollY - sectionTop;
+                    bg.style.transform = `translateY(${scrollProgress * speed}px)`;
+                }
             }
         }
+        
     });
 };
 

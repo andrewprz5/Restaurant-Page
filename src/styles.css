@@ -354,6 +354,12 @@ footer div div {
 }
 
 @media (max-width: 768px) {
+
+     body {
+        font-size: 14px;
+        line-height: 1.45;
+    }
+    
     nav {
         padding-left: 0;
         padding-right: 0;

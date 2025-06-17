@@ -1,4 +1,35 @@
 
+#descriptionBox {
+    color: #000000;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 50px;
+    margin: 0;
+}
+
+#descriptionBox div {
+    font-size: 2.25rem;
+}
+
+#contactBox {
+    margin-top: 50px;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    text-align: center;
+    color: black;
+    font-size: 1.1rem;
+}
+
+#contactInfo {
+    margin: 0 0 10px;
+}
+
+#contactRef {
+    text-decoration: underline;
+}
 
 #imageBox h1 {
     color: white; 
@@ -17,66 +48,8 @@
     justify-content: center;
 }
 
-@media (max-width: 768px) {
-    #imageBox {
-        padding-left: 0;
-        padding-right: 0;
-        height: 300px;
-    }
-
-    #nelliesName {
-        font-size: 3.5rem;
-    }
-
-    #imageBox h1 {
-        text-align: center;
-        transform: rotate(0deg);
-    }
-
-}
-
-@media (max-width: 480px) {
-    #nelliesName {
-        font-size: 3rem;
-    }
-
-    #imageBox h1 {
-        transform: rotate(0deg);
-        text-align: center;
-    }
-}
-
 #para2 {
     margin-top: 40px;
-}
-
-#descriptionBox {
-    color: #000000;
-    font-size: 2.25rem;
-    font-family: "Lato", sans-serif;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-align: center;
-    text-transform: uppercase;
-    padding: 50px;
-    margin: 0 60px 0 60px;
-}
-
-#contactBox {
-    margin-top: 50px;
-    font-family: "Lato", sans-serif;
-    font-weight: 700;
-    text-align: center;
-    color: black;
-    font-size: 1.1rem;
-}
-
-#contactInfo {
-    margin: 0 0 10px;
-}
-
-#contactRef {
-    text-decoration: underline;
 }
 
 .flex-layout {
@@ -144,11 +117,109 @@
     align-items: center;
     text-align: center;
     color: white;
-    z-index: 1;
 }
 
 .parallax-outer h2 {
     font-size: 5rem;
     text-shadow: 2px 2px 2px black;
 }
+
+
+@media (max-width: 768px) {
+
+    #descriptionBox div {
+        font-size: 23px;
+    }
+    
+    #imageBox {
+        padding-left: 0;
+        padding-right: 0;
+        height: 300px;
+    }
+
+    #nelliesName {
+        font-size: 3.5rem;
+    }
+
+    #imageBox h1 {
+        text-align: center;
+        transform: rotate(0deg);
+    }
+
+    .flex-layout {
+        flex-direction: column;
+    }
+
+    .imageGallery {
+        max-width: 400px;
+        margin: auto;
+    }
+
+    #contactInfo {
+        margin: 0 20px 0 20px;
+    }
+
+    #first-row .imageGallery:first-of-type {
+        width: 100%;
+    }
+
+    #second-row {
+        background: none;
+    }
+
+    .imageGallery img {
+        display: flex;
+    }
+
+    .text-container h2 {
+        font-size: 30px;
+    }
+
+    .parallax-outer {
+        height: 350px;
+    }
+
+    .parallax-bg {
+        height: 100%;
+    }
+
+    .text-container {
+        height: 100%;
+    }
+
+    footer div {
+        flex-direction: column;
+        margin: auto;
+        padding: 0;
+    }
+
+    footer div div {
+        margin-top: 10px;
+    }
+
+    footer div div:first-child {
+        margin-top: 25px;
+    }
+
+    footer div div:last-child {
+        margin-bottom: 35px;
+    }
+
+}
+
+@media (max-width: 480px) {
+    #nelliesName {
+        font-size: 3rem;
+    }
+
+    #imageBox h1 {
+        transform: rotate(0deg);
+        text-align: center;
+    }
+
+    .text-container {
+        height: 100%;
+    }
+}
+
 
