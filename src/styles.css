@@ -8,10 +8,6 @@
     padding: 0;
 }
 
-html, body {
-    overflow-x: hidden;
-}
-
 body {
     background-color: white;
     line-height: 1.75;
@@ -33,6 +29,7 @@ nav {
     padding-left: 15px;
     padding-right: 15px;
     min-height: 50px;
+    overflow-x: hidden;
 }
 
 .flex-item ul {
@@ -359,7 +356,7 @@ footer div div {
         font-size: 14px;
         line-height: 1.45;
     }
-    
+
     nav {
         padding-left: 0;
         padding-right: 0;

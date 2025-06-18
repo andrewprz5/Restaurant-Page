@@ -242,6 +242,18 @@
         grid-template-columns: 1fr;
     }
 
+    .food-item-container {
+        width: 85%;
+    }
+
+    .food-item-name {
+        margin-right: 60px;
+    }
+
+    .item-price {
+        margin: 10px 10px 10px 20px;
+    }
+
     .additional-items-container {
         margin-left: 10px;
         margin-right: 10px;

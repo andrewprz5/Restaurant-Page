@@ -69,10 +69,7 @@ function updateNavMenu() {
             `;
 
             const menuToggleBtn = document.getElementById("menu-toggle");
-            const separatorLine = document.querySelectorAll('.separator-line');
-            separatorLine.forEach(line => {
-                line.remove();
-            });
+
             if (menuToggleBtn) {
                 menuToggleBtn.addEventListener("click", () => {
                 menuToggleBtn.classList.toggle("active");
@@ -102,6 +99,30 @@ function updateNavMenu() {
             mobileMenu.remove();
         }
      }
+};
+
+function changeLayout() {
+    if (window.innerWidth <= 768) {
+        const contactForm = document.getElementById("contactFormContainer");
+
+        const findUsContainer = document.getElementById("findUsContainer");
+        const googleMaps = document.getElementById("googleMaps");
+        const firstChild = findUsContainer.firstElementChild;
+        findUsContainer.insertBefore(contactForm, firstChild.nextSibling);
+
+        contactForm.style.padding = "0";
+        findUsContainer.style.cssText = `
+        flex-direction: column;
+        width: 100%;
+        `;
+        googleMaps.style.cssText = `
+        height: 400px;
+        width: auto;
+        `;
+        
+    } else {
+        console.log('change back');
+    }
 };
 
 home(content);
@@ -135,7 +156,9 @@ window.addEventListener("DOMContentLoaded", () => {
     
 
     updateNavMenu();
+    changeLayout();
     activeTab("home", "home-list");
 });
 
 window.addEventListener('resize', updateNavMenu);
+window.addEventListener('resize', changeLayout);

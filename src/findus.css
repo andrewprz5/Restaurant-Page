@@ -131,3 +131,9 @@ input[type="submit"]:hover {
     padding: 0.2em 1em;
     border: 2px solid #ffb900;
 }
+
+@media (max-width: 768px) {
+    #orderMenuDiv {
+        margin-bottom: 10px;
+    }
+}
