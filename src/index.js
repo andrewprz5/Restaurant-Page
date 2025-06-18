@@ -84,7 +84,8 @@ function updateNavMenu() {
         }
         
      } else {
-        navMenu.innerHTML = `
+        if (document.querySelector('.menu-toggle-container')){
+            navMenu.innerHTML = `
         <ul>
                     <li class="list active" id="home-list">
                         <button class="tab-button active" id="home">Home</button>
@@ -144,6 +145,8 @@ function updateNavMenu() {
                     </li>
                 </ul>
         `;
+        }
+        
         const mobileMenu = document.querySelector('.mobile-menu');
         if (mobileMenu) {
             mobileMenu.remove();
@@ -210,4 +213,4 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 window.addEventListener('resize', updateNavMenu);
-window.addEventListener('resize', changeLayout);
+ window.addEventListener('resize', changeLayout);
