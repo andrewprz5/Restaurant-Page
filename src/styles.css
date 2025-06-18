@@ -19,6 +19,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 10;
+    overflow-x: hidden;
 }
 
 nav {
@@ -29,7 +30,7 @@ nav {
     padding-left: 15px;
     padding-right: 15px;
     min-height: 50px;
-    overflow-x: hidden;
+    flex-wrap: wrap;
 }
 
 .flex-item ul {
@@ -177,10 +178,6 @@ li > div:hover {
 
 .subcategory:hover {
     background-color: #9e000a;
-}
-
-#push-right {
-    margin-left: auto;
 }
 
 #push-right a {

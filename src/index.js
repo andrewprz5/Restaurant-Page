@@ -84,16 +84,66 @@ function updateNavMenu() {
         }
         
      } else {
-        const existingToggle = document.querySelector('.menu-toggle-container');
-        if (existingToggle) {
-            existingToggle.remove();
-        } else {
-            return;
-        }
-
-        if (navMenu.dataset.originalHtml) {
-            navMenu.innerHTML = navMenu.dataset.originalHtml;
-        }
+        navMenu.innerHTML = `
+        <ul>
+                    <li class="list active" id="home-list">
+                        <button class="tab-button active" id="home">Home</button>
+                    </li>
+                     <li class="list active"  id="about-list">
+                        <button class="tab-button active" id="about">About</button>
+                    </li>
+                     <li class="list active" id="menu-list">
+                        <div>
+                            <button class ="tab-button active" id="menu">Menu</button>
+                            <span></span>
+                        </div>
+                        <ul class="submenu">
+                            <li class="subcategory">
+                                <a href="/menu#appetizers">Appetizers</a>
+                            </li>
+                            <li class="subcategory">
+                                <a href="/menu#soup_and_salad">Soup and Salad</a>
+                            </li>
+                            <li class="subcategory">
+                                <a href="/menu#burgers">Burgers</a>
+                            </li>
+                            <li class="subcategory">
+                                <a href="/menu#sandwiches">Sandwiches</a>
+                            </li>
+                            <li class="subcategory">
+                                <a href="/menu#specialty_sandwiches">Specialty Sandwiches</a>
+                            </li>
+                            <li class="subcategory">
+                                <a href="/menu#meats">Meats</a>
+                            </li>
+                            <li class="subcategory">
+                                <a href="/menu#fish">Fish</a>   
+                            </li>
+                            <li class="subcategory">
+                                <a href="/menu#italian">Italian</a>
+                            </li>
+                            <li class="subcategory">
+                                <a href="/menu#sides">Sides</a>
+                            </li>
+                            <li class="subcategory">
+                                <a href="/menu#pizza">Pizza</a>
+                            </li>
+                            <li class="subcategory">
+                                <a href="/menu#specialty_pie">Specialty Pie</a>
+                            </li>
+                            <li class="subcategory">
+                                <a href="/menu#gluten_free">Gluten Free</a>
+                            </li>
+                            <li class="subcategory">
+                                <a href="/menu#kids">Kids</a>
+                            </li>
+                        </ul>
+                    </li>
+                     <li class="list active" id="find-us-list">
+                        <button class="tab-button active" id="find-us">Find Us</button>
+                    </li>
+                </ul>
+        `;
         const mobileMenu = document.querySelector('.mobile-menu');
         if (mobileMenu) {
             mobileMenu.remove();
@@ -102,10 +152,9 @@ function updateNavMenu() {
 };
 
 function changeLayout() {
-    if (window.innerWidth <= 768) {
-        const contactForm = document.getElementById("contactFormContainer");
-
-        const findUsContainer = document.getElementById("findUsContainer");
+    const findUsContainer = document.getElementById("findUsContainer");
+    if (window.innerWidth <= 768 && findUsContainer) {
+        const contactForm = document.getElementById("contactFormContainer");        
         const googleMaps = document.getElementById("googleMaps");
         const firstChild = findUsContainer.firstElementChild;
         findUsContainer.insertBefore(contactForm, firstChild.nextSibling);
