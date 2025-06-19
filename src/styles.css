@@ -294,9 +294,10 @@ footer div div {
 .menu-toggle-container {
     width: 20% !important;
     text-align: right;
+    display: none;
 }
 
-#menu-toggle {
+.menu-toggle-btn {
     color: #f5f5f5;
     font-size: 16px;
     text-transform: uppercase;
@@ -310,8 +311,8 @@ footer div div {
     background-color: black;
 }
 
-#menu-toggle:hover,
-#menu-toggle.active {
+.menu-toggle-btn:hover,
+.menu-toggle-btn.active {
     background-color: #9e000a;
     border: none;
     color: #f5f5f5;
