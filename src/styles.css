@@ -14,12 +14,16 @@ body {
     font-family: "Cinzel Decorative", serif;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 header {
     background-color: black;
     position: sticky;
     top: 0;
     z-index: 10;
-    overflow-x: hidden;
+    overflow: visible;
 }
 
 nav {
@@ -31,6 +35,10 @@ nav {
     padding-right: 15px;
     min-height: 50px;
     flex-wrap: wrap;
+}
+
+header, nav, .flex-item {
+    overflow: visible !important;
 }
 
 .flex-item ul {
@@ -139,10 +147,11 @@ li > div:hover {
     position: absolute;
     top: 100%;
     left: 0;
-    z-index: 10;
-    visibility: hidden;
-    opacity: 0;
     text-align: left;
+    white-space: nowrap;
+    transition: opacity 0.2s ease;
+    z-index: 999;
+    visibility: hidden;
 }
 
 .submenu.mobile {

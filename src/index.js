@@ -43,6 +43,7 @@ function switchTab(container) {
 
 home(content);
 switchTab(content);
+focusElement();
 
 
 
@@ -71,18 +72,21 @@ function goIntoContent() {
 function updateNavMenu() {
     const normalLayout = document.querySelector('.normal-layout');
     const menuToggleContainer = document.querySelector('.menu-toggle-container');
-        if(window.innerWidth <= 768) {
+    if (menuToggleContainer) {
+         if(window.innerWidth <= 768) {
             menuToggleContainer.style.display = "block";
             normalLayout.style.display = "none";
         } else {
             menuToggleContainer.style.display = "none";
             normalLayout.style.display = "flex";
         }
-    };
+    }
+};
 
 window.addEventListener('resize', () => {
     updateNavMenu();
     changeLayout();
+    focusElement();
 });
 
 
@@ -90,8 +94,9 @@ function changeLayout() {
     const findUsContainer = document.getElementById("findUsContainer");
     const contactForm = document.getElementById("contactFormContainer");        
     const googleMaps = document.getElementById("googleMaps");
-    const firstChild = findUsContainer.firstElementChild;
-    if (window.innerWidth <= 768) {
+    if (findUsContainer) {
+        const firstChild = findUsContainer.firstElementChild;
+        if (window.innerWidth <= 768) {
 
         findUsContainer.insertBefore(contactForm, firstChild.nextSibling);
 
@@ -106,41 +111,43 @@ function changeLayout() {
         `;
         
     } else {
-        
-    }
+        content.insertBefore(contactForm, content.lastElementChild);
+
+        contactForm.style.cssText = `
+            padding-right: 30%;
+            padding-left: 30%;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            width: 100%;
+        `;
+        findUsContainer.style.cssText = `
+            display: flex;
+            margin: auto;
+            width: 80%;
+        `;
+        googleMaps.style.cssText = `
+            float: left;
+            min-height: 1px;
+            margin: 20px;
+            width: 100%;
+        `;
+        }
+    };
 };
-
-/*
-
-window.addEventListener("DOMContentLoaded", () => {
     
-    updateNavMenu();
-    changeLayout();
-    home(content);
-    switchTab(content);
-    focusElement();
-
-});
+    
 
 function focusElement() {
-        const submenu = document.querySelector('.submenu');
-        const menuList = document.getElementById("menu-list");
+    const submenu = document.querySelector('.submenu');
+    const menuList = document.getElementById("menu-list");
 
-        menuList.addEventListener('mouseenter', () => {
-            submenu.classList.add('focus');
-        });
+    menuList.addEventListener('mouseenter', () => {
+        submenu.classList.add('focus');
+    });
 
-        menuList.addEventListener('mouseleave', () => {
+    menuList.addEventListener('mouseleave', () => {
         submenu.classList.remove('focus');
     });
 };
 
 
-   
-
-window.addEventListener('resize', () => {
-    updateNavMenu();
-    changeLayout();
-    focusElement();
-});
-*/
