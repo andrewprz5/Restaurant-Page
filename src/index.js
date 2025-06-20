@@ -70,15 +70,17 @@ function goIntoContent() {
 function updateNavMenu() {
     const normalLayout = document.getElementById("nav-menu")
     const menuToggleContainer = document.querySelector('.menu-toggle-container');
-    if (normalLayout || menuToggleContainer) {
-         if(window.innerWidth <= 768) {
-            menuToggleContainer.style.display = "block";
-            normalLayout.style.display = "none";
-     
-        } else {
-            menuToggleContainer.style.display = "none";
-            normalLayout.style.display = "flex";
-        }
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const menuToggleBtn = document.querySelector('.menu-toggle-btn');
+    
+    if(window.innerWidth <= 768) {
+        if (menuToggleContainer) menuToggleContainer.style.display = "block";
+        if (normalLayout) normalLayout.style.display = "none";
+    } else {
+        if (menuToggleContainer) menuToggleContainer.style.display = "none";
+        if (normalLayout) normalLayout.style.display = "flex";
+        if (mobileMenu) mobileMenu.classList.remove("open");
+        if (menuToggleBtn) menuToggleBtn.classList.remove("active");
     }
 };
 
@@ -93,25 +95,22 @@ let isListenerAttached = false;
 
 function menuToggle() {
     const menuToggleContainer = document.querySelector('.menu-toggle-container');
-    let isOpen = false;
-    if (menuToggleContainer.style.display === "block" && !isListenerAttached) {
+
+    if (menuToggleContainer && menuToggleContainer.style.display === "block" && !isListenerAttached) {
         const menuToggleBtn = document.querySelector('.menu-toggle-btn');
+
         menuToggleBtn.addEventListener("click", () => {
             menuToggleBtn.classList.toggle("active");
-            if (menuToggleBtn.classList.contains("active")) {
-                const mobileMenu = document.querySelector('.mobile-menu');
-                if (!isOpen) {
-                    mobileMenu.classList.add('open');
-                    isOpen = true;
-                } else {
-                    mobileMenu.classList.remove('open');
-                    isOpen = false;
-                }
+
+            const mobileMenu = document.querySelector('.mobile-menu');
+            if (mobileMenu) {
+                mobileMenu.classList.toggle('open');
             }
-            isListenerAttached = true;
-        })
+        });
+
+        isListenerAttached = true; 
     }
-};
+}
 
 document.addEventListener("DOMContentLoaded", () => {
     menuToggle();
@@ -182,6 +181,7 @@ function focusElement() {
 a resize eL to make this happen...
 checking for menu-toggle-container, 
 
--- google maps not loading after resize??
+-- nav bar not sticking
+-- toggle mobile menu items
 
 */
