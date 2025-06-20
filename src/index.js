@@ -11,12 +11,14 @@ const content = document.querySelector("#content");
 function switchTab(container) {
     const tabButtons = document.querySelectorAll('.tab-button'); 
     const listItems = document.querySelectorAll('.list');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
     tabButtons.forEach((button, index) => {
         button.addEventListener('click', () => {
             if (container.firstChild){
 
                 tabButtons.forEach(btn => btn.classList.remove('active'));
                 listItems.forEach(list => list.classList.remove('active'));
+                mobileNavLinks.forEach(link => link.classList.remove('active'));
 
                 container.innerHTML = '';
 
@@ -26,15 +28,19 @@ function switchTab(container) {
                     home(content);
                     goIntoContent();
                     document.getElementById("home-list").classList.add('active');
+                    document.getElementById("mobile-home-link").classList.add('active');
                 } else if (index === 1) {
                     about(content);
                     document.getElementById('about-list').classList.add('active');
+                    document.getElementById("mobile-about-link").classList.add('active');
                 } else if (index === 2) {
                     menu(content);
                     document.getElementById('menu-list').classList.add('active');
+                    document.getElementById("mobile-menu-link").classList.add('active');
                 } else {
                     findUs(content);
                     document.getElementById('find-us-list').classList.add('active');
+                    document.getElementById("mobile-find-link").classList.add('active');
                 }
             }
         })
@@ -44,6 +50,8 @@ function switchTab(container) {
 home(content);
 switchTab(content);
 focusElement();
+
+
 
 function goIntoContent() {
      const nelliesPic = document.getElementById("imageBox");
@@ -68,7 +76,7 @@ function goIntoContent() {
 
 
 function updateNavMenu() {
-    const normalLayout = document.getElementById("nav-menu")
+    const normalLayout = document.getElementById("nav-menu");
     const menuToggleContainer = document.querySelector('.menu-toggle-container');
     const mobileMenu = document.querySelector('.mobile-menu');
     const menuToggleBtn = document.querySelector('.menu-toggle-btn');
@@ -76,6 +84,7 @@ function updateNavMenu() {
     if(window.innerWidth <= 768) {
         if (menuToggleContainer) menuToggleContainer.style.display = "block";
         if (normalLayout) normalLayout.style.display = "none";
+        menuToggle();
     } else {
         if (menuToggleContainer) menuToggleContainer.style.display = "none";
         if (normalLayout) normalLayout.style.display = "flex";
@@ -91,30 +100,6 @@ window.addEventListener('resize', () => {
     menuToggle();
 });
 
-let isListenerAttached = false;
-
-function menuToggle() {
-    const menuToggleContainer = document.querySelector('.menu-toggle-container');
-
-    if (menuToggleContainer && menuToggleContainer.style.display === "block" && !isListenerAttached) {
-        const menuToggleBtn = document.querySelector('.menu-toggle-btn');
-
-        menuToggleBtn.addEventListener("click", () => {
-            menuToggleBtn.classList.toggle("active");
-
-            const mobileMenu = document.querySelector('.mobile-menu');
-            if (mobileMenu) {
-                mobileMenu.classList.toggle('open');
-            }
-        });
-
-        isListenerAttached = true; 
-    }
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-    menuToggle();
-});
 
 function changeLayout() {
     const findUsContainer = document.getElementById("findUsContainer");
@@ -176,12 +161,67 @@ function focusElement() {
     });
 };
 
+let isListenerAttached = false;
 
-/* i need mobile menu to appear; #nav-menu has to not appear when i resize, and i need
-a resize eL to make this happen...
-checking for menu-toggle-container, 
+function menuToggle() {
+    const menuToggleContainer = document.querySelector('.menu-toggle-container');
 
--- nav bar not sticking
--- toggle mobile menu items
+    if (menuToggleContainer && menuToggleContainer.style.display === "block" && !isListenerAttached) {
+        const menuToggleBtn = document.querySelector('.menu-toggle-btn');
 
+        menuToggleBtn.addEventListener("click", () => {
+            menuToggleBtn.classList.toggle("active");
+
+            const mobileMenu = document.querySelector('.mobile-menu');
+            if (mobileMenu) {
+                mobileMenu.classList.toggle('open');
+            }
+        });
+
+        isListenerAttached = true; 
+    }
+};
+
+function setupSubmenuScroll(content) {
+    const submenuLinks = document.querySelectorAll('a[data-scroll]');
+
+    submenuLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            const targetId = link.getAttribute('data-scroll');
+
+            if(!document.querySelector(targetId)) {
+                content.innerHTML = '';
+                menu(content);
+            }
+
+            setTimeout(() => {
+                const target = document.querySelector(targetId);
+                if (target) {
+                    target.scrollIntoView({behavior: 'smooth'});
+                }
+            }, 50);
+        })
+    })
+};
+
+const businessName = document.getElementById("business-name");
+
+businessName.addEventListener("click", (e) => {
+    e.preventDefault();
+    content.innerHTML = "";
+    home(content);
+    goIntoContent();
+})
+
+document.addEventListener("DOMContentLoaded", () => {
+    menuToggle();
+    updateNavMenu();
+    setupSubmenuScroll(content);
+});
+
+/* 
+- open mobile submenu 
+- click on mobile list, brings me to other tab
 */

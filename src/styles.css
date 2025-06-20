@@ -80,6 +80,15 @@ header, nav, .flex-item {
     display: block;
 }
 
+.mobile-menu > ul li a:hover,
+.mobile-menu > ul li a:active {
+    background-color:#9e000a;
+}
+
+.mobile-nav-link.active {
+    background-color: #9e000a;
+}
+
 .mobile-submenu-container {
     display: flex;
     justify-content: flex-end;
@@ -99,7 +108,7 @@ header, nav, .flex-item {
 }
 
 #mobile-menu-link {
-    padding-right: 26px !important;
+    padding-right: 14px !important;
 }
 
 .list {
@@ -381,6 +390,10 @@ footer div div {
 
     .flex-item h2 {
         font-size: 1.25rem;
+    }
+
+    #push-right {
+        margin-left: auto;
     }
 
 }
