@@ -45,8 +45,6 @@ home(content);
 switchTab(content);
 focusElement();
 
-
-
 function goIntoContent() {
      const nelliesPic = document.getElementById("imageBox");
      const header = document.querySelector("header");
@@ -70,12 +68,13 @@ function goIntoContent() {
 
 
 function updateNavMenu() {
-    const normalLayout = document.querySelector('.normal-layout');
+    const normalLayout = document.getElementById("nav-menu")
     const menuToggleContainer = document.querySelector('.menu-toggle-container');
-    if (menuToggleContainer) {
+    if (normalLayout || menuToggleContainer) {
          if(window.innerWidth <= 768) {
             menuToggleContainer.style.display = "block";
             normalLayout.style.display = "none";
+     
         } else {
             menuToggleContainer.style.display = "none";
             normalLayout.style.display = "flex";
@@ -87,8 +86,36 @@ window.addEventListener('resize', () => {
     updateNavMenu();
     changeLayout();
     focusElement();
+    menuToggle();
 });
 
+let isListenerAttached = false;
+
+function menuToggle() {
+    const menuToggleContainer = document.querySelector('.menu-toggle-container');
+    let isOpen = false;
+    if (menuToggleContainer.style.display === "block" && !isListenerAttached) {
+        const menuToggleBtn = document.querySelector('.menu-toggle-btn');
+        menuToggleBtn.addEventListener("click", () => {
+            menuToggleBtn.classList.toggle("active");
+            if (menuToggleBtn.classList.contains("active")) {
+                const mobileMenu = document.querySelector('.mobile-menu');
+                if (!isOpen) {
+                    mobileMenu.classList.add('open');
+                    isOpen = true;
+                } else {
+                    mobileMenu.classList.remove('open');
+                    isOpen = false;
+                }
+            }
+            isListenerAttached = true;
+        })
+    }
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+    menuToggle();
+});
 
 function changeLayout() {
     const findUsContainer = document.getElementById("findUsContainer");
@@ -151,3 +178,10 @@ function focusElement() {
 };
 
 
+/* i need mobile menu to appear; #nav-menu has to not appear when i resize, and i need
+a resize eL to make this happen...
+checking for menu-toggle-container, 
+
+-- google maps not loading after resize??
+
+*/
