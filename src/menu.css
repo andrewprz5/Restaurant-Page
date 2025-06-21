@@ -170,7 +170,6 @@
     text-transform: uppercase;
     width: 300px;
     color: #721212;
-    white-space: nowrap;
 }
 
 
@@ -193,8 +192,6 @@
 
 .separator-line {
     border-bottom: 2px dotted black;
-    margin-left: 20px;
-    margin-right: 20px;
     width: 100%;
 }
 
@@ -250,12 +247,8 @@
         margin-right: 60px;
     }
 
-    .item-price {
-        margin: 10px 10px 10px 20px;
-    }
-
     .additional-items-container {
-        margin-left: 10px;
-        margin-right: 10px;
+        margin-left: 15px;
+        margin-right: 15px;
     }
 }

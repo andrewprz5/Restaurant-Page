@@ -60,7 +60,7 @@ header, nav, .flex-item {
 
 .mobile-menu.open {
     display: block;
-    height: 150px;
+    height: 100%;
 }
 
 .mobile-menu ul {
@@ -68,16 +68,21 @@ header, nav, .flex-item {
 }
 
 .mobile-menu ul li {
-    line-height: 1;
+    line-height: 0.5;
+    font-family: 'Lato', sans-serif;
 }
 
-.mobile-menu > ul li a {
+.mobile-nav-link ,
+#mobile-menu-link,
+.subcategory a {
     text-decoration: none;
+    font-size: 18px;
     padding-right: 14px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 16px;
+    padding-bottom: 16px;
     padding-left: 14px;
     display: block;
+    text-transform: uppercase;
 }
 
 .mobile-menu > ul li a:hover,
@@ -97,7 +102,7 @@ header, nav, .flex-item {
 
 .mobile-menu span {
     position: absolute;
-    top: 30%;
+    top: 35%;
     right: 0;
     width: 9px;
     height: 9px;
@@ -107,8 +112,14 @@ header, nav, .flex-item {
     cursor: pointer;
 }
 
+.mobile-menu-list {
+    position: relative;
+}
+
 #mobile-menu-link {
     padding-right: 14px !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
 }
 
 .list {
@@ -163,10 +174,6 @@ li > div:hover {
     visibility: hidden;
 }
 
-.submenu.mobile {
-    display: block;
-}
-
 .submenu.focus {
     display: block;
     visibility: visible;
@@ -183,15 +190,37 @@ li > div:hover {
     font-size: 1.1rem;
 }
 
-.subcategory {
-    font-size: 16px;
-    line-height: 1;
-    border: none;
+.submenu-mobile {
+    font-family: "Lato", sans-serif;
+    text-align: left;
+    height: 0;
+    visibility: hidden;
+    display: none;
+}
+
+.submenu-mobile.focus {
+    display: block;
+    margin-left: auto;
+    visibility: visible;
+    height: max-content !important;
+    width: 100% !important;
+    text-align: right;
+    background-color: black;
+    transition: height 0.2s ease-in-out;
 }
 
 .subcategory {
+    border: none;
     width: 100%;
-    padding: 5px;
+    line-height: 0;
+}
+
+.subcategory a {
+    text-transform: none !important;
+}
+
+.submenu-mobile > .subcategory {
+    padding: 0px;
 }
 
 .subcategory:hover {
@@ -273,14 +302,13 @@ a span {
 }
 
 #imageBox h1 {
-    transform: rotate(-12deg);
     color: white;
 }
 
 #nelliesName {
     font-size: 6rem;
     font-weight: 600;
-    text-shadow: 2px 2px 2px black;
+    text-shadow: 7px 5px 4px black;
     color: white;
     letter-spacing: 0.1ch;
 }

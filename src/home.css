@@ -31,12 +31,6 @@
     text-decoration: underline;
 }
 
-#imageBox h1 {
-    color: white; 
-    transform: rotate(-12deg);
-    text-align: center;
-}
-
 #imageBox {
     background-image: url('https://nelliesplacenj.com/wp-content/uploads/2020/06/bar-fb.jpg');
     background-size: cover; 

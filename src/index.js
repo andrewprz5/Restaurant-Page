@@ -9,43 +9,63 @@ import findUs from "./findus.js";
 const content = document.querySelector("#content");
 
 function switchTab(container) {
-    const tabButtons = document.querySelectorAll('.tab-button'); 
-    const listItems = document.querySelectorAll('.list');
-    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-    tabButtons.forEach((button, index) => {
-        button.addEventListener('click', () => {
-            if (container.firstChild){
+  const tabButtons = document.querySelectorAll('.tab-button');
+  const listItems = document.querySelectorAll('.list');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
-                tabButtons.forEach(btn => btn.classList.remove('active'));
-                listItems.forEach(list => list.classList.remove('active'));
-                mobileNavLinks.forEach(link => link.classList.remove('active'));
+  const tabConfig = [
+    {
+      render: home,
+      listId: 'home-list',
+      mobileId: 'mobile-home-link',
+      afterRender: goIntoContent
+    },
+    {
+      render: about,
+      listId: 'about-list',
+      mobileId: 'mobile-about-link'
+    },
+    {
+      render: menu,
+      listId: 'menu-list',
+      mobileId: 'mobile-menu-link'
+    },
+    {
+      render: findUs,
+      listId: 'find-us-list',
+      mobileId: 'mobile-find-link'
+    }
+  ];
 
-                container.innerHTML = '';
+  function handleTabClick(index) {
+    // Remove all active states
+    tabButtons.forEach(btn => btn.classList.remove('active'));
+    listItems.forEach(list => list.classList.remove('active'));
+    mobileNavLinks.forEach(link => link.classList.remove('active'));
 
-                button.classList.add('active');
+    // Clear content
+    container.innerHTML = '';
 
-                if (index === 0) {
-                    home(content);
-                    goIntoContent();
-                    document.getElementById("home-list").classList.add('active');
-                    document.getElementById("mobile-home-link").classList.add('active');
-                } else if (index === 1) {
-                    about(content);
-                    document.getElementById('about-list').classList.add('active');
-                    document.getElementById("mobile-about-link").classList.add('active');
-                } else if (index === 2) {
-                    menu(content);
-                    document.getElementById('menu-list').classList.add('active');
-                    document.getElementById("mobile-menu-link").classList.add('active');
-                } else {
-                    findUs(content);
-                    document.getElementById('find-us-list').classList.add('active');
-                    document.getElementById("mobile-find-link").classList.add('active');
-                }
-            }
-        })
-    })
-};
+    const { render, listId, mobileId, afterRender } = tabConfig[index];
+
+    // Add active states
+    tabButtons[index]?.classList.add('active');
+    document.getElementById(listId)?.classList.add('active');
+    document.getElementById(mobileId)?.classList.add('active');
+
+    // Render page
+    render(content);
+    if (afterRender) afterRender();
+  }
+
+  tabButtons.forEach((button, index) => {
+    button.addEventListener('click', () => handleTabClick(index));
+  });
+
+  mobileNavLinks.forEach((button, index) => {
+    button.addEventListener('click', () => handleTabClick(index));
+  });
+}
 
 home(content);
 switchTab(content);
@@ -168,6 +188,7 @@ function menuToggle() {
 
     if (menuToggleContainer && menuToggleContainer.style.display === "block" && !isListenerAttached) {
         const menuToggleBtn = document.querySelector('.menu-toggle-btn');
+        const submenuOpener = document.getElementById("submenu-opener");
 
         menuToggleBtn.addEventListener("click", () => {
             menuToggleBtn.classList.toggle("active");
@@ -177,6 +198,14 @@ function menuToggle() {
                 mobileMenu.classList.toggle('open');
             }
         });
+
+        submenuOpener.addEventListener("click", () => {
+            const submenuMobile = document.querySelector(".submenu-mobile");
+            if (submenuMobile) {
+                submenuMobile.classList.toggle("focus");
+            }
+            
+        } );
 
         isListenerAttached = true; 
     }
@@ -221,7 +250,5 @@ document.addEventListener("DOMContentLoaded", () => {
     setupSubmenuScroll(content);
 });
 
-/* 
-- open mobile submenu 
-- click on mobile list, brings me to other tab
-*/
+// nav bar not sticking
+// css redesign
