@@ -74,7 +74,7 @@
                 </ul>
             </div>
             <div class="menu-toggle-container">
-                <button class="menu-toggle-btn" id="menu-toggle">
+                <button class="menu-toggle-btn" id="menu-toggle" aria-expanded="false">
                     <span class="svg-container">
                         <svg class="svg-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512">
                             <rect class="svg-piece" width="512" height="102"></rect>
@@ -93,8 +93,8 @@
                         <a class="mobile-nav-link" id="mobile-about-link"href="#">About</a>
                     </li>
                     <li id="mobile-menu-list">
-                        <div class="mobile-submenu-container mobile-nav-link" id="mobile-menu-link">
-                            <a href="#" id="mobile-menu-link"aria-haspopup="true">Menu</a>
+                        <div class="mobile-submenu-container mobile-nav-link" data-link="menu">
+                            <a href="#" aria-haspopup="true">Menu</a>
                             <span id="submenu-opener"></span>
                         </div>
                         <ul class="submenu-mobile">

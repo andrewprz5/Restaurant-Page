@@ -51,12 +51,25 @@ export default function homePage(container) {
         } contactBox.appendChild(contactInfo);
     };
 
+    /*
     for (let i = 0; i < 3; i++) {
         const imageBox = document.createElement("div");
         imageBox.className = "imageGallery";
         if (i === 0) {
             imageBox.appendChild(contactBox);
         } imageGallery1.appendChild(imageBox);
+    };
+
+    imageGallery1.className = "flex-layout";
+    imageGallery1.id = "first-row";
+    container.appendChild(imageGallery1);
+
+    */
+
+    for (let i = 0; i< 3; i++) {
+        const imageBox = document.createElement("div");
+        imageBox.className = "imageGallery";
+        imageGallery1.appendChild(imageBox);
     };
 
     imageGallery1.className = "flex-layout";
@@ -106,6 +119,33 @@ export default function homePage(container) {
     imageGallery2.className = "flex-layout"; 
     imageGallery2.id = "second-row";
     container.appendChild(imageGallery2); 
+
+    // css redesign implementation
+
+    const contactInfo = document.createElement("div");
+    contactInfo.className = "contact-info";
+    
+    for (let i = 0; i < 5; i++) {
+        const p = document.createElement("p");
+        if (i === 0) {
+            p.textContent = "9 Franklin Turnpike";
+        } else if (i === 1) {
+            p.innerHTML = "Waldwick, NJ 07463 <br>";
+        } else if (i === 2) {
+            p.textContent = "Sunday - Wednesday from 11:00am to 10:00pm";
+        } else if (i === 3) {
+            p.innerHTML = "Thursday - Saturday from 11:00am to 11:00pm <br>";
+        } else {
+            const a = document.createElement("a");
+            a.textContent = "Contact Us.";
+            p.appendChild(a);
+        }
+        contactInfo.appendChild(p);
+    }
+
+    container.appendChild(contactInfo);
+
+    //end
 
     const parallaxEl = document.createElement("div");
     parallaxEl.className = 'parallax-outer';

@@ -113,11 +113,15 @@ function updateNavMenu() {
     }
 };
 
+let resizeTimer;
 window.addEventListener('resize', () => {
-    updateNavMenu();
-    changeLayout();
-    focusElement();
-    menuToggle();
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+        updateNavMenu();
+        changeLayout();
+        focusElement();
+        menuToggle();
+    }, 200);
 });
 
 
@@ -191,11 +195,13 @@ function menuToggle() {
         const submenuOpener = document.getElementById("submenu-opener");
 
         menuToggleBtn.addEventListener("click", () => {
+
             menuToggleBtn.classList.toggle("active");
 
             const mobileMenu = document.querySelector('.mobile-menu');
             if (mobileMenu) {
                 mobileMenu.classList.toggle('open');
+                document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
             }
         });
 
@@ -250,5 +256,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setupSubmenuScroll(content);
 });
 
-// nav bar not sticking
 // css redesign
+// js tweaks
+// smaller mobile designs
+// maybe there is a gmaps issue during resizing

@@ -9,14 +9,12 @@
 }
 
 body {
-    background-color: white;
+    background-color: black;
     line-height: 1.75;
     font-family: "Cinzel Decorative", serif;
+    overflow-x: clip;
 }
 
-html, body {
-    overflow-x: hidden;
-}
 
 header {
     background-color: black;
@@ -73,7 +71,7 @@ header, nav, .flex-item {
 }
 
 .mobile-nav-link ,
-#mobile-menu-link,
+.mobile-nav-link[data-link="menu"],
 .subcategory a {
     text-decoration: none;
     font-size: 18px;
@@ -116,10 +114,11 @@ header, nav, .flex-item {
     position: relative;
 }
 
-#mobile-menu-link {
+.mobile-nav-link[data-link="menu"] a {
     padding-right: 14px !important;
     padding-top: 8px !important;
     padding-bottom: 8px !important;
+    text-decoration: none;
 }
 
 .list {

@@ -1,7 +1,7 @@
 const name = "Nellie's Place";
 
 const bizDscrptn1 =  "Thin-Crust Pizzas, All American Cuisine, and a Selection of 13 Top Quality Beers on Tap!";
-const bizDscrptn2 = "Place an order: ";
+const bizDscrptn2 = "Order now: ";
 
 const phone = "201.652.8626";
 const phoneRef = "tel:201.652.8626";

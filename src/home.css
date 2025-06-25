@@ -1,6 +1,7 @@
 
 #descriptionBox {
-    color: #000000;
+    color: white;
+    background-color: black;
     font-family: "Lato", sans-serif;
     font-weight: 700;
     letter-spacing: 1px;
@@ -12,6 +13,16 @@
 
 #descriptionBox div {
     font-size: 2.25rem;
+}
+
+#descriptionBox div:nth-of-type(2) {
+    background-color: white;
+    color: black;
+    width: fit-content;
+    margin: 50px auto 20px auto;
+    padding: 20px;
+    text-transform: uppercase;
+    font-weight: 800;
 }
 
 #contactBox {
@@ -42,17 +53,17 @@
     justify-content: center;
 }
 
-#para2 {
-    margin-top: 40px;
-}
-
 .flex-layout {
     display: flex;
 }
 
-#first-row .imageGallery:first-of-type {
-    background-color: #ae9a64;
+#first-row {
+    height: 375px;
 }
+
+#first-row .imageGallery:first-of-type {
+    background-image: url('./nellies-bar.jpg');
+} /* contact form change */
 
 #first-row .imageGallery:nth-child(2) {
     background-image: url('./pizza-dough.jpg');
@@ -62,6 +73,7 @@
     background-image: url('./thin-crust-pizza.jpg');
 }
 
+#first-row .imageGallery:first-of-type,
 #first-row .imageGallery:nth-child(2),
 #first-row .imageGallery:nth-child(3) {
     background-repeat: no-repeat;
@@ -81,6 +93,30 @@
 .imageGallery img {
     width: 100%;
     height: auto;
+}
+
+.contact-info {
+    text-align: center;
+    margin: 50px;
+    line-height: 5;
+    background-color: black;
+    color: white;
+    padding: 50px;
+    letter-spacing: 2px;
+    font-family: 'Lato';
+    font-size: 1.2rem;
+    text-transform: uppercase;
+
+}
+
+.contact-info > a {
+    background-color: white;
+    color: black;
+    padding: 20px;
+    text-transform: uppercase;
+    font-family: 'Lato', sans-serif;
+    text-decoration: none;
+    font-weight: 800;
 }
 
 .parallax-outer {
