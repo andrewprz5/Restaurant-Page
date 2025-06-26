@@ -1,7 +1,7 @@
 const name = "Nellie's Place";
 
 const bizDscrptn1 =  "Thin-Crust Pizzas, All American Cuisine, and a Selection of 13 Top Quality Beers on Tap!";
-const bizDscrptn2 = "Order now: ";
+const bizDscrptn2 = "Place an order: ";
 
 const phone = "201.652.8626";
 const phoneRef = "tel:201.652.8626";
@@ -11,7 +11,7 @@ const address1 = "9 Franklin Turnpike";
 const address2 = "Waldwick, NJ 07463";
 const hoursOp = "Sunday - Wednesday from 11:00am to 10:00pm";
 const hoursOp2 = "Thursday - Saturday from 11:00am to 11:00pm";
-const cta = "Contact Us.";
+const cta = "Contact Us: 201.652.8626";
 const contactLink = "https://nelliesplacenj.com/find-us/";
 
 const pizzaImage = "https://nelliesplacenj.com/wp-content/uploads/2020/09/pizza-500x500-1";
@@ -73,3 +73,5 @@ export {name, bizDscrptn1, bizDscrptn2, phone, phoneRef, space, address1, addres
 export {aboutText, aboutPara1, aboutPara2, aboutPara3, aboutPara4, aboutPara5, staffImgSrc, viewMenuText};
 
 export {viewMenuText2, containerFee};
+
+

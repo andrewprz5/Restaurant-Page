@@ -8,9 +8,6 @@
     text-align: center;
 }
 
-.h1-tab span {
-    color: black;
-}
 
 #findUsContainer {
     display: flex;
@@ -43,93 +40,84 @@ iframe {
 }
 
 #contactFormContainer {
-    padding-right: 30%;
-    padding-left: 30%;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    width: 100%;
-}
-
-#contactFormContainer h2 {
-    margin: 20px;
-    font-family: Arial, Helvetica, Verdana, sans-serif;
-    font-weight: 300;
-    font-size: 43px;
+    margin: 4rem auto 2rem;
+    padding: 4rem 2rem;
+    max-width: 700px;
+    background-color: #000;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    color: #f8f4ef;
+    font-family: 'Lato', sans-serif;
 }
 
 #contactFormContainer span {
-    color: rgb(159, 27, 36);
-}
-
-#formContainer {
-    margin: 20px;
+    color: #fff7f0;
+    font-size: 2.2rem;
+    font-family: 'Cinzel Decorative';
+    display: block;
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
 label {
-    margin-bottom: 5px;
-    background-color: #fff;
-    color: rgb(159, 27, 36);
-    border: 0;
-    width: 100%;
-    border-bottom: 2px solid rgb(159, 27, 36);
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-    display: inline-block;
-    max-width: 100%;
-    font-weight: 700;
+    display: block;
+    color: #e8e1d9;
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    font-family: 'Lato', sans-serif;
 }
 
 input,
 textarea {
-    background-color: #fff;
-    color: rgb(159, 27, 36);
-    border: 0;
+    background-color: #1b1b1b;
+    color: #f5f5f5;
+    border: none;
+    padding: 0.75rem 0.5rem;
+    font-size: 1rem;
     width: 100%;
-    border-bottom: 2px solid rgb(159, 27, 36);
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-    display: block;
-    padding: 6px 12px;
-    font-size: 14px;
-    line-height: 1.45;
-    transition: all ease-in-out .15s;
-    box-shadow: none;
-}
-
-textarea {
-    height: 100px;
+    font-family: 'Lato', sans-serif;
+    margin-top: 0.4rem;
+    transition: border-color 0.3s ease;
 }
 
 input:focus,
 textarea:focus {
-    background-color: #fcfcfc;
-    border-color: #ccc;
-    box-shadow: none;
-    outline: 0;
+  border-bottom: 1px solid #9e000a;
+  outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #aaa;
+  font-style: italic;
 }
 
 #submitDiv {
-    width: 100%;
-    text-align: center;
+  text-align: center;
+  margin-top: 2.5rem;
 }
 
 input[type="submit"] {
-    font-size: 16px;
-    line-height: 1.2;
-    border: 0;
+    background-color: #9e000a;
+    color: #fff7f0;
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 1.1rem;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 input[type="submit"]:hover {
-    margin: 0 auto !important;
-    background: rgb(159, 27, 36);
-    color: white;
+    background-color: #7c0008;
 }
 
 #errorDiv {
-    margin: 2em 0.5em 1em;
-    padding: 0.2em 1em;
-    border: 2px solid #ffb900;
+    color: #ffb3b3;
+    font-size: 0.95rem;
+    text-align: center;
+    margin-top: 0.5rem;
 }
 
 @media (max-width: 768px) {

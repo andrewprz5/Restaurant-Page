@@ -10,6 +10,7 @@
 
 body {
     background-color: black;
+    color: white;
     line-height: 1.75;
     font-family: "Cinzel Decorative", serif;
     overflow-x: clip;
@@ -261,8 +262,8 @@ a[title="Nellie's Place"] {
 }
 
 a span {
-    font-size: 1.2rem;
-    font-weight: 500;
+    font-size: 1.3rem;
+    font-weight: 600;
 }
 
 .tab-button {
@@ -312,13 +313,22 @@ a span {
     letter-spacing: 0.1ch;
 }
 
+#content {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#content.loaded {
+    opacity: 1;
+}
+
 footer a {
     text-decoration: none;
     font-weight: 400;
 }
 
 footer div {
-    background-color: #AE9A64;
+    background-color: #9e000a;
     display: flex;
     align-items: stretch;
     justify-content: center;
@@ -330,7 +340,7 @@ footer div div {
     float: left;
     min-height: 1px;
     margin-top: 30px;
-    color: black;
+    color: white;
     font-family: "Lato", sans-serif;
     font-size: 20px;
     text-align: center;

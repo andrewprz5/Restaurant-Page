@@ -1,5 +1,6 @@
 import {goIntoHeader, bizDscrptn2, phone, viewMenuText} from "./content.js";
 import "./findus.css";
+import menu from "./menu.js";
 
 export default function findUs(container) {
     goIntoHeader();
@@ -95,6 +96,7 @@ export default function findUs(container) {
     nameInput.value = "";
     nameInput.type = "text";
     nameInput.name = "your-name";
+    nameInput.placeholder = "John Smith";
 
     const emailLabel = document.createElement("label");
     emailLabel.innerHTML = "Email * <br>";
@@ -104,6 +106,7 @@ export default function findUs(container) {
     emailInput.value = "";
     emailInput.type = "email";
     emailInput.name = "your-email";
+    emailInput.placeholder = "email@address.com";
 
     const messageLabel = document.createElement("label");
     messageLabel.innerHTML = "Leave us a message <br>";
@@ -144,9 +147,17 @@ export default function findUs(container) {
     placeOrderText.id = "placeOrderPara";
     placeOrderDiv.appendChild(placeOrderText);
     
-    const viewMenuAnchor = document.createElement("a");
-    viewMenuAnchor.href = "https://nelliesplacenj.com/menu/";
+    const viewMenuAnchor = document.createElement("btn");
+    viewMenuAnchor.href = "#";
     viewMenuAnchor.id = "menuLink";
+    viewMenuAnchor.addEventListener("click", () => {
+        container.innerHTML = "";
+        menu(container);
+        document.getElementById("find-us").classList.remove("active");
+        document.getElementById("find-us-list").classList.remove("active");
+        document.getElementById("menu").classList.add("active");
+        document.getElementById("menu-list").classList.add("active");
+    });
     
     const viewMenuSpan = document.createElement("span");
     viewMenuSpan.textContent = viewMenuText;
@@ -155,6 +166,4 @@ export default function findUs(container) {
     
     orderMenuDiv.append(placeOrderDiv, viewMenuDiv);
     container.appendChild(orderMenuDiv);
-
-
 }

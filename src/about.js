@@ -1,4 +1,5 @@
 import "./about.css";
+import menu from "./menu.js";
 import {aboutText, aboutPara1, aboutPara2, aboutPara3, aboutPara4, aboutPara5, viewMenuText, staffImgSrc, goIntoHeader, bizDscrptn2, phone} from "./content.js";
 
 export default function aboutPage(container) {
@@ -72,9 +73,16 @@ export default function aboutPage(container) {
     placeOrderText.id = "placeOrderPara";
     placeOrderDiv.appendChild(placeOrderText);
 
-    const viewMenuAnchor = document.createElement("a");
-    viewMenuAnchor.href = "https://nelliesplacenj.com/menu/";
+    const viewMenuAnchor = document.createElement("button");
     viewMenuAnchor.id = "menuLink";
+    viewMenuAnchor.addEventListener("click", () => {
+        container.innerHTML = "";
+        menu(container);
+        document.getElementById("about").classList.remove("active");
+        document.getElementById("about-list").classList.remove("active");
+        document.getElementById("menu").classList.add("active");
+        document.getElementById("menu-list").classList.add("active");
+    });
 
     const viewMenuSpan = document.createElement("span");
     viewMenuSpan.textContent = viewMenuText;
@@ -129,7 +137,6 @@ export default function aboutPage(container) {
     for (let i = 0; i < 5; i++) {
         const photoDiv = document.createElement("div");
         photoDiv.className = "photo-about-gallery";
-        const paImg = document.createElement("div");
         imgGllryRow2.appendChild(photoDiv);
     }
 

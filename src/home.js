@@ -1,16 +1,18 @@
 import "./home.css";
-import {name, bizDscrptn1, bizDscrptn2, phone, phoneRef, space, address1, address2, hoursOp, hoursOp2, cta, contactLink, pizzaImage, pizzaText, dessertImage, dessertText,
+import { bizDscrptn1, bizDscrptn2, phone, phoneRef, space, address1, address2, hoursOp, hoursOp2, cta, contactLink, pizzaImage, pizzaText, dessertImage, dessertText,
     beerImage, beerText, pastaImage, pastaText, famousText1, famousText2, famousText3, sloganPizza
 } from "./content.js";
 
+let parallaxScrollAttached = false;
+
 export default function homePage(container) {
 
-    const descriptionBox = document.createElement("div");
+    const descriptionBox = document.createElement("section");
     descriptionBox.id = "descriptionBox";
     const textBox1 = document.createElement("div");
     const textBox2 = document.createElement("div");
-    const p1 = document.createElement("p");
-    const p2 = document.createElement("p");
+    const p1 = document.createElement("h1");
+    const p2 = document.createElement("h2");
     const a = document.createElement("a");
 
     p1.textContent = bizDscrptn1;
@@ -18,6 +20,7 @@ export default function homePage(container) {
     p2.id = "para2";
     a.textContent = phone;
     a.href = phoneRef;
+    a.setAttribute("aria-label", "Call us at " + phone);
 
     p2.appendChild(a);
     textBox1.appendChild(p1);
@@ -51,21 +54,6 @@ export default function homePage(container) {
         } contactBox.appendChild(contactInfo);
     };
 
-    /*
-    for (let i = 0; i < 3; i++) {
-        const imageBox = document.createElement("div");
-        imageBox.className = "imageGallery";
-        if (i === 0) {
-            imageBox.appendChild(contactBox);
-        } imageGallery1.appendChild(imageBox);
-    };
-
-    imageGallery1.className = "flex-layout";
-    imageGallery1.id = "first-row";
-    container.appendChild(imageGallery1);
-
-    */
-
     for (let i = 0; i< 3; i++) {
         const imageBox = document.createElement("div");
         imageBox.className = "imageGallery";
@@ -78,49 +66,37 @@ export default function homePage(container) {
 
     const imageGallery2 = document.createElement("div"); 
 
-    for (let i = 0; i < 4; i++) {
+    const imageData = [
+        { src: pizzaImage, alt: pizzaText },
+        { src: dessertImage, alt: dessertText },
+        { src: beerImage, alt: beerText },
+        { src: pastaImage, alt: pastaText },
+    ];
+
+    imageData.forEach(({ src, alt }) => {
         const imageBox = document.createElement("div");
         imageBox.className = "imageGallery";
         imageBox.setAttribute("itemscope", "");
         imageBox.setAttribute("itemtype", "https://schema.org/ImageObject");
 
         const img = document.createElement("img");
-        if (i === 0) {
-            img.src = `${pizzaImage}.jpg`;
-            img.alt = pizzaText;
-            img.srcset = `${pizzaImage}.jpg 500w, ${pizzaImage}-300x300.jpg 300w, ${pizzaImage}-150x150.jpg 150w`;
-            img.setAttribute("fetchpriority", "high");
-        } else {
-            img.setAttribute("loading", "lazy");
-            if (i === 1) {
-                img.src = `${dessertImage}.jpg`;
-                img.alt = dessertText;
-                img.srcset = `${dessertImage}.jpg 500w, ${dessertImage}-300x300.jpg 300w, ${dessertImage}-150x150.jpg 150w`;
-            } else if (i === 2) {
-                img.src = `${beerImage}.jpg`;
-                img.alt = beerText;
-                img.srcset = `${beerImage}.jpg 500w, ${beerImage}-300x300.jpg 300w, ${beerImage}-150x150.jpg 150w`;
-            } else {
-                img.src = `${pastaImage}.jpg`;
-                img.alt = pastaText;
-                img.srcset = `${pastaImage}.jpg 500w, ${pastaImage}-300x300.jpg 300w, ${pastaImage}-150x150.jpg 150w`;
-            }
-        }
-        img.setAttribute("decoding", "async");
+        img.src = `${src}.jpg`;
+        img.alt = alt;
+        img.srcset = `${src}.jpg 500w, ${src}-300x300.jpg 300w, ${src}-150x150.jpg 150w`;
+        img.sizes = "(max-width: 500px) 100vw, 500px";
+        img.decoding = "async";
+        img.loading = "lazy";
         img.setAttribute("itemprop", "image");
-        img.setAttribute("width", "500");
-        img.setAttribute("height", "500");
-        img.setAttribute("sizes", "(max-width: 500px) 100vw, 500px");
+        img.width = 500;
+        img.height = 500;
 
         imageBox.appendChild(img);
         imageGallery2.appendChild(imageBox);
-    }; 
+    });
 
     imageGallery2.className = "flex-layout"; 
     imageGallery2.id = "second-row";
     container.appendChild(imageGallery2); 
-
-    // css redesign implementation
 
     const contactInfo = document.createElement("div");
     contactInfo.className = "contact-info";
@@ -130,14 +106,16 @@ export default function homePage(container) {
         if (i === 0) {
             p.textContent = "9 Franklin Turnpike";
         } else if (i === 1) {
-            p.innerHTML = "Waldwick, NJ 07463 <br>";
+            p.innerHTML = "Waldwick, NJ 07463";
         } else if (i === 2) {
             p.textContent = "Sunday - Wednesday from 11:00am to 10:00pm";
         } else if (i === 3) {
-            p.innerHTML = "Thursday - Saturday from 11:00am to 11:00pm <br>";
+            p.innerHTML = "Thursday - Saturday from 11:00am to 11:00pm";
         } else {
             const a = document.createElement("a");
-            a.textContent = "Contact Us.";
+            a.href="tel:201.652.8626";
+            a.textContent = cta;
+            p.style.marginTop = "50px";
             p.appendChild(a);
         }
         contactInfo.appendChild(p);
@@ -146,7 +124,6 @@ export default function homePage(container) {
     container.appendChild(contactInfo);
 
     //end
-
     const parallaxEl = document.createElement("div");
     parallaxEl.className = 'parallax-outer';
     parallaxEl.setAttribute('data-parallax-speed', '0.5');
@@ -172,25 +149,29 @@ export default function homePage(container) {
 
     parallaxEl.append(parallaxBg, textContainer);
     container.appendChild(parallaxEl);
-
-    window.addEventListener('scroll', () => {
-        if (window.innerWidth > 768) {
-            const section = document.querySelector('.parallax-outer');
-            const bg = document.querySelector('.parallax-bg');
-            if (section) {
-                const speed = parseFloat(section.getAttribute('data-parallax-speed')) || 0.3;
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.offsetHeight;
-                const scrollY = window.scrollY;
-                const windowHeight = window.innerHeight;
-
-                if (scrollY + windowHeight >= sectionTop && scrollY <= sectionTop + sectionHeight) {
-                    const scrollProgress = scrollY - sectionTop;
-                    bg.style.transform = `translateY(${scrollProgress * speed}px)`;
-                }
-            }
-        }
-        
-    });
+    
+    window.removeEventListener('scroll', handleParallaxScroll);
+    window.addEventListener('scroll', handleParallaxScroll);
+    
 };
 
+
+function handleParallaxScroll() {
+    const section = document.querySelector('.parallax-outer');
+    const bg = document.querySelector('.parallax-bg');
+
+    if (!section || !bg) return;
+
+    if (window.innerWidth > 768) {
+        const speed = parseFloat(section.getAttribute('data-parallax-speed')) || 0.3;
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const scrollY = window.scrollY;
+        const windowHeight = window.innerHeight;
+
+        if (scrollY + windowHeight >= sectionTop && scrollY <= sectionTop + sectionHeight) {
+            const scrollProgress = scrollY - sectionTop;
+            bg.style.transform = `translateY(${scrollProgress * speed}px)`;
+        }
+    }
+}

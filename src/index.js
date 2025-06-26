@@ -3,7 +3,7 @@ import "./styles.css";
 import home from "./home.js";
 import about from "./about.js";
 import menu from "./menu.js";
-import findUs from "./findus.js";
+import findUs from "./findUs.js";
 
 
 const content = document.querySelector("#content");
@@ -45,6 +45,8 @@ function switchTab(container) {
 
     // Clear content
     container.innerHTML = '';
+    container.classList.remove("loaded");
+    setTimeout(() => container.classList.add("loaded"), 50);
 
     const { render, listId, mobileId, afterRender } = tabConfig[index];
 
@@ -54,8 +56,14 @@ function switchTab(container) {
     document.getElementById(mobileId)?.classList.add('active');
 
     // Render page
-    render(content);
+    render(container);
     if (afterRender) afterRender();
+
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            container.classList.add("loaded");
+        });
+    });
   }
 
   tabButtons.forEach((button, index) => {
@@ -68,8 +76,9 @@ function switchTab(container) {
 }
 
 home(content);
+setTimeout(() => content.classList.add("loaded"), 0);
 switchTab(content);
-focusElement();
+
 
 
 
@@ -119,8 +128,6 @@ window.addEventListener('resize', () => {
     resizeTimer = setTimeout(() => {
         updateNavMenu();
         changeLayout();
-        focusElement();
-        menuToggle();
     }, 200);
 });
 
@@ -149,11 +156,14 @@ function changeLayout() {
         content.insertBefore(contactForm, content.lastElementChild);
 
         contactForm.style.cssText = `
-            padding-right: 30%;
-            padding-left: 30%;
-            padding-top: 20px;
-            padding-bottom: 20px;
-            width: 100%;
+            margin: 4rem auto 2rem;
+            padding: 4rem 2rem;
+            max-width: 700px;
+            background-color: #000;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            color: #f8f4ef;
+            font-family: 'Lato', sans-serif;
         `;
         findUsContainer.style.cssText = `
             display: flex;
@@ -169,7 +179,6 @@ function changeLayout() {
         }
     };
 };
-    
     
 
 function focusElement() {
@@ -188,9 +197,8 @@ function focusElement() {
 let isListenerAttached = false;
 
 function menuToggle() {
-    const menuToggleContainer = document.querySelector('.menu-toggle-container');
 
-    if (menuToggleContainer && menuToggleContainer.style.display === "block" && !isListenerAttached) {
+    if (window.innerWidth <= 768 && !isListenerAttached) {
         const menuToggleBtn = document.querySelector('.menu-toggle-btn');
         const submenuOpener = document.getElementById("submenu-opener");
 
@@ -234,7 +242,9 @@ function setupSubmenuScroll(content) {
             setTimeout(() => {
                 const target = document.querySelector(targetId);
                 if (target) {
-                    target.scrollIntoView({behavior: 'smooth'});
+                    target.scrollIntoView({behavior: 'smooth', block:'start'});
+                } else {
+                    console.warn('Target not found:', targetId);
                 }
             }, 50);
         })
@@ -254,6 +264,7 @@ document.addEventListener("DOMContentLoaded", () => {
     menuToggle();
     updateNavMenu();
     setupSubmenuScroll(content);
+    focusElement();
 });
 
 // css redesign
