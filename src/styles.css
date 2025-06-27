@@ -313,6 +313,8 @@ a span {
     letter-spacing: 0.1ch;
 }
 
+/*
+
 #content {
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
@@ -321,6 +323,8 @@ a span {
 #content.loaded {
     opacity: 1;
 }
+
+*/
 
 footer a {
     text-decoration: none;

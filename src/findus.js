@@ -5,7 +5,7 @@ import menu from "./menu.js";
 export default function findUs(container) {
     goIntoHeader();
 
-    const h1Container = document.createElement("div");
+    const h1Container = document.createElement("section");
     h1Container.className = "h1-container";
     h1Container.id = "h1Container";
     const h1 = document.createElement("h1");
@@ -19,7 +19,7 @@ export default function findUs(container) {
 
     // GMAPS & owners
 
-    const flexContainer = document.createElement("div");
+    const flexContainer = document.createElement("section");
     flexContainer.id = "findUsContainer";
 
     const googleMaps = document.createElement("div");
@@ -28,10 +28,11 @@ export default function findUs(container) {
     const iframe = document.createElement("iframe");
     iframe.setAttribute("loading", "lazy");
     iframe.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.7640645905285!2d-74.12016968420164!3d41.00853697930085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2e4872c7e400f%3A0x208d89c32db990b3!2sNellie's%20Place!5e0!3m2!1sen!2sus!4v1599767199545!5m2!1sen!2sus";
-    iframe.setAttribute("width", "1200");
     iframe.setAttribute("height", "825");
     iframe.setAttribute("frameborder", "0");
     iframe.allowFullscreen = true;
+    iframe.style.width = "100%";
+    iframe.style.maxWidth = "1200px";
 
     const ownersDiv = document.createElement("div");
     ownersDiv.className = "";
@@ -57,7 +58,7 @@ export default function findUs(container) {
 
     //contact-form
 
-    const contactFormContainer = document.createElement("div");
+    const contactFormContainer = document.createElement("section");
     contactFormContainer.id = "contactFormContainer";
 
     const contactFormH2 = document.createElement("h2");
@@ -69,7 +70,7 @@ export default function findUs(container) {
     const form = document.createElement("form");
     form.action = "/find-us/#wpcf7-f215-p200-o1";
     form.method = "post";
-    form.noValidate = true;
+    form.setAttribute("novalidate", true);
 
     const errorDiv = document.createElement("div");
     errorDiv.id = "errorDiv";
@@ -89,7 +90,7 @@ export default function findUs(container) {
     });
 
     const nameLabel = document.createElement("label");
-    nameLabel.innerHTML = "Name <br>";
+    nameLabel.textContent = "Name";
     const nameInput = document.createElement("input");
     nameInput.size = "40";
     nameInput.maxLength = "400";
@@ -99,7 +100,7 @@ export default function findUs(container) {
     nameInput.placeholder = "John Smith";
 
     const emailLabel = document.createElement("label");
-    emailLabel.innerHTML = "Email * <br>";
+    emailLabel.textContent = "Email *";
     const emailInput = document.createElement("input");
     emailInput.size = "40";
     emailInput.maxLength = "400";
@@ -109,7 +110,7 @@ export default function findUs(container) {
     emailInput.placeholder = "email@address.com";
 
     const messageLabel = document.createElement("label");
-    messageLabel.innerHTML = "Leave us a message <br>";
+    messageLabel.textContent = "Leave us a message";
     const messageArea = document.createElement("textarea");
     messageArea.cols = "40";
     messageArea.rows = "10";
@@ -147,7 +148,8 @@ export default function findUs(container) {
     placeOrderText.id = "placeOrderPara";
     placeOrderDiv.appendChild(placeOrderText);
     
-    const viewMenuAnchor = document.createElement("btn");
+    const viewMenuAnchor = document.createElement("button");
+    viewMenuAnchor.type = "button";
     viewMenuAnchor.href = "#";
     viewMenuAnchor.id = "menuLink";
     viewMenuAnchor.addEventListener("click", () => {

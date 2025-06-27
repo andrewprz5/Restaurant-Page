@@ -1,6 +1,7 @@
 import "./about.css";
 import menu from "./menu.js";
 import {aboutText, aboutPara1, aboutPara2, aboutPara3, aboutPara4, aboutPara5, viewMenuText, staffImgSrc, goIntoHeader, bizDscrptn2, phone} from "./content.js";
+import { handleParallaxScroll } from "./index.js";
 
 export default function aboutPage(container) {
     goIntoHeader();
@@ -82,6 +83,8 @@ export default function aboutPage(container) {
         document.getElementById("about-list").classList.remove("active");
         document.getElementById("menu").classList.add("active");
         document.getElementById("menu-list").classList.add("active");
+
+        handleParallaxScroll();
     });
 
     const viewMenuSpan = document.createElement("span");
@@ -92,7 +95,7 @@ export default function aboutPage(container) {
     orderMenuDiv.append(placeOrderDiv, viewMenuDiv);
     container.appendChild(orderMenuDiv);
 
-    const imgGllryRow1 = document.createElement("div");
+    const imgGllryRow1 = document.createElement("section");
     imgGllryRow1.id = "imgGllryRow1";
 
     for (let i = 0; i < 5; i++) {
@@ -131,7 +134,7 @@ export default function aboutPage(container) {
 
     container.appendChild(imgGllryRow1);
 
-    const imgGllryRow2 = document.createElement("div");
+    const imgGllryRow2 = document.createElement("section");
     imgGllryRow2.id = "imgGllryRow2";
 
     for (let i = 0; i < 5; i++) {

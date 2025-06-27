@@ -3,7 +3,7 @@ import "./styles.css";
 import home from "./home.js";
 import about from "./about.js";
 import menu from "./menu.js";
-import findUs from "./findUs.js";
+import findUs from "./findus.js";
 
 
 const content = document.querySelector("#content");
@@ -18,7 +18,8 @@ function switchTab(container) {
       render: home,
       listId: 'home-list',
       mobileId: 'mobile-home-link',
-      afterRender: goIntoContent
+      afterRender: goIntoContent,
+      scrollEvent: handleParallaxScroll
     },
     {
       render: about,
@@ -28,7 +29,8 @@ function switchTab(container) {
     {
       render: menu,
       listId: 'menu-list',
-      mobileId: 'mobile-menu-link'
+      mobileId: 'mobile-menu-link',
+      scrollEvent: handleParallaxScroll
     },
     {
       render: findUs,
@@ -45,10 +47,8 @@ function switchTab(container) {
 
     // Clear content
     container.innerHTML = '';
-    container.classList.remove("loaded");
-    setTimeout(() => container.classList.add("loaded"), 50);
 
-    const { render, listId, mobileId, afterRender } = tabConfig[index];
+    const { render, listId, mobileId, afterRender, scrollEvent } = tabConfig[index];
 
     // Add active states
     tabButtons[index]?.classList.add('active');
@@ -56,14 +56,9 @@ function switchTab(container) {
     document.getElementById(mobileId)?.classList.add('active');
 
     // Render page
-    render(container);
+    render(content);
     if (afterRender) afterRender();
-
-    requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-            container.classList.add("loaded");
-        });
-    });
+    if (scrollEvent) window.addEventListener("scroll", scrollEvent);
   }
 
   tabButtons.forEach((button, index) => {
@@ -76,9 +71,8 @@ function switchTab(container) {
 }
 
 home(content);
-setTimeout(() => content.classList.add("loaded"), 0);
 switchTab(content);
-
+focusElement();
 
 
 
@@ -128,6 +122,8 @@ window.addEventListener('resize', () => {
     resizeTimer = setTimeout(() => {
         updateNavMenu();
         changeLayout();
+        focusElement();
+        menuToggle();
     }, 200);
 });
 
@@ -156,14 +152,11 @@ function changeLayout() {
         content.insertBefore(contactForm, content.lastElementChild);
 
         contactForm.style.cssText = `
-            margin: 4rem auto 2rem;
-            padding: 4rem 2rem;
-            max-width: 700px;
-            background-color: #000;
-            border-radius: 8px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-            color: #f8f4ef;
-            font-family: 'Lato', sans-serif;
+            padding-right: 30%;
+            padding-left: 30%;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            width: 100%;
         `;
         findUsContainer.style.cssText = `
             display: flex;
@@ -179,6 +172,7 @@ function changeLayout() {
         }
     };
 };
+    
     
 
 function focusElement() {
@@ -197,8 +191,9 @@ function focusElement() {
 let isListenerAttached = false;
 
 function menuToggle() {
+    const menuToggleContainer = document.querySelector('.menu-toggle-container');
 
-    if (window.innerWidth <= 768 && !isListenerAttached) {
+    if (menuToggleContainer && menuToggleContainer.style.display === "block" && !isListenerAttached) {
         const menuToggleBtn = document.querySelector('.menu-toggle-btn');
         const submenuOpener = document.getElementById("submenu-opener");
 
@@ -242,9 +237,7 @@ function setupSubmenuScroll(content) {
             setTimeout(() => {
                 const target = document.querySelector(targetId);
                 if (target) {
-                    target.scrollIntoView({behavior: 'smooth', block:'start'});
-                } else {
-                    console.warn('Target not found:', targetId);
+                    target.scrollIntoView({behavior: 'smooth'});
                 }
             }, 50);
         })
@@ -264,10 +257,29 @@ document.addEventListener("DOMContentLoaded", () => {
     menuToggle();
     updateNavMenu();
     setupSubmenuScroll(content);
-    focusElement();
 });
+
+export function handleParallaxScroll() {
+    const parallaxEls = document.querySelectorAll("[data-parallax-speed]");
+    let ticking = false;
+
+        parallaxEls.forEach((el) => {
+            const speed = parseFloat(el.dataset.parallaxSpeed) || 1;
+            const rect = el.getBoundingClientRect();
+
+            // Skip parallax if not visible
+            if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+
+            const move = rect.top * speed * -0.2;
+            el.style.transform = `translateY(${move}px)`;
+        });
+
+    window.addEventListener("scroll", handleParallaxScroll);
+}
+
 
 // css redesign
 // js tweaks
 // smaller mobile designs
 // maybe there is a gmaps issue during resizing
+// understand more about parallaxscroll function

@@ -374,16 +374,19 @@ class menuSection {
 
         sectionHeader.appendChild(sectionTitle);
         menuSection.appendChild(sectionHeader);
-        const content = document.querySelector("#content");
+        const content = document.getElementById("content") || document.body;
         content.appendChild(menuSection);
+
+        const backgroundWrapper = document.createElement("div");
+        backgroundWrapper.className = "parallax-wrapper";
 
         const foodBackgroundImg = document.createElement("div");
         foodBackgroundImg.className = "food-background-img";
-        foodBackgroundImg.id = `${this.getFormatted()}-container`;
         foodBackgroundImg.setAttribute("data-parallax-speed", "2");
-        foodBackgroundImg.setAttribute("data-parallax-image", `${this.image}`);
         foodBackgroundImg.style.backgroundImage = `url(${this.image})`;
-        content.appendChild(foodBackgroundImg);
+
+        backgroundWrapper.appendChild(foodBackgroundImg);
+        content.appendChild(backgroundWrapper);
 
         const section = document.createElement("div");
         section.id = `${this.category}-section`;
