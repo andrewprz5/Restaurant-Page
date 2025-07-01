@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="Nellie’s Place is a classic pizzeria and bar in Waldwick, NJ. View our full menu, call to order, and find us easily.">
+   <meta name="keywords" content="Nellie's Place, Pizzeria, Waldwick NJ, Pizza Menu, Bar, Restaurant">
+   <link rel="icon">
+   <title>Nellie's Place NJ</title>
+</head>
+<body>
+   <header>
+       <nav>
+           <div class="flex-item">
+               <h1>
+                   <a href="#" title="Nellie's Place" id="business-name">Nellie's Place</a>
+               </h1>
+           </div>
+           <div class="flex-item" id="nav-menu">
+               <ul>
+                   <li class="list active" id="home-list">
+                       <button class="tab-button active" id="home">Home</button>
+                   </li>
+                    <li class="list"  id="about-list">
+                       <button class="tab-button" id="about">About</button>
+                   </li>
+                    <li class="list" id="menu-list">
+                       <div>
+                           <button class ="tab-button" id="menu">Menu</button>
+                           <span></span>
+                       </div>
+                       <ul class="submenu">
+                           <li class="subcategory">
+                               <a href="#" data-scroll="#appetizersContainer">Appetizers</a>
+                           </li>
+                           <li class="subcategory">
+                               <a href="#" data-scroll="#soup-and-saladContainer">Soup and Salad</a>
+                           </li>
+                           <li class="subcategory">
+                               <a href="#" data-scroll="#burgersContainer">Burgers</a>
+                           </li>
+                           <li class="subcategory">
+                               <a href="#" data-scroll="#sandwichesContainer">Sandwiches</a>
+                           </li>
+                           <li class="subcategory">
+                               <a href="#" data-scroll="#specialty-sandwichesContainer">Specialty Sandwiches</a>
+                           </li>
+                           <li class="subcategory">
+                               <a href="#" data-scroll="#meatsContainer">Meats</a>
+                           </li>
+                           <li class="subcategory">
+                               <a href="#" data-scroll="#fishContainer">Fish</a>  
+                           </li>
+                           <li class="subcategory">
+                               <a href="#" data-scroll="#italianContainer">Italian</a>
+                           </li>
+                           <li class="subcategory">
+                               <a href="#" data-scroll="#sidesContainer">Sides</a>
+                           </li>
+                           <li class="subcategory">
+                               <a href="#" data-scroll="#pizzaContainer">Pizza</a>
+                           </li>
+                           <li class="subcategory">
+                               <a href="#" data-scroll="#specialty-pieContainer">Specialty Pie</a>
+                           </li>
+                           <li class="subcategory">
+                               <a href="#" data-scroll="#gluten-freeContainer">Gluten Free</a>
+                           </li>
+                           <li class="subcategory">
+                               <a href="#" data-scroll="#kidsContainer">Kids</a>
+                           </li>
+                       </ul>
+                   </li>
+                    <li class="list" id="find-us-list">
+                       <button class="tab-button" id="find-us">Find Us</button>
+                   </li>
+               </ul>
+           </div>
+           <div class="menu-toggle-container">
+               <button class="menu-toggle-btn" id="menu-toggle" aria-expanded="false">
+                   <span class="svg-container">
+                       <svg class="svg-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512">
+                           <rect class="svg-piece" width="512" height="102"></rect>
+                           <rect class="svg-piece" y="205" width="512" height="102"></rect>
+                           <rect class="svg-piece" y="410" width="512" height="102"></rect>
+                       </svg>
+                   </span>
+               </button>
+           </div>
+           <div class="mobile-menu">
+               <ul>
+                   <li>
+                       <a class="mobile-nav-link active" id="mobile-home-link" href="#">Home</a>
+                   </li>
+                   <li>
+                       <a class="mobile-nav-link" id="mobile-about-link"href="#">About</a>
+                   </li>
+                   <li id="mobile-menu-list">
+                       <div class="mobile-submenu-container mobile-nav-link" data-link="menu">
+                           <a href="#" aria-haspopup="true">Menu</a>
+                           <span id="submenu-opener"></span>
+                       </div>
+                       <ul class="submenu-mobile">
+                           <li class="subcategory">
+                               <a href="#" data-scroll="#appetizersContainer">Appetizers</a>
+                           </li>
+                           <li class="subcategory">
+                               <a href="#" data-scroll="#soup-and-saladContainer">Soup and Salad</a>
+                           </li>
+                           <li class="subcategory">
+                               <a href="#" data-scroll="#burgersContainer">Burgers</a>
+                           </li>
+                           <li class="subcategory">
+                               <a href="#" data-scroll="#sandwichesContainer">Sandwiches</a>
+                           </li>
+                           <li class="subcategory">
+                               <a href="#" data-scroll="#specialty-sandwichesContainer">Specialty Sandwiches</a>
+                           </li>
+                           <li class="subcategory">
+                               <a href="#" data-scroll="#meatsContainer">Meats</a>
+                           </li>
+                           <li class="subcategory">
+                               <a href="#" data-scroll="#fishContainer">Fish</a>  
+                           </li>
+                           <li class="subcategory">
+                               <a href="#" data-scroll="#italianContainer">Italian</a>
+                           </li>
+                           <li class="subcategory">
+                               <a href="#" data-scroll="#sidesContainer">Sides</a>
+                           </li>
+                           <li class="subcategory">
+                               <a href="#" data-scroll="#pizzaContainer">Pizza</a>
+                           </li>
+                           <li class="subcategory">
+                               <a href="#" data-scroll="#specialty-pieContainer">Specialty Pie</a>
+                           </li>
+                           <li class="subcategory">
+                               <a href="#" data-scroll="#gluten-freeContainer">Gluten Free</a>
+                           </li>
+                           <li class="subcategory">
+                               <a href="#" data-scroll="#kidsContainer">Kids</a>
+                           </li>
+                       </ul>
+                   </li>
+                   <li>
+                       <a class="mobile-nav-link" id="mobile-find-link" href="#">Find Us</a>
+                   </li>
+               </ul>
+           </div>
+           <div class="flex-item" id="push-right">
+               <h2>
+                   <a href="tel:201.652.8626" rel="noopener noreferrer">201.652.8626</a>
+               </h2>
+           </div>
+       </nav>
+   </header>
+   <div id="imageBox">
+           <h1>
+               <span id="nelliesName">Nellie's Place</span>
+           </h1>
+       </div>
+   <div id="content">
+   </div>
+   <footer itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+       <div>
+           <div>
+               <p><a href="tel:201.652.8626" rel="noopener noreferrer">201.652.8626</a></p>
+           </div>
+           <div>
+               <p>©2025 Nellie’s Place</p>
+           </div>
+           <div>
+               <p>9 Franklin Turnpike, <br>Waldwick 07463</p>
+           </div>
+       </div>
+  
+   </footer>
+  
+   <script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Restaurant",
+ "name": "Nellie's Place",
+ "address": {
+   "@type": "PostalAddress",
+   "streetAddress": "9 Franklin Turnpike",
+   "addressLocality": "Waldwick",
+   "addressRegion": "NJ",
+   "postalCode": "07463"
+ },
+ "telephone": "+12016528626",
+ "url": "https://nelliesplacenj.com"
+}
+    </script>
+</body>
+</html>

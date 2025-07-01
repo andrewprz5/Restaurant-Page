@@ -1,0 +1,379 @@
+#descriptionBox {
+   color: white;
+   background-color: black;
+   font-family: "Lato", sans-serif;
+   letter-spacing: 1px;
+   text-align: center;
+   padding: 50px;
+   margin: 0;
+}
+
+
+#descriptionBox div {
+   font-size: 1.8rem;
+}
+
+
+#descriptionBox div:nth-of-type(2) {
+   margin: 75px auto 20px auto;
+   padding: 20px;
+   text-transform: uppercase;
+   font-weight: 700;
+   text-decoration: underline;
+}
+
+
+#contactBox {
+   margin-top: 50px;
+   font-family: "Lato", sans-serif;
+   font-weight: 700;
+   text-align: center;
+   color: black;
+   font-size: 1.1rem;
+}
+
+
+#contactInfo {
+   margin: 0 0 10px;
+}
+
+
+#contactRef {
+   text-decoration: underline;
+}
+
+
+#imageBox {
+   background-image: url('https://nelliesplacenj.com/wp-content/uploads/2020/06/bar-fb.jpg');
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+   height: 700px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+
+.flex-layout {
+   display: flex;
+}
+
+
+#first-row {
+   height: 375px;
+}
+
+
+#first-row .imageGallery:first-of-type {
+   background-image: url('./nellies-bar.jpg');
+} 
+
+#first-row .imageGallery:nth-child(2) {
+   background-image: url('https://nelliesplacenj.com/wp-content/uploads/2020/06/dough-rising-300x200.png');
+}
+
+
+#first-row .imageGallery:nth-child(3) {
+   background-image: url('https://nelliesplacenj.com/wp-content/uploads/2020/06/eating-pizza-300x200.png');
+}
+
+
+#first-row .imageGallery:first-of-type,
+#first-row .imageGallery:nth-child(2),
+#first-row .imageGallery:nth-child(3) {
+   background-repeat: no-repeat;
+   background-position: center;
+   background-attachment: scroll;
+   background-size: cover;
+}
+
+
+#second-row {
+   background-color: black;
+}
+
+
+.imageGallery {
+   flex: 1;
+}
+
+
+.imageGallery img {
+   width: 100%;
+   height: auto;
+}
+
+
+.contact-info {
+   text-align: center;
+   margin: 50px;
+   line-height: 5;
+   background-color: black;
+   color: white;
+   padding: 50px;
+   letter-spacing: 2px;
+   font-family: 'Lato';
+   font-size: 1.5rem;
+   text-transform: uppercase;
+
+
+}
+
+
+.contact-info a {
+   background-color: black;
+   color: white;
+   padding: 20px;
+   text-transform: uppercase;
+   font-family: 'Lato', sans-serif;
+   font-weight: 800;
+   font-size: 1.5rem;
+}
+
+
+.parallax-outer {
+ position: relative;
+ height: 100vh;
+ overflow: hidden;
+}
+
+
+.parallax-bg {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   height: 170%;
+   background-image: url('https://nelliesplacenj.com/wp-content/uploads/2020/06/pizza_img_9237.jpg');
+   background-size: cover;
+   background-attachment: fixed;
+   background-position: center;
+   transform: translateY(0);
+}
+
+
+.text-container {
+   position: relative;
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   color: white;
+}
+
+
+.parallax-outer h2 {
+   font-size: 4rem;
+   text-shadow: 2px 2px 2px black;
+}
+
+
+@media (max-width: 1024px) {
+   .parallax-bg {
+       background-attachment: scroll !important;
+       background-position: center center;
+       background-size: cover;
+       transform: none !important;
+   }
+}
+
+
+
+
+@media (max-width: 768px) {
+
+
+   #descriptionBox div {
+       font-size: 1.5rem;
+   }
+
+
+   #descriptionBox div:nth-of-type(2) {
+       margin: 50px auto 20px auto;
+       text-decoration: none;
+   }
+  
+   #imageBox {
+       padding-left: 0;
+       padding-right: 0;
+       height: 300px;
+   }
+
+
+   #nelliesName {
+       font-size: 3.5rem;
+   }
+
+
+   #imageBox h1 {
+       text-align: center;
+       transform: rotate(0deg);
+   }
+
+
+   .flex-layout {
+       flex-direction: column;
+   }
+
+
+   .imageGallery {
+       max-width: 400px;
+       margin: auto;
+   }
+
+
+   #contactBox {
+       margin-top: 20px;
+   }
+
+
+   #contactInfo {
+       margin: 0 20px 0 20px;
+   }
+
+
+   #first-row {
+       display: none;
+   }
+
+
+   #first-row .imageGallery:first-of-type {
+       width: 100%;
+   }
+
+
+   #second-row {
+       background: none;
+   }
+
+
+   .imageGallery img {
+       display: flex;
+   }
+
+
+   .contact-info {
+       line-height: 4;
+       font-size: 1.1rem;
+   }
+
+
+   .parallax-outer {
+       height: 400px;
+   }
+
+
+   .parallax-bg {
+       height: 100%;
+   }
+
+
+   .text-container {
+       height: 120%;
+       line-height: 2;
+   }
+
+
+   .text-container h2 {
+       font-size: 2rem;
+   }
+
+
+}
+
+
+@media (max-width: 480px) {
+  
+   #nelliesName {
+       font-size: 2rem;
+   }
+
+
+   #imageBox h1 {
+       transform: rotate(0deg);
+       text-align: center;
+   }
+
+
+   .text-container {
+       height: 100%;
+   }
+
+
+   .text-container h2 {
+       font-size: 1.8rem;
+   }
+
+
+   #descriptionBox {
+       padding: 30px;
+       line-height: 2;
+   }
+
+
+   #descriptionBox div {
+       font-size: .9rem;
+   }
+
+
+   .contact-info {
+       line-height: 3;
+       margin: 20px;
+       font-size: 1rem;
+       text-transform: none;
+       letter-spacing: 0px;
+   }
+
+
+   .contact-info p:last-child {
+       margin-top: 40px;
+   }
+  
+   #descriptionBox div {
+       font-size: 0.8rem;
+   }
+
+
+   #descriptionBox div:nth-of-type(2) {
+       margin: 3rem auto 1rem auto;
+       font-size: 0.7rem;
+   }
+
+
+   .imageGallery img {
+       width: 75%;
+       margin: auto;
+   }
+
+
+   .contact-info {
+       margin: 2rem;
+       line-height: 4;
+       padding: 0;
+       font-size: 0.8rem;
+   }
+
+
+   .contact-info p {
+       margin-top: 2rem;
+   }
+
+
+   .contact-info a {
+       padding: 0;
+       font-size: 0.9rem;
+   }
+
+
+   .text-container h2 {
+       font-size: 1.3rem;
+   }
+
+
+   .parallax-outer {
+       height: 300px;
+   }
+}
