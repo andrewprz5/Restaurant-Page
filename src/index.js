@@ -101,7 +101,7 @@ function goIntoContent() {
    if (header.contains(nelliesPic)) {
         if (window.innerWidth > 768) {
             nelliesPic.style.cssText = `
-            background-image: url('https://nelliesplacenj.com/wp-content/uploads/2020/06/bar-fb.jpg');
+            background-image: url('https://www.franciscosegarra.com/wp-content/uploads/2021/06/interior-design-of-pizzerias.jpg');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -112,7 +112,7 @@ function goIntoContent() {
         `;
         } else {
         nelliesPic.style.cssText = `
-            background-image: url('https://nelliesplacenj.com/wp-content/uploads/2020/06/bar-fb.jpg');
+            background-image: url('https://www.franciscosegarra.com/wp-content/uploads/2021/06/interior-design-of-pizzerias.jpg');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -124,7 +124,7 @@ function goIntoContent() {
         }
        
        const span = document.querySelector("#imageBox span");
-       span.textContent = `Nellie's Place`;
+       span.textContent = `Pizza & Bar`;
        header.removeChild(nelliesPic);
        header.after(nelliesPic);
    }
@@ -327,12 +327,5 @@ export function handleParallaxScroll() {
 }
 
 
-
-
-// css redesign
-// js tweaks
-// smaller mobile designs
-// maybe there is a gmaps issue during resizing
-// understand more about parallaxscroll
 
 

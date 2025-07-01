@@ -355,7 +355,7 @@ a span {
 
 
 #imageBox {
-   background-image: url('https://nelliesplacenj.com/wp-content/uploads/2020/06/bar-fb.jpg');
+   background-image: url('https://www.franciscosegarra.com/wp-content/uploads/2021/06/interior-design-of-pizzerias.jpg');
    background-size: cover;
    background-repeat: no-repeat;
    background-position: center;
@@ -466,6 +466,10 @@ footer div div {
 
 .svg-piece {
    fill: currentColor;
+}
+
+.disclaimer {
+    font-family:'Lato', sans-serif;
 }
 
 

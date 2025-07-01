@@ -166,6 +166,12 @@ input[type="submit"]:hover {
        margin: 10px auto;
    }
 
+   iframe {
+    width: 80%;
+    margin: auto; 
+    height: 500px;
+   }
+
 
    #ownersFigure {
        text-align: center;
@@ -196,8 +202,8 @@ input[type="submit"]:hover {
 
 @media (max-width: 480px) {
     iframe {
-        width: 80%;
+        width: 70%;
         margin: auto;
-        height: 400px;
+        height: 300px;
     }
 }

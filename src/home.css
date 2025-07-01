@@ -15,7 +15,7 @@
 
 
 #descriptionBox div:nth-of-type(2) {
-   margin: 75px auto 20px auto;
+   margin: 50px auto 20px auto;
    padding: 20px;
    text-transform: uppercase;
    font-weight: 700;
@@ -44,7 +44,7 @@
 
 
 #imageBox {
-   background-image: url('https://nelliesplacenj.com/wp-content/uploads/2020/06/bar-fb.jpg');
+   background-image: url('https://www.franciscosegarra.com/wp-content/uploads/2021/06/interior-design-of-pizzerias.jpg');
    background-size: cover;
    background-repeat: no-repeat;
    background-position: center;
@@ -66,16 +66,16 @@
 
 
 #first-row .imageGallery:first-of-type {
-   background-image: url('./nellies-bar.jpg');
+   background-image: url('https://as2.ftcdn.net/jpg/01/58/59/77/1000_F_158597762_82bmWlozorIGtptdCypSptXaZ0Ur3xa2.jpg');
 } 
 
 #first-row .imageGallery:nth-child(2) {
-   background-image: url('https://nelliesplacenj.com/wp-content/uploads/2020/06/dough-rising-300x200.png');
+   background-image: url('https://media.istockphoto.com/id/496626684/photo/pizza-dough.jpg?s=612x612&w=0&k=20&c=qx8vPdT4Riw6wlb7Wbq8nLuRMikmbCKrKkD71Z85FUA=');
 }
 
 
 #first-row .imageGallery:nth-child(3) {
-   background-image: url('https://nelliesplacenj.com/wp-content/uploads/2020/06/eating-pizza-300x200.png');
+   background-image: url('https://media.istockphoto.com/id/899907172/photo/baked-tasty-margerita-pizza-near-oven.jpg?s=612x612&w=0&k=20&c=r3J2p-ixkOCZG2VejNxN-CvMHnQhhkOSSh0C9fStV0g=');
 }
 
 
@@ -96,12 +96,16 @@
 
 .imageGallery {
    flex: 1;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
 }
 
 
 .imageGallery img {
    width: 100%;
-   height: auto;
+   max-height: 300px;
+   display: block;
 }
 
 
@@ -145,7 +149,7 @@
    left: 0;
    right: 0;
    height: 170%;
-   background-image: url('https://nelliesplacenj.com/wp-content/uploads/2020/06/pizza_img_9237.jpg');
+   background-image: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGl6emF8ZW58MHx8MHx8fDA%3D');
    background-size: cover;
    background-attachment: fixed;
    background-position: center;
@@ -329,7 +333,7 @@
 
 
    #descriptionBox div:nth-of-type(2) {
-       margin: 3rem auto 1rem auto;
+       margin: 1rem auto;
        font-size: 0.7rem;
    }
 
@@ -341,10 +345,10 @@
 
 
    .contact-info {
-       margin: 2rem;
+       margin:3rem;
        line-height: 2;
        padding: 0;
-       font-size: 0.8rem;
+       font-size: 1rem;
        text-transform: none;
        letter-spacing: 0px;
    }
@@ -362,7 +366,7 @@
 
 
    .text-container h2 {
-       font-size: 1.3rem;
+       font-size: 1.7rem;
    }
 
 

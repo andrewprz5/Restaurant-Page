@@ -94,28 +94,26 @@
 
 #imgGllryRow1,
 #imgGllryRow2 {
-   display: flex;
-   flex-wrap: wrap;
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
    width: 100%;
    padding: 0;
-   max-width: 100%;
-   background-color: black;
+   gap: 10px;
 }
 
 
 .photo-about-gallery {
-   flex: 1 1 auto;
-   display: flex;
-   width: 20%;
-   min-height: 300px;
-   margin: 0 0 10px 0;
-}
-
-
-.photo-about-gallery img {
+   aspect-ratio: 4 / 3;
+   min-height: unset;
    height: auto;
 }
 
+.photo-about-gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
 
 #imgGllryRow2 > .photo-about-gallery {
    background-size: cover;
@@ -125,27 +123,27 @@
 
 
 #imgGllryRow2 .photo-about-gallery:nth-child(1) {
-   background-image: url('https://nelliesplacenj.com/wp-content/uploads/2020/06/wings.jpg');
+   background-image: url('https://media.istockphoto.com/id/699144432/photo/raise-your-glasses-for-a-toast.jpg?s=612x612&w=0&k=20&c=cbTq6vSzZFxQvYdqHNVndU7msZCHm1nyoKRUmym9lhk=');
 }
 
 
 #imgGllryRow2 .photo-about-gallery:nth-child(2) {
-   background-image: url('https://nelliesplacenj.com/wp-content/uploads/2020/09/empty-pizza-pan.png');
+   background-image: url('https://cdn.create.vista.com/api/media/small/235985752/stock-photo-cropped-view-friends-toasting-glasses-beer-bar');
 }
 
 
 #imgGllryRow2 .photo-about-gallery:nth-child(3) {
-   background-image: url('https://nelliesplacenj.com/wp-content/uploads/2020/09/nachos.png');
+   background-image: url('https://media.istockphoto.com/id/1405280562/photo/people-eating-guacamole-at-restaurant.jpg?s=612x612&w=0&k=20&c=X70bRSFh4Pd50ywVJETpxY1552kIZFjtQrVCc4l3iyo=');
 }
 
 
 #imgGllryRow2 .photo-about-gallery:nth-child(4) {
-   background-image: url('https://nelliesplacenj.com/wp-content/uploads/2020/09/making-pizza-3.png');
+   background-image: url('https://thumbs.dreamstime.com/b/cook-chef-making-delicious-pizza-restaurant-close-up-118152952.jpg');
 }
 
 
 #imgGllryRow2 .photo-about-gallery:nth-child(5) {
-   background-image: url('https://nelliesplacenj.com/wp-content/uploads/2020/09/pizza-boxes.png');
+   background-image: url('https://images.pexels.com/photos/17626467/pexels-photo-17626467/free-photo-of-pizza-boxes-in-a-restaurant.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
 }
 
 
@@ -183,9 +181,9 @@
 
    #imgGllryRow1,
    #imgGllryRow2 {
-       flex-direction: column;
-       align-content: center;
        background: none;
+       grid-template-columns: 1fr;
+       padding: 20px;
    }
 
 

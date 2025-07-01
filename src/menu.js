@@ -28,7 +28,7 @@ export default function menuPage(container) {
    const nelliesHeadline = document.createElement("h1");
    nelliesHeadline.id = "nelliesHeadline";
    const nelliesText = document.createElement("span");
-   nelliesText.textContent = "Nellie's Place";
+   nelliesText.textContent = "Pizza & Bar";
 
 
    const viewMenu = document.createElement("div");
@@ -38,13 +38,13 @@ export default function menuPage(container) {
 
 
    const menuLink = document.createElement("a");
-   menuLink.href = "https://nelliesplacenj.com/wp-content/uploads/2025/03/Nellies-Main-Menu-03-25-2.pdf";
+   menuLink.href = "https://www.shutterstock.com/image-vector/pizza-menu-landscape-template-design-260nw-2408440781.jpg";
    menuLink.setAttribute("itemprop", "url");
 
 
    const menuSource = document.createElement("img");
    menuSource.setAttribute("decoding", "async");
-   menuSource.src = "https://nelliesplacenj.com/wp-content/uploads/2020/06/menu-top.jpg";
+   menuSource.src = "https://www.shutterstock.com/image-vector/pizza-menu-landscape-template-design-260nw-2408440781.jpg";
    menuSource.alt = "menu - top";
    menuSource.setAttribute("itemprop", "image");
    menuSource.setAttribute("height", "150");
@@ -500,57 +500,22 @@ class Food {
 }
 
 
-
-
 const friedCalamari = new Food(
    "Fried Calamari",
    "appetizers",
-   "hot, medium or sweet",
-   "14.99",
+   "lightly breaded with lemon and aioli",
+   "10.99",
    function () {
        foodArray.push(this);
    }
 );
 
 
-const buffaloCalamari = new Food(
-   "Buffalo Calamari",
-   "appetizers",
-   "hot, medium or mild",
-   "15.99",
-   function() {
-       foodArray.push(this);
-   }
-);
-
-
-const chickenFingers = new Food(
-   "Chicken Fingers",
-   "appetizers",
-   0,
-   "12.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const buffChickenFingers = new Food(
-   "Buffalo Chicken Fingers",
-   "appetizers",
-   "hot, medium, mild or Elkin style",
-   "13.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
 const friedMozz = new Food(
-   "Fried Mozzarella",
+   "Garlic Bread",
    "appetizers",
-   0,
-   "11.99",
+   "toasted with herbed butter and parmesan",
+   "5.99",
    function() {
        foodArray.push(this);
    }
@@ -558,10 +523,10 @@ const friedMozz = new Food(
 
 
 const pretzelBites = new Food(
-   "Pretzel Bites",
+   "Mozzarella Sticks",
    "appetizers",
-   "With cheese sauce",
-   "10.99",
+   "crispy, golden, served with marinara",
+   "8.99",
    function() {
        foodArray.push(this);
    }
@@ -579,77 +544,11 @@ const soupOfTheDay = new Food(
 )
 
 
-const chzyFries = new Food(
-   "Cheezy Fries",
-   "appetizers",
-   "with bacon",
-   "11.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const friedRavioli = new Food(
-   "Fried Ravioli",
-   "appetizers",
-   0,
-   "9.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
 const chickenWings = new Food(
    "Chicken Wings",
    "appetizers",
    "buffalo or Elkin style",
    "14.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const brdBnlssChxWings = new Food(
-   "Breaded Boneless Chicken Wings",
-   "appetizers",
-   "Buffalo style",
-   "13.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const jalapenoPoppers = new Food(
-   "Jalapeno Poppers",
-   "appetizers",
-   0,
-   "9.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const homeChili = new Food(
-   "Homemade Chili",
-   "appetizers",
-   0,
-   "9.49",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const irishNachos = new Food(
-   "Irish Nachos",
-   "appetizers",
-   "potato chips topped with corned beef, sauerkraut and Swiss cheese",
-   "11.99",
    function() {
        foodArray.push(this);
    }
@@ -677,18 +576,6 @@ const potatoSkins = new Food(
    }
 )
 
-
-const friedZucchiniStx = new Food(
-   "Fried Zucchini Sticks",
-   "appetizers",
-   0,
-   "10.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
 const garlicBreadParm = new Food(
    "Garlic Bread Parmesan",
    "appetizers",
@@ -698,40 +585,6 @@ const garlicBreadParm = new Food(
        foodArray.push(this);
    }
 )
-
-
-const joeBite = new Food(
-   "Joe-Joe Bites",
-   "appetizers",
-   "cheeseburger sliders",
-   "13.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const spinachArtDips = new Food(
-   "Spinach Artichoke Dips",
-   "appetizers",
-   0,
-   "12.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const bakedStfdClams = new Food(
-   "Baked Stuffed Clams",
-   "appetizers",
-   0,
-   "8.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
 
 const musselsMarinara = new Food(
    "Mussels Marinara",
@@ -754,51 +607,6 @@ const buffaloShrimp = new Food(
    }
 )
 
-
-const steamers = new Food(
-   "Steamers",
-   "appetizers",
-   0,
-   "12.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const theWorks = new Food(
-   "The Works",
-   "appetizers",
-   "mozzarella sticks, fried ravioli, potato skins, broccoli & cheddar bites",
-   "13.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const scLinguini = new Food(
-   "Shrimp & Clam Linguini",
-   "appetizers",
-   0,
-   "11.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const clamsHalf = new Food(
-   "Clams on the Half Shell",
-   "appetizers",
-   0,
-   "7.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
 const soupBowl = new Food(
    "Soup of the Day",
    "soup-and-salad",
@@ -819,40 +627,6 @@ const frenchOnionSoup = new Food(
        foodArray.push(this);
    }
 )
-
-
-const dinnerSalad = new Food(
-   "Dinner Salad",
-   "soup-and-salad",
-   "with French onion soup $1.00 additional",
-   "12.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const quicheDay = new Food(
-   "Quiche of the Day",
-   "soup-and-salad",
-   0,
-   "8.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const quicheSalad = new Food(
-   "Quiche of the Day & Dinner Salad",
-   "soup-and-salad",
-   0,
-   "13.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
 
 const greekSmall = new Food(
    "Greek Salad",
@@ -875,31 +649,8 @@ const greekLarge = new Food(
    }
 )
 
-
-const caesarSmall = new Food(
-   "Nellie's Caesar Salad",
-   "soup-and-salad",
-   "romaine with tomato wedges, cucumber, roasted red pepper and croutons - small",
-   "9.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const caesarLarge = new Food(
-   "Nellie's Caesar Salad",
-   "soup-and-salad",
-   "romaine with tomato wedges, cucumber, roasted red pepper and croutons - large",
-   "12.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
 const classicSmall = new Food(
-   "Classic Caesar Salad",
+   "Caesar Salad",
    "soup-and-salad",
    "romaine with parmesan cheese and croutons - small",
    "8.99",
@@ -910,7 +661,7 @@ const classicSmall = new Food(
 
 
 const classicLarge = new Food(
-   "Classic Caesar Salad",
+   "Caesar Salad",
    "soup-and-salad",
    "romaine with parmesan cheese and croutons - large",
    "11.99",
@@ -920,33 +671,12 @@ const classicLarge = new Food(
 )
 
 
-const grillBuffChxSalad = new Food(
-   "Grilled Buffalo Chicken Salad",
-   "soup-and-salad",
-   "Buffalo chicken over iceburg lettuce with tomato wedges, chopped celery, carrot and crumbled bleu cheese",
-   "15.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
 
 const cobbSalad = new Food(
    "Cobb Salad",
    "soup-and-salad",
    "romaine with tomato, peppers, onions, bacon, hard-boiled egg and chicken",
    "14.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const springMix = new Food(
-   "Nellie's Spring Mix",
-   "soup-and-salad",
-   "arcadian harvest greens, crumbled bleu cheese, craisins, red onion, grape tomato and sliced almonds",
-   "12.99",
    function() {
        foodArray.push(this);
    }
@@ -962,29 +692,6 @@ const spinachSalad = new Food(
        foodArray.push(this);
    }
 )
-
-
-const hangerSteakSalad = new Food(
-   "Hanger Steak Salad",
-   "soup-and-salad",
-   "with red onion, tomato wedges and crumbled bleu cheese over baby arugula",
-   "19.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const texMexSalad = new Food(
-   "Tex Mex Salad",
-   "soup-and-salad",
-   "breaded chicken, romaine, diced tomato, red onion, corn, black beans, sliced avocado, jalapeno, monterey jack cheese and tortilla strips with ranch dressing",
-   "15.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
 
 const mushroomBurger = new Food(
    "Mushroom, Onion & Swiss Burger",
@@ -1019,17 +726,6 @@ const blackBeanBurger = new Food(
 )
 
 
-const montereyJackBurger = new Food(
-   "Monterey Jack Avocado Burger",
-   "burgers",
-   "with tomato and red onion",
-   "15.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
 const bbqBurger = new Food(
    "Barbecue Burger",
    "burgers",
@@ -1057,28 +753,6 @@ const turkeyBurger = new Food(
    "burgers",
    0,
    "11.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const rasherBurger = new Food(
-   "Rasher Cheddar Burger",
-   "burgers",
-   "topped with cheddar & Irish bacon",
-   "14.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const deliSandwich = new Food(
-   "Deli Sandwich",
-   "sandwiches",
-   "turkey, ham, roast beef, salami, tuna salad, corned beef or pastrami",
-   "13.99",
    function() {
        foodArray.push(this);
    }
@@ -1129,28 +803,6 @@ const tunaMelt = new Food(
 )
 
 
-const chxBLT = new Food(
-   "Breaded Chicken BLT",
-   "sandwiches",
-   "with spicy mayo",
-   "15.49",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const chxHero = new Food(
-   "Nellie's Chicken Hero",
-   "sandwiches",
-   "chicken cutlet with brown gravy and mozzarella cheese",
-   "14.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
 const grilledCheese = new Food(
    "Grilled Cheese",
    "sandwiches",
@@ -1177,17 +829,6 @@ const parmHero = new Food(
    "Parmesan Hero",
    "sandwiches",
    "chicken, meatball or eggplant",
-   "14.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const reuben = new Food(
-   "Reuben",
-   "sandwiches",
-   "corned beef or pastrami",
    "14.99",
    function() {
        foodArray.push(this);
@@ -1250,61 +891,6 @@ const bbqChxWrap = new Food(
 )
 
 
-const chxFajitaPanini = new Food(
-   "Chicken Fajita Panini",
-   "specialty-sandwiches",
-   "grilled chicken, cheddar cheese, peppers, onions, and fajita sauce",
-   "14.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const turkeyBLTWrap = new Food(
-   "Turkey BLT Wrap",
-   "specialty-sandwiches",
-   0,
-   "12.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const frenchDipPanini = new Food(
-   "French Dip Panini",
-   "specialty-sandwiches",
-   "roast beef, caramelized onions, swiss cheese, and a side of au jus",
-   "14.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const romaPanini = new Food(
-   "Roma Panini",
-   "specialty-sandwiches",
-   "chicken, fresh mozzarella, tomato, basil and pesto mayonnaise",
-   "14.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const poBoyCod = new Food(
-   "Po Boy Cod Sandwich",
-   "specialty-sandwiches",
-   "fried cod, lettuce, tomato, pickle & remoulade",
-   "15.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
 const grilledChxSandwich = new Food(
    "Grilled Chicken Sandwich",
    "specialty-sandwiches",
@@ -1315,18 +901,6 @@ const grilledChxSandwich = new Food(
    }
 )
 
-
-
-
-const danishBBRibs = new Food(
-   "Danish Baby Back Ribs",
-   "meats",
-   "full rack",
-   "22.99",
-   function() {
-       foodArray.push(this);
-   }
-)
 
 
 const nyStripSteak = new Food(
@@ -1361,40 +935,6 @@ const chickenCaprese = new Food(
    }
 )
 
-
-const chickenDuffy = new Food(
-   "Chicken Duffy",
-   "meats",
-   "sauteed chicken, broccoli, hot cherry peppers and garlic in oil",
-   "21.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const shepherdsPie = new Food(
-   "Shepherd’s Pie",
-   "meats",
-   "made with ground lamb served with mashed potato",
-   "20.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const calvesLiver = new Food(
-   "Calves Liver",
-   "meats",
-   "with bacon & onions",
-   "10.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
 const fishChips = new Food(
    "Fish & Chips",
    "fish",
@@ -1411,28 +951,6 @@ const broiledSalmon = new Food(
    "fish",
    0,
    "24.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const musselsDiavolo = new Food(
-   "Mussels Fra Diavolo",
-   "fish",
-   "served over linguini",
-   "22.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const shrimpScampi = new Food(
-   "Shrimp Scampi",
-   "fish",
-   "served over linguini",
-   "22.99",
    function() {
        foodArray.push(this);
    }
@@ -1460,18 +978,6 @@ const eggplantParm = new Food(
    }
 )
 
-
-const chickenWay = new Food(
-   "Chicken Your Way",
-   "italian",
-   "marsala, francaise, vodka, plum tomato basil, parmesan or broccoli scampi sauce, with linguini",
-   "21.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
 const spaghettiMeatballs = new Food(
    "Spagetti & Meatballs",
    "italian",
@@ -1483,30 +989,9 @@ const spaghettiMeatballs = new Food(
 )
 
 
-const spaghettiMeatSauce = new Food(
-   "Spaghetti with Meat Sauce",
-   "italian",
-   0,
-   "16.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const ravioliMarinara = new Food(
-   "Ravioli Marinara",
-   "italian",
-   "meat or cheese",
-   "15.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
 
 const penneVodkaBasil = new Food(
-   "Penne with Vodka or Plum Tomato Basil Sauce",
+   "Penne with Vodka",
    "italian",
    0,
    "16.99",
@@ -1582,28 +1067,6 @@ const frenchFries = new Food(
 )
 
 
-const frenchFriesXtra = new Food(
-   "French Fries",
-   "sides",
-   "with gravy or cheese",
-   "7.49",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const meatballsSausage = new Food(
-   "Meatballs or Sausage",
-   "sides",
-   0,
-   "7.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
 const coleslaw = new Food(
    "Coleslaw",
    "sides",
@@ -1616,7 +1079,7 @@ const coleslaw = new Food(
 
 
 const barPie = new Food(
-   `12” Bar Pie`,
+   `12” Medium Pie`,
    "pizza",
    0,
    "12.00",
@@ -1692,39 +1155,6 @@ const vegetablePizza = new Food(
 )
 
 
-const rigatoniPizza = new Food(
-   "Rigatoni Plum Tomato Basil",
-   "specialty-pie",
-   "plum tomato basil sauce, mozzarella, rigatoni and ricotta dollops",
-   "20.00",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const specialPizza = new Food(
-   "Nellie’s Special",
-   "specialty-pie",
-   "a mix of our favorite toppings",
-   "22.50",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const meatLovers = new Food(
-   "Meat Lovers",
-   "specialty-pie",
-   "pepperoni, meatball, sausage and bacon",
-   "20.00",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
 const margarita = new Food(
    "Margarita",
    "specialty-pie",
@@ -1737,7 +1167,7 @@ const margarita = new Food(
 
 
 const buffChxSpecial = new Food(
-   "Buffalo Chicken Special",
+   "Buffalo Chicken",
    "specialty-pie",
    "breaded chicken, hot sauce, ranch dressing and celery",
    "22.00",
@@ -1785,17 +1215,6 @@ const gfCheesePizza = new Food(
    "gluten-free",
    "toppings priced same as above",
    "17.00",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const gfChickenNugs = new Food(
-   "Gluten Free Chicken Nuggets",
-   "gluten-free",
-   0,
-   "14.99",
    function() {
        foodArray.push(this);
    }
@@ -1859,39 +1278,6 @@ const kidsHotDog = new Food(
 
 const kidsMacChz = new Food(
    "Mac & Cheese",
-   "kids",
-   0,
-   "7.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const kidsRavioli = new Food(
-   "Ravioli",
-   "kids",
-   "meat or cheese",
-   "7.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const kidsSpaghetti = new Food(
-   "Spaghetti & Meatball",
-   "kids",
-   0,
-   "7.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const kidsChxBroc = new Food(
-   "Grilled Chicken & Broccoli",
    "kids",
    0,
    "7.99",

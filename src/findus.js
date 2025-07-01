@@ -34,7 +34,6 @@ export default function findUs(container) {
 
    const iframe = document.createElement("iframe");
    iframe.loading = "eager";
-   iframe.setAttribute("style", "border:0; width:100%; height:600px; display:block;");
    iframe.setAttribute("frameborder", "0");
    iframe.setAttribute("allowfullscreen", "");
    iframe.setAttribute("aria-hidden", "false");

@@ -4,13 +4,12 @@ import { bizDscrptn1, bizDscrptn2, phone, phoneRef, space, address1, address2, h
 } from "./content.js";
 
 
-
-
 export default function homePage(container) {
 
 
    const descriptionBox = document.createElement("section");
    descriptionBox.id = "descriptionBox";
+   descriptionBox.className = "cta-demo";
    const textBox1 = document.createElement("div");
    const textBox2 = document.createElement("div");
    const p1 = document.createElement("h1");
@@ -19,11 +18,11 @@ export default function homePage(container) {
 
 
    p1.textContent = bizDscrptn1;
-   p2.textContent = bizDscrptn2;
    p2.id = "para2";
-   a.textContent = phone;
-   a.href = phoneRef;
+   a.href = "#contact";
+   a.className = "cta-button";
    a.setAttribute("aria-label", "Call us at " + phone);
+   a.textContent = bizDscrptn2;
 
 
    p2.appendChild(a);
@@ -92,15 +91,10 @@ export default function homePage(container) {
 
 
        const img = document.createElement("img");
-       img.src = `${src}.jpg`;
+       img.src =`${src}.jpg`;
        img.alt = alt;
-       img.srcset = `${src}.jpg 500w, ${src}-300x300.jpg 300w, ${src}-150x150.jpg 150w`;
-       img.sizes = "(max-width: 500px) 100vw, 500px";
        img.decoding = "async";
        img.loading = "lazy";
-       img.setAttribute("itemprop", "image");
-       img.width = 500;
-       img.height = 500;
 
 
        imageBox.appendChild(img);
@@ -119,20 +113,20 @@ export default function homePage(container) {
    for (let i = 0; i < 5; i++) {
        const p = document.createElement("p");
        if (i === 0) {
-           p.textContent = "9 Franklin Turnpike";
+           p.textContent = "Web Developer";
        } else if (i === 1) {
-           p.innerHTML = "Waldwick, NJ 07463";
+           p.innerHTML = "Hawthorne, NJ 07506";
        } else if (i === 2) {
-           p.textContent = "Sunday - Wednesday from 11:00am to 10:00pm";
+           p.textContent = "Monday - Friday from 8:00am to 11:00pm";
        } else if (i === 3) {
-           p.innerHTML = "Thursday - Saturday from 11:00am to 11:00pm";
+           p.innerHTML = "Saturday - Sunday from 8:00am to 12:00am";
        } else {
            const a = document.createElement("a");
-           a.href="tel:201.652.8626";
+           a.href="tel:347.857.9661";
            a.textContent = cta;
            p.style.marginTop = "50px";
            p.style.fontWeight = "600";
-           p.textContent = "Contact Us: ";
+           p.textContent = "Contact Me: ";
            p.appendChild(a);
        }
        contactInfo.appendChild(p);
