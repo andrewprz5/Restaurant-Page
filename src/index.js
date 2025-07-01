@@ -99,16 +99,30 @@ function goIntoContent() {
     const nelliesPic = document.getElementById("imageBox");
     const header = document.querySelector("header");
    if (header.contains(nelliesPic)) {
-       nelliesPic.style.cssText = `
-           background-image: url('https://nelliesplacenj.com/wp-content/uploads/2020/06/bar-fb.jpg');
-           background-size: cover;
-           background-repeat: no-repeat;
-           background-position: center;
-           height: 700px;
-           display: flex;
-           align-items: center;
-           justify-content: center;
-       `;
+        if (window.innerWidth > 768) {
+            nelliesPic.style.cssText = `
+            background-image: url('https://nelliesplacenj.com/wp-content/uploads/2020/06/bar-fb.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 700px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        `;
+        } else {
+        nelliesPic.style.cssText = `
+            background-image: url('https://nelliesplacenj.com/wp-content/uploads/2020/06/bar-fb.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 300px; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+         `;
+        }
+       
        const span = document.querySelector("#imageBox span");
        span.textContent = `Nellie's Place`;
        header.removeChild(nelliesPic);

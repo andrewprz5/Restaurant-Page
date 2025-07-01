@@ -174,7 +174,8 @@ input[type="submit"]:hover {
 
 
    #ownersImg {
-       height: 620px;
+       height: 700px;
+       width: 325px;
    }
 
 
@@ -191,4 +192,12 @@ input[type="submit"]:hover {
    input[type="submit"] {
        font-size: 0.9rem;
    }
+}
+
+@media (max-width: 480px) {
+    iframe {
+        width: 80%;
+        margin: auto;
+        height: 400px;
+    }
 }
