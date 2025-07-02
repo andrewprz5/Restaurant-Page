@@ -162,9 +162,18 @@ export default function findUs(container) {
    viewMenuDiv.className = "b-flex-item";
   
    const placeOrderText = document.createElement("p");
-   placeOrderText.textContent = `${bizDscrptn2}: ${phone}`;
+   placeOrderText.textContent = `${bizDscrptn2}`;
    placeOrderText.id = "placeOrderPara";
-   placeOrderDiv.appendChild(placeOrderText);
+
+   const callText = document.createElement("p");
+   callText.textContent = "Call: "
+   callText.id = "placeOrderPara";
+   const callAnchor = document.createElement("a");
+   callAnchor.textContent = "347.857.9661";
+   callAnchor.href = "tel:347.857.9661";
+   callText.appendChild(callAnchor);
+
+   placeOrderDiv.append(placeOrderText, callText);
   
    const viewMenuAnchor = document.createElement("button");
    viewMenuAnchor.type = "button";

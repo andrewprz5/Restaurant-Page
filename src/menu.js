@@ -94,7 +94,7 @@ export default function menuPage(container) {
 
    const appetizers = new menuSection(
        "Appetizers",
-       "https://media.istockphoto.com/id/923784110/photo/canapes-for-party.jpg?s=612x612&w=0&k=20&c=Afdkr9ehEsFjK2108kYUMVYHIwDvdXfNozle3t0IkRI="
+       "https://www.themediterraneandish.com/wp-content/uploads/2021/02/fried-calamari-recipe-7.jpg"
    )
 
 
@@ -116,7 +116,7 @@ export default function menuPage(container) {
 
    const soupAndSalad = new menuSection(
        "Soup and Salad",
-       "https://media.istockphoto.com/id/147249044/photo/pumpkin-soup-with-garnish-bread-and-salad-in-the-background.jpg?s=612x612&w=0&k=20&c=JNNAqrEDqw-u7jSX5yFWAuPeAJ9sPdfubyDJcoCEAXs="
+      "https://kristineskitchenblog.com/wp-content/uploads/2021/12/best-chicken-noodle-soup-recipe-15.jpg"
    )
 
 
@@ -140,7 +140,7 @@ export default function menuPage(container) {
 
    const burgers = new menuSection(
        "Burgers",
-       "https://media.istockphoto.com/id/1302436326/photo/junk-food-homemade-beef-burgers-on-vintage-wooden-background.jpg?s=612x612&w=0&k=20&c=NsyDE31unoNd80wGfrkMOqvsnjeNOpHER-yL_8KwcRw="
+       "https://inthecuriouskitchen.com/cdn/shop/articles/Blog-Burger_Blog_c2be0536-06ee-40a7-af8e-aee7aaa6f8d3.jpg?v=1748954829"
    )
 
 
@@ -164,7 +164,7 @@ export default function menuPage(container) {
 
    const sandwiches = new menuSection(
        "Sandwiches",
-       "https://media.istockphoto.com/id/1397193477/photo/club-sandwich-made-with-bacon-ham-turkey-cheese-lettuce-and-tomato.jpg?s=612x612&w=0&k=20&c=fjNyxTEA0L88bqENs8_SKMnfAOyWlNPGxLIxz9nsSss="
+       "https://www.foxvalleyfoodie.com/wp-content/uploads/2021/06/sliced-turkey-melt-sandwich.jpg"
    )
 
 
@@ -212,7 +212,7 @@ export default function menuPage(container) {
 
    const meats = new menuSection(
        "Meats",
-       "https://media.istockphoto.com/id/587207508/photo/sliced-grilled-steak-ribeye-with-herb-butter.jpg?s=612x612&w=0&k=20&c=gm6Kg6rHYH0xWTF5oszm6NZ-hp9aPRbk9V1kvCr8MQI="
+       "https://www.wisermeats.com/cdn/shop/products/img_0031_3131d77d-18af-4fe7-976b-b3d8c9b9991e.jpg?v=1710536602"
    )
 
 
@@ -236,7 +236,7 @@ export default function menuPage(container) {
 
    const fish = new menuSection(
        "Fish",
-       "https://media.istockphoto.com/id/1297899281/photo/fried-salmon-steaks-fried-cauliflower-and-fried-edible-mushrooms-on-wooden-table.jpg?s=612x612&w=0&k=20&c=DtscQEXOXQ048CWFJWW86SgRlFzmISnTGkwfBXG7mms="
+       "https://kalejunkie.com/wp-content/uploads/2023/03/BroiledSalmon_Shot3_109.jpg"
    )
 
 
@@ -260,7 +260,7 @@ export default function menuPage(container) {
 
    const italian = new menuSection(
        "Italian",
-       "https://media.istockphoto.com/id/1227415751/photo/full-table-of-italian-meals-on-plates-pizza-pasta-ravioli-carpaccio-caprese-salad-and-tomato.jpg?s=612x612&w=0&k=20&c=0qCRhYGQw0w6ahhVX-4ezayA9r81A81cwbPDbgRlC5s="
+       "https://www.thecountrycook.net/wp-content/uploads/2013/01/2nd-to-last-image-Crock-Pot-Chicken-Parmesan-scaled.jpg"
    )
 
 
@@ -284,7 +284,7 @@ export default function menuPage(container) {
 
    const sides = new menuSection(
        "Sides",
-       "https://media.istockphoto.com/id/511621559/photo/cajun-seasoned-french-fries.jpg?s=612x612&w=0&k=20&c=LM_SvCTbSsUTHSJSWOxzsyolo9YbDeNAXTibip4n1O4="
+       "https://images.pexels.com/photos/1583884/pexels-photo-1583884.jpeg"
    )
 
 
@@ -304,7 +304,7 @@ export default function menuPage(container) {
 
    const pizza = new menuSection(
        "Pizza",
-       "https://media.istockphoto.com/id/1083487948/photo/tasty-pepperoni-pizza-and-cooking-ingredients-tomatoes-basil-on-black-concrete-background-top.jpg?s=612x612&w=0&k=20&c=E5rcp7F5y3SII4AYFmxFfcnkh6_LtVO4dzvjJDkXook="
+       "https://cdn.pixabay.com/photo/2017/12/10/14/47/pizza-3010062_1280.jpg"
    )
 
 
@@ -338,7 +338,7 @@ export default function menuPage(container) {
 
    const specialtyPie = new menuSection(
        "Specialty Pie",
-       "https://thumbs.dreamstime.com/b/specialty-pizza-toppings-fresh-medium-size-extra-hot-fresh-out-oven-shallow-depth-field-32244068.jpg"
+       "https://static.vecteezy.com/system/resources/previews/051/200/144/non_2x/meat-lovers-pizza-cut-out-on-an-isolated-simple-minimalist-background-photo.jpg"
    )
 
 
@@ -386,7 +386,7 @@ export default function menuPage(container) {
 
    const kids = new menuSection(
        "Kids",
-       "https://media.istockphoto.com/id/547133980/photo/macaroni-and-cheese-background.jpg?s=612x612&w=0&k=20&c=D3jViAaJtVI1Oi-AWNGcHNqLsbk10Wi_zKimkG-1NTg="
+       "https://popmenucloud.com/cdn-cgi/image/width=1920,height=1920,format=auto,fit=scale-down/gipnbema/9681ae81-f4b9-4b96-8845-ca24798fe829.jpg"
    )
 
 

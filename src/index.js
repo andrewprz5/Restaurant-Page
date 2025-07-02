@@ -23,8 +23,7 @@ function switchTab(container) {
      render: home,
      listId: 'home-list',
      mobileId: 'mobile-home-link',
-     afterRender: goIntoContent,
-     scrollEvent: handleParallaxScroll
+     afterRender: goIntoContent
    },
    {
      render: about,
@@ -34,8 +33,7 @@ function switchTab(container) {
    {
      render: menu,
      listId: 'menu-list',
-     mobileId: 'mobile-menu-link',
-     scrollEvent: handleParallaxScroll
+     mobileId: 'mobile-menu-link'
    },
    {
      render: findUs,
@@ -68,11 +66,7 @@ function switchTab(container) {
    // Render page
    render(content);
    updateNavMenu();
-   
-   if (afterRender) afterRender();
 
-
-   if (scrollEvent) window.addEventListener("scroll", scrollEvent);
  }
 
 
@@ -301,32 +295,6 @@ document.addEventListener("DOMContentLoaded", () => {
    menuToggle();
    setupSubmenuScroll(content);
 });
-
-
-export function handleParallaxScroll() {
-       const parallaxEls = document.querySelectorAll("[data-parallax-speed]");
-
-
-       parallaxEls.forEach((el) => {
-           if (window.innerWidth > 768) {
-               const speed = parseFloat(el.dataset.parallaxSpeed) || 1;
-               const rect = el.getBoundingClientRect();
-
-
-               if (rect.bottom < 0 || rect.top > window.innerHeight) return;
-
-
-               const move = rect.top * speed * -0.2;
-               el.style.transform = `translateY(${move}px)`;
-           } else {
-               el.style.transform = 'translateY(0px)';
-           }
-       });
-
-
-       window.addEventListener("scroll", handleParallaxScroll);
-}
-
 
 
 

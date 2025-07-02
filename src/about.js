@@ -1,7 +1,7 @@
 import "./about.css";
 import menu from "./menu.js";
 import {aboutText, aboutPara1, aboutPara2, aboutPara3, aboutPara4, aboutPara5, viewMenuText, staffImgSrc, goIntoHeader, bizDscrptn2, phone} from "./content.js";
-import { handleParallaxScroll } from "./index.js";
+
 
 
 export default function aboutPage(container) {
@@ -78,9 +78,19 @@ export default function aboutPage(container) {
 
 
    const placeOrderText = document.createElement("p");
-   placeOrderText.textContent = `${bizDscrptn2}: ${phone}`;
+   placeOrderText.textContent = `${bizDscrptn2}`;
    placeOrderText.id = "placeOrderPara";
-   placeOrderDiv.appendChild(placeOrderText);
+   
+
+   const callText = document.createElement("p");
+   callText.textContent = "Call: "
+   callText.id = "placeOrderPara";
+   const callAnchor = document.createElement("a");
+   callAnchor.textContent = "347.857.9661";
+   callAnchor.href = "tel:347.857.9661";
+   callText.appendChild(callAnchor);
+
+   placeOrderDiv.append(placeOrderText, callText);
 
 
    const viewMenuAnchor = document.createElement("button");
@@ -93,8 +103,6 @@ export default function aboutPage(container) {
        document.getElementById("menu").classList.add("active");
        document.getElementById("menu-list").classList.add("active");
 
-
-       handleParallaxScroll();
    });
 
 

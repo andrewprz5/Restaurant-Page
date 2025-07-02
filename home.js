@@ -174,7 +174,33 @@ export default function homePage(container) {
    parallaxEl.append(parallaxBg, textContainer);
    container.appendChild(parallaxEl);
   
+   window.removeEventListener('scroll', handleParallaxScroll);
+   window.addEventListener('scroll', handleParallaxScroll);
   
 };
 
 
+function handleParallaxScroll() {
+   const section = document.querySelector('.parallax-outer');
+   const bg = document.querySelector('.parallax-bg');
+
+
+   if (!section || !bg) return;
+
+
+   if (window.innerWidth > 768) {
+       const speed = parseFloat(section.getAttribute('data-parallax-speed')) || 0.3;
+       const sectionTop = section.offsetTop;
+       const sectionHeight = section.offsetHeight;
+       const scrollY = window.scrollY;
+       const windowHeight = window.innerHeight;
+
+
+       if (scrollY + windowHeight >= sectionTop && scrollY <= sectionTop + sectionHeight) {
+           const scrollProgress = scrollY - sectionTop;
+           bg.style.transform = `translateY(${scrollProgress * speed}px)`;
+       }
+   } else {
+       bg.style.transform = "translateY(0px)";
+   }
+}
