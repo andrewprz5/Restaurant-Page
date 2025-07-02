@@ -16,6 +16,13 @@ export default function homePage(container) {
    const p2 = document.createElement("h2");
    const a = document.createElement("a");
 
+   const btn = document.createElement("button");
+
+   const btnAnchor = document.createElement("a");
+   btnAnchor.innerHTML = "Get a Free Website Audit";
+   btn.appendChild(btnAnchor);
+   btnAnchor.href = "https://redbrick-porfolio.netlify.app/";
+
 
    p1.innerHTML = bizDscrptn1;
    p2.id = "para2";
@@ -28,7 +35,7 @@ export default function homePage(container) {
    p2.appendChild(a);
    textBox1.appendChild(p1);
    textBox2.appendChild(p2);
-   descriptionBox.append(textBox1, textBox2);
+   descriptionBox.append(textBox1, textBox2, btn);
    container.appendChild(descriptionBox);
 
 
@@ -113,7 +120,7 @@ export default function homePage(container) {
    for (let i = 0; i < 5; i++) {
        const p = document.createElement("p");
        if (i === 0) {
-           p.innerHTML = "Web Developer";
+           p.innerHTML = "Pizza & Bar";
        } else if (i === 1) {
            p.innerHTML = "Hawthorne, NJ 07506";
        } else if (i === 2) {

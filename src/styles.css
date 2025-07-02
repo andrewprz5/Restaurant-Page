@@ -48,9 +48,19 @@ nav {
    flex-wrap: wrap;
 }
 
+nav:nth-of-type(2) {
+   padding: 10px;
+}
+
 
 header, nav, .flex-item {
    overflow: visible !important;
+}
+
+.cta-banner {
+   text-align: center;
+   font-family: 'Lato', sans-serif;
+   font-size: 1.3rem;
 }
 
 
@@ -545,6 +555,17 @@ footer div div {
        font-size: 1rem;
    }
 
+   .cta-banner {
+      font-size: 1.1rem;
+   }
+
+   .cta-banner p {
+      margin-bottom: 10px;
+   }
+
+   .cta-banner a {
+      font-size: 1.5rem;
+   }
 
 }
 
@@ -599,7 +620,9 @@ footer div div {
        font-size: 0.7rem;
    }
 
-
+   .cta-banner a {
+      font-size: 1.4rem;
+   }
 }
 
 

@@ -1,8 +1,8 @@
 const name = "Pizza & Bar";
 
 
-const bizDscrptn1 =  "See what a modern site can do for your business!";
-const bizDscrptn2 = "Request a Custom Demo";
+const bizDscrptn1 =  "Websites That Convert Visitors Into Customers – Fast, Affordable, Built for Small Businesses";
+const bizDscrptn2 = "I help restaurants, barbers, and service businesses grow with mobile-optimized websites built to drive results";
 
 
 const phone = "347.857.9661";
