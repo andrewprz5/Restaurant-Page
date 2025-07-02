@@ -14,9 +14,9 @@ export default function menuPage(container) {
    menuTopHeader.id = "menuTopHeader";
 
 
-   const nelliesName = document.createElement("div");
-   nelliesName.id = "nelliesMenuName";
-   nelliesName.className = "menu-header-item";
+   const pizzaBarName = document.createElement("div");
+   pizzaBarName.id = "pizzaBarMenuName";
+   pizzaBarName.className = "menu-header-item";
    const viewMenuContainer = document.createElement("div");
    viewMenuContainer.className = "menu-header-item";
    viewMenuContainer.id = "viewMenuContainer";
@@ -25,10 +25,10 @@ export default function menuPage(container) {
    menuImg.id = "menuImg";
 
 
-   const nelliesHeadline = document.createElement("h1");
-   nelliesHeadline.id = "nelliesHeadline";
-   const nelliesText = document.createElement("span");
-   nelliesText.textContent = "Pizza & Bar";
+   const pizzaBarHeadline = document.createElement("h1");
+   pizzaBarHeadline.id = "pizzaBarHeadline";
+   const pizzaBarText = document.createElement("span");
+   pizzaBarText.textContent = "Pizza & Bar";
 
 
    const viewMenu = document.createElement("div");
@@ -80,13 +80,13 @@ export default function menuPage(container) {
    menuImg.appendChild(menuLink);
    viewMenu.appendChild(viewMenuPara);
    viewMenuContainer.appendChild(viewMenu);
-   nelliesHeadline.appendChild(nelliesText);
-   nelliesName.appendChild(nelliesHeadline);
+   pizzaBarHeadline.appendChild(pizzaBarText);
+   pizzaBarName.appendChild(pizzaBarHeadline);
    subtitle.appendChild(containerPara);
    menuTextHeader.appendChild(menuText);
    menuTitle.appendChild(menuTextHeader);
    sectionLine.appendChild(separator);
-   menuTopHeader.append(nelliesName, viewMenuContainer, menuImg);
+   menuTopHeader.append(pizzaBarName, viewMenuContainer, menuImg);
    menuBottomHeader.append(sectionLine, menuTitle, subtitle);
    menuHeader.append(menuTopHeader, menuBottomHeader);
    container.appendChild(menuHeader);
@@ -94,7 +94,7 @@ export default function menuPage(container) {
 
    const appetizers = new menuSection(
        "Appetizers",
-       "https://nelliesplacenj.com/wp-content/uploads/2020/06/bacon-cheese-fries-2560X1380-1024x552.jpg"
+       "https://media.istockphoto.com/id/923784110/photo/canapes-for-party.jpg?s=612x612&w=0&k=20&c=Afdkr9ehEsFjK2108kYUMVYHIwDvdXfNozle3t0IkRI="
    )
 
 
@@ -103,10 +103,20 @@ export default function menuPage(container) {
 
    retrieveFood("Appetizers");
 
+   const appsItemsContainer = document.createElement("div");
+   const appsItemsPara = document.createElement("p");
+   appsItemsPara.textContent = "Side of Marinara - $0.75";
+   const appsItemsPara2 = document.createElement("p");
+   appsItemsPara2.textContent = "Extra Dipping Sauce";
+   appsItemsContainer.append(appsItemsPara, appsItemsPara2);
+   appsItemsContainer.className = "additional-items-container";
+
+   container.appendChild(appsItemsContainer)
+
 
    const soupAndSalad = new menuSection(
        "Soup and Salad",
-       "https://nelliesplacenj.com/wp-content/uploads/2020/10/salads-cropped-scaled.jpg"
+       "https://media.istockphoto.com/id/147249044/photo/pumpkin-soup-with-garnish-bread-and-salad-in-the-background.jpg?s=612x612&w=0&k=20&c=JNNAqrEDqw-u7jSX5yFWAuPeAJ9sPdfubyDJcoCEAXs="
    )
 
 
@@ -118,9 +128,9 @@ export default function menuPage(container) {
 
    const additionalItemsContainer = document.createElement("div");
    const additionalItemsPara = document.createElement("p");
-   additionalItemsPara.textContent = "Add Chicken to a Salad $4.00 ~ Add Steak to a Salad $6.00";
+   additionalItemsPara.textContent = "Add Grilled Chicken — $2.00 ~ Add Avocado — $1.50";
    const additionalItemsPara2 = document.createElement("p");
-   additionalItemsPara2.textContent = "Add Shrimp to a Salad $6.00 ~ Add Salmon to a Salad $8.00 ~ Add Avocado to a Salad $2.50";
+   additionalItemsPara2.textContent = "Extra Dressing - $0.75";
    additionalItemsContainer.append(additionalItemsPara, additionalItemsPara2);
    additionalItemsContainer.className = "additional-items-container";
 
@@ -130,7 +140,7 @@ export default function menuPage(container) {
 
    const burgers = new menuSection(
        "Burgers",
-       "https://nelliesplacenj.com/wp-content/uploads/2020/06/bacon-cheeseburger-2560x1380-1.jpg"
+       "https://media.istockphoto.com/id/1302436326/photo/junk-food-homemade-beef-burgers-on-vintage-wooden-background.jpg?s=612x612&w=0&k=20&c=NsyDE31unoNd80wGfrkMOqvsnjeNOpHER-yL_8KwcRw="
    )
 
 
@@ -142,8 +152,10 @@ export default function menuPage(container) {
 
    const lettuceTomatoContainer = document.createElement("div");
    const lettuceTomatoPara = document.createElement("p");
-   lettuceTomatoPara.textContent = "Lettuce and Tomato upon request";
-   lettuceTomatoContainer.appendChild(lettuceTomatoPara);
+   lettuceTomatoPara.textContent = "Add Bacon - $1.50 ~ Extra Cheese - $1.00";
+   const lettuceTomatoPara2 = document.createElement("p");
+   lettuceTomatoPara2.textContent = "Double Patty - $3.00"
+   lettuceTomatoContainer.append(lettuceTomatoPara, lettuceTomatoPara2);
    lettuceTomatoContainer.className = "additional-items-container";
 
 
@@ -152,7 +164,7 @@ export default function menuPage(container) {
 
    const sandwiches = new menuSection(
        "Sandwiches",
-       "https://nelliesplacenj.com/wp-content/uploads/2020/12/IMG_6545cropped.jpg"
+       "https://media.istockphoto.com/id/1397193477/photo/club-sandwich-made-with-bacon-ham-turkey-cheese-lettuce-and-tomato.jpg?s=612x612&w=0&k=20&c=fjNyxTEA0L88bqENs8_SKMnfAOyWlNPGxLIxz9nsSss="
    )
 
 
@@ -162,19 +174,21 @@ export default function menuPage(container) {
    retrieveFood("Sandwiches");
 
 
-   const breadOptions = document.createElement("div");
-   const breadOptionsPara = document.createElement("p");
-   breadOptionsPara .textContent = "Gluten free wraps or Round Rolls available for $3.00 additional";
-   breadOptions.appendChild(breadOptionsPara);
-   breadOptions.className = "additional-items-container";
+   const swOptions = document.createElement("div");
+   const swOptionsPara = document.createElement("p");
+   swOptionsPara.textContent = "Add Cheese - $1.00 ~ Extra Bacon - $1.50";
+   const swPara2 = document.createElement("p");
+   swPara2.textContent = "Avocado - $1.50";
+   swOptions.appendChild(swOptionsPara, swPara2);
+   swOptions.className = "additional-items-container";
 
 
-   container.appendChild(breadOptions);
+   container.appendChild(swOptions);
 
 
    const specialtySandwiches = new menuSection(
        "Specialty Sandwiches",
-       "https://nelliesplacenj.com/wp-content/uploads/2020/12/panini-cropped.jpg"
+       "https://img.freepik.com/free-photo/side-view-club-sandwich-with-ham-pickled-cucumber-lettuce-tomato-cheese-sauce-board_141793-4867.jpg?semt=ais_hybrid&w=740"
    )
 
 
@@ -186,12 +200,10 @@ export default function menuPage(container) {
 
    const xtraOptions = document.createElement("div");
    const xtraOptionsPara = document.createElement("p");
-   xtraOptionsPara.textContent = "Gluten Free Wraps or Round Rolls available for $3.00 additional";
+   xtraOptionsPara.textContent = "Add Peppers & Onions - $1.00";
    const xtraOptionsPara2 = document.createElement("p");
-   xtraOptionsPara2.textContent = "All Burgers and Sandwiches served with French Fries and Cole Slaw ~ Fruit substitution available";
-   const xtraOptionsPara3 = document.createElement("p");
-   xtraOptionsPara3.textContent = "Substitute Waffle Fries, Sweet Potato Fries, Onion Rings or Sauteed Spinach for $3.00 ~ with Side Salad $3.00 additional";
-   xtraOptions.append(xtraOptionsPara, xtraOptionsPara2, xtraOptionsPara3);
+   xtraOptionsPara2.textContent = "Extra Cheese - $1.00";
+   xtraOptions.append(xtraOptionsPara, xtraOptionsPara2);
    xtraOptions.className = "additional-items-container";
 
 
@@ -200,7 +212,7 @@ export default function menuPage(container) {
 
    const meats = new menuSection(
        "Meats",
-       "https://nelliesplacenj.com/wp-content/uploads/2020/12/IMG_9731cropped.jpg"
+       "https://media.istockphoto.com/id/587207508/photo/sliced-grilled-steak-ribeye-with-herb-butter.jpg?s=612x612&w=0&k=20&c=gm6Kg6rHYH0xWTF5oszm6NZ-hp9aPRbk9V1kvCr8MQI="
    )
 
 
@@ -212,9 +224,9 @@ export default function menuPage(container) {
 
    const meatOptions = document.createElement("div");
    const meatOptionsPara = document.createElement("p");
-   meatOptionsPara.textContent = "Above served with Side Salad and Choice of Potato, Rice or Linguini";
+   meatOptionsPara.textContent = "Add Sautéed Onions — $1.00 ~ Add Mushrooms - $1.25";
    const meatOptionsPara2 = document.createElement("p");
-   meatOptionsPara2.textContent = "Substitute Waffle Fries, Sweet Potato Fries, Onion Rings or Sauteed Spinach for $3.00";
+   meatOptionsPara2.textContent = "Side of Gravy or Sauce - $0.75";
    meatOptions.append(meatOptionsPara, meatOptionsPara2);
    meatOptions.className = "additional-items-container";
 
@@ -224,7 +236,7 @@ export default function menuPage(container) {
 
    const fish = new menuSection(
        "Fish",
-       "https://nelliesplacenj.com/wp-content/uploads/2020/11/fish-and-chips-cropped-scaled.jpg"
+       "https://media.istockphoto.com/id/1297899281/photo/fried-salmon-steaks-fried-cauliflower-and-fried-edible-mushrooms-on-wooden-table.jpg?s=612x612&w=0&k=20&c=DtscQEXOXQ048CWFJWW86SgRlFzmISnTGkwfBXG7mms="
    )
 
 
@@ -236,9 +248,9 @@ export default function menuPage(container) {
 
    const fishOptions = document.createElement("div");
    const fishOptionsPara = document.createElement("p");
-   fishOptionsPara.textContent = "Above served with Side Salad and Choice of Potato, Rice or Linguini";
+   fishOptionsPara.textContent = "Tartar Sauce - $0.75 ~ Lemon Wedge - Free";
    const fishOptionsPara2 = document.createElement("p");
-   fishOptionsPara2.textContent = "Substitute Waffle Fries, Sweet Potato Fries, Onion Rings or Sauteed Spinach for $3.00";
+   fishOptionsPara2.textContent = "Side Salad - $3.00";
    fishOptions.append(fishOptionsPara, fishOptionsPara2);
    fishOptions.className = "additional-items-container";
 
@@ -248,7 +260,7 @@ export default function menuPage(container) {
 
    const italian = new menuSection(
        "Italian",
-       "https://nelliesplacenj.com/wp-content/uploads/2020/12/IMG_8225-cropped.jpg"
+       "https://media.istockphoto.com/id/1227415751/photo/full-table-of-italian-meals-on-plates-pizza-pasta-ravioli-carpaccio-caprese-salad-and-tomato.jpg?s=612x612&w=0&k=20&c=0qCRhYGQw0w6ahhVX-4ezayA9r81A81cwbPDbgRlC5s="
    )
 
 
@@ -260,7 +272,9 @@ export default function menuPage(container) {
 
    const italianOptions = document.createElement("div");
    const italianOptionsPara = document.createElement("p");
-   italianOptionsPara.textContent = "Above servied with Side Salad";
+   italianOptionsPara.textContent = "Add Extra Meatballs - $2.50 ~ Side Garlic Bread - $2.00";
+   const italianPara2 = document.createElement("p");
+   italianPara2.textContent = "Extra Parmesan - $0.75";
    italianOptions.appendChild(italianOptionsPara);
    italianOptions.className = "additional-items-container";
 
@@ -270,11 +284,19 @@ export default function menuPage(container) {
 
    const sides = new menuSection(
        "Sides",
-       "https://nelliesplacenj.com/wp-content/uploads/2020/06/fries-2560x1380-1.jpg"
+       "https://media.istockphoto.com/id/511621559/photo/cajun-seasoned-french-fries.jpg?s=612x612&w=0&k=20&c=LM_SvCTbSsUTHSJSWOxzsyolo9YbDeNAXTibip4n1O4="
    )
 
 
    sides.addSection();
+
+   const sideOptions = document.createElement("div");
+   const sidePara = document.createElement("p");
+   sidePara.textContent = "Cheese Fries - $1.00";
+   const sidePara2 = document.createElement("p");
+   sidePara2.textContent = "Spicy Mayo or Garlic Aioli - $0.75";
+   sideOptions.append(sidePara, sidePara2);
+   sideOptions.className = "additional-items-container";
 
 
    retrieveFood("Sides");
@@ -282,7 +304,7 @@ export default function menuPage(container) {
 
    const pizza = new menuSection(
        "Pizza",
-       "https://nelliesplacenj.com/wp-content/uploads/2020/06/pizza-2560x1380-1.jpg"
+       "https://media.istockphoto.com/id/1083487948/photo/tasty-pepperoni-pizza-and-cooking-ingredients-tomatoes-basil-on-black-concrete-background-top.jpg?s=612x612&w=0&k=20&c=E5rcp7F5y3SII4AYFmxFfcnkh6_LtVO4dzvjJDkXook="
    )
 
 
@@ -294,28 +316,29 @@ export default function menuPage(container) {
 
    const pizzaToppings = document.createElement("div");
    const pizzaToppingsPara = document.createElement("p");
-   pizzaToppingsPara.textContent = "TOPPINGS: $2 each";
+   pizzaToppingsPara.textContent = "Toppings: $2 each";
    const pizzaToppingsPara2 = document.createElement("p");
-   pizzaToppingsPara2.textContent = "Sausage ~ Pepperoni ~ Fresh Mushroom ~ Green Pepper ~ Garlic ~ Onion ~ Black Olive ~ Anchovy ~ Broccoli ~ Meatball ~ Salami ~ Bacon ~ Extra Cheese ~ Fra Diablo ~ Sliced Hot Cherry Peppers";
+   pizzaToppingsPara2.textContent = "Sausage ~ Pepperoni ~ Fresh Mushroom ~ Green Pepper ~ Garlic ~ Onion ~ Black Olive ~ Anchovies ~ Broccoli ~ Meatball ~ Salami ~ Bacon ~ Extra Cheese ~ Fra Diablo ~ Sliced Hot Cherry Peppers";
    pizzaToppings.append(pizzaToppingsPara, pizzaToppingsPara2);
    pizzaToppings.className = "additional-items-container";
 
 
    const gourmetToppings = document.createElement("div");
    const gourmetToppingsPara = document.createElement("p");
-   gourmetToppingsPara.textContent = "GOURMET TOPPINGS: $2.50 each";
+   gourmetToppingsPara.textContent = "Gourmet Toppings: $2.50 each";
    const gourmetToppingsPara2 = document.createElement("p");
    gourmetToppingsPara2.textContent = "Eggplant ~ Sun-Dried Tomato ~ Spinach ~ Fresh Tomato Slices ~ Artichokes ~ Pineapple ~ Roasted Red Pepper ~ Fresh Basil ~ Hot Honey";
    gourmetToppings.append(gourmetToppingsPara, gourmetToppingsPara2);
    gourmetToppings.className = "additional-items-container";
 
+   container.appendChild(pizzaToppings);
 
    container.appendChild(gourmetToppings);
 
 
    const specialtyPie = new menuSection(
        "Specialty Pie",
-       "https://nelliesplacenj.com/wp-content/uploads/2020/06/specialty-pizza-2560x1380-1.jpg"
+       "https://thumbs.dreamstime.com/b/specialty-pizza-toppings-fresh-medium-size-extra-hot-fresh-out-oven-shallow-depth-field-32244068.jpg"
    )
 
 
@@ -327,9 +350,9 @@ export default function menuPage(container) {
 
    const specialtyPieOptions = document.createElement("div");
    const specialtyPiePara = document.createElement("p");
-   specialtyPiePara.textContent = `All Specialty Pizzas are Priced as a 14" Large Pie`;
+   specialtyPiePara.textContent = `Ranch Drizzle - $0.50`;
    const specialtyPiePara2 = document.createElement("p");
-   specialtyPiePara2.textContent = "Gluten Free available for $4.00 extra";
+   specialtyPiePara2.textContent = "Gluten-Free Crust - $2.00";
    specialtyPieOptions.append(specialtyPiePara, specialtyPiePara2);
    specialtyPieOptions.className = "additional-items-container";
 
@@ -339,7 +362,7 @@ export default function menuPage(container) {
 
    const glutenFree = new menuSection(
        "Gluten Free",
-       "https://nelliesplacenj.com/wp-content/uploads/2020/10/chicken-nuggets-gluten-free-cropped.jpg"
+       "https://heatherchristo.com/wp-content/uploads/2015/01/Creamy-Sun-dried-tomato-Pasta-with-Spicy-Chicken-Sausage.jpg"
    )
 
 
@@ -351,9 +374,9 @@ export default function menuPage(container) {
 
    const allergens = document.createElement("div");
    const allergensPara = document.createElement("p");
-   allergensPara.textContent = "While these products are Gluten Free, our kitchen is not.";
+   allergensPara.textContent = "Gluten-Free Pasta - $2.00";
    const allergensPara2 = document.createElement("p");
-   allergensPara2.textContent = "Please speak to a manager for allergen questions.";
+   allergensPara2.textContent = "Gluten-Free Bun - $2.00";
    allergens.append(allergensPara, allergensPara2);
    allergens.className = "additional-items-container";
 
@@ -363,7 +386,7 @@ export default function menuPage(container) {
 
    const kids = new menuSection(
        "Kids",
-       "https://nelliesplacenj.com/wp-content/uploads/2020/11/Kids-chicken-nuggets-and-fries-cropped-scaled.jpg"
+       "https://media.istockphoto.com/id/547133980/photo/macaroni-and-cheese-background.jpg?s=612x612&w=0&k=20&c=D3jViAaJtVI1Oi-AWNGcHNqLsbk10Wi_zKimkG-1NTg="
    )
 
 
@@ -375,7 +398,7 @@ export default function menuPage(container) {
 
    const guestsAge = document.createElement("div");
    const guestsScript = document.createElement("p");
-   guestsScript.textContent = "For Guests Under 10";
+   guestsScript.textContent = "Juice Box - $1.00";
    guestsAge.appendChild(guestsScript);
    guestsAge.className = "additional-items-container";
 
@@ -503,7 +526,7 @@ class Food {
 const friedCalamari = new Food(
    "Fried Calamari",
    "appetizers",
-   "lightly breaded with lemon and aioli",
+   "Lightly breaded with lemon and aioli",
    "10.99",
    function () {
        foodArray.push(this);
@@ -511,10 +534,10 @@ const friedCalamari = new Food(
 );
 
 
-const friedMozz = new Food(
+const garlicBread = new Food(
    "Garlic Bread",
    "appetizers",
-   "toasted with herbed butter and parmesan",
+   "Toasted with herbed butter and parmesan",
    "5.99",
    function() {
        foodArray.push(this);
@@ -522,116 +545,20 @@ const friedMozz = new Food(
 )
 
 
-const pretzelBites = new Food(
+const mozzSticks = new Food(
    "Mozzarella Sticks",
    "appetizers",
-   "crispy, golden, served with marinara",
+   "Crispy, golden, served with marinara",
    "8.99",
    function() {
        foodArray.push(this);
    }
 )
 
-
-const soupOfTheDay = new Food(
-   "Soup of the Day",
-   "soup-and-salad",
-   "cup",
-   "4.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const chickenWings = new Food(
-   "Chicken Wings",
+const chxTenders = new Food(
+   "Chicken Tenders",
    "appetizers",
-   "buffalo or Elkin style",
-   "14.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const nachos = new Food(
-   "Nachos",
-   "appetizers",
-   "beef chili or grilled chicken",
-   "11.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const potatoSkins = new Food(
-   "Potato Skins",
-   "appetizers",
-   0,
-   "10.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-const garlicBreadParm = new Food(
-   "Garlic Bread Parmesan",
-   "appetizers",
-   0,
-   "5.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-const musselsMarinara = new Food(
-   "Mussels Marinara",
-   "appetizers",
-   "hot, medium, sweet or scampi",
-   "11.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const buffaloShrimp = new Food(
-   "Buffalo Shrimp",
-   "appetizers",
-   "sauteed hot, medium or mild",
-   "11.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-const soupBowl = new Food(
-   "Soup of the Day",
-   "soup-and-salad",
-   "bowl",
-   "6.49",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const frenchOnionSoup = new Food(
-   "French Onion Soup",
-   "soup-and-salad",
-   0,
-   "7.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-const greekSmall = new Food(
-   "Greek Salad",
-   "soup-and-salad",
-   "iceburg lettuce, tomato, onion, pepper, cucumber, feta, olives, and anchovies - small",
+   "Served with honey mustard",
    "9.99",
    function() {
        foodArray.push(this);
@@ -639,31 +566,70 @@ const greekSmall = new Food(
 )
 
 
-const greekLarge = new Food(
+const loadedNachos = new Food(
+   "Loaded Nachos",
+   "appetizers",
+   "Cheddar, jalapeños, pico de gallo, sour cream",
+   "11.49",
+   function() {
+       foodArray.push(this);
+   }
+)
+
+const greekSalad = new Food(
    "Greek Salad",
    "soup-and-salad",
-   "iceburg lettuce, tomato, onion, pepper, cucumber, feta, olives, and anchovies - large",
-   "12.99",
+   "Feta, olives, cucumber, red onion, vinaigrette",
+   "10.99",
    function() {
        foodArray.push(this);
    }
 )
 
-const classicSmall = new Food(
-   "Caesar Salad",
+const caesarSalad = new Food(
+   "Classic Caesar Salad",
    "soup-and-salad",
-   "romaine with parmesan cheese and croutons - small",
-   "8.99",
+   "Romaine, parmesan, croutons, Caesar dressing",
+   "9.49",
    function() {
        foodArray.push(this);
    }
 )
 
-
-const classicLarge = new Food(
-   "Caesar Salad",
+const gardenSalad = new Food(
+   "Garden Salad",
    "soup-and-salad",
-   "romaine with parmesan cheese and croutons - large",
+   "Mixed greens, tomato, cucumber, onion",
+   "7.99",
+   function() {
+       foodArray.push(this);
+   }
+)
+
+const tomatoBasilSoup = new Food(
+   "Tomato Basil Soup",
+   "soup-and-salad",
+   "Creamy and house-made",
+   "6.99",
+   function() {
+       foodArray.push(this);
+   }
+)
+
+const chxNoodleSoup = new Food(
+   "Chicken Noodle Soup",
+   "soup-and-salad",
+   "Slow-cooked with fresh veggies",
+   "6.99",
+   function() {
+       foodArray.push(this);
+   }
+)
+
+const classicBurger = new Food(
+   "Classic Cheeseburger",
+   "burgers",
+   "Lettuce, tomato, American cheese, brioche bun",
    "11.99",
    function() {
        foodArray.push(this);
@@ -671,66 +637,33 @@ const classicLarge = new Food(
 )
 
 
-
-const cobbSalad = new Food(
-   "Cobb Salad",
-   "soup-and-salad",
-   "romaine with tomato, peppers, onions, bacon, hard-boiled egg and chicken",
-   "14.99",
+const baconBBQ = new Food(
+   "Bacon BBQ Burger",
+   "burgers",
+   "Smoky BBQ sauce, crispy bacon, cheddar",
+   "13.49",
    function() {
        foodArray.push(this);
    }
 )
 
 
-const spinachSalad = new Food(
-   "Spinach Salad",
-   "soup-and-salad",
-   "spinach leaves with bacon, sliced mushroom, roasted pepper, red onion and hard boiled egg with balsamic vinaigrette",
+const mushroomSwiss = new Food(
+   "Mushroom Swiss Burger",
+   "burgers",
+   "Sautéed mushrooms, melted Swiss",
    "12.99",
    function() {
        foodArray.push(this);
    }
 )
 
-const mushroomBurger = new Food(
-   "Mushroom, Onion & Swiss Burger",
+
+const spicyJalaBurger = new Food(
+   "Spicy Jalapeño Burger",
    "burgers",
-   0,
-   "14.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const baconBleuBurger = new Food(
-   "Bacon Bleu Cheeseburger",
-   "burgers",
-   0,
-   "14.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const blackBeanBurger = new Food(
-   "Black Bean Veggie Burger",
-   "burgers",
-   0,
-   "14.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const bbqBurger = new Food(
-   "Barbecue Burger",
-   "burgers",
-   "with barbecue sauce, cheddar, and red onion",
-   "14.99",
+   "Pepper jack, jalapeños, chipotle mayo",
+   "12.99",
    function() {
        foodArray.push(this);
    }
@@ -738,26 +671,14 @@ const bbqBurger = new Food(
 
 
 const cheeseburger = new Food(
-   "Cheeseburger",
+   "Veggie Black Bean Burger ",
    "burgers",
-   0,
-   "14.49",
+   "Avocado, lettuce, tomato, vegan bun",
+   "11.49",
    function() {
        foodArray.push(this);
    }
 )
-
-
-const turkeyBurger = new Food(
-   "Turkey Burger",
-   "burgers",
-   0,
-   "11.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
 
 const classicBLT = new Food(
    "Classic BLT",
@@ -770,22 +691,22 @@ const classicBLT = new Food(
 )
 
 
-const clubSandwich = new Food(
-   "Club Sandwich",
+const trkySand = new Food(
+   "Turkey Club",
    "sandwiches",
-   "turkey,roast beef, tuna, or ham & cheese",
-   "14.49",
+   "Roasted turkey, bacon, lettuce, tomato",
+   "10.99",
    function() {
        foodArray.push(this);
    }
 )
 
 
-const grilledClub = new Food(
-   "Grilled Chicken or Cheeseburger Club",
+const grilledChz = new Food(
+   "Grilled Cheese",
    "sandwiches",
-   0,
-   "15.49",
+   "Cheddar and mozzarella on sourdough",
+   "7.99",
    function() {
        foodArray.push(this);
    }
@@ -795,74 +716,19 @@ const grilledClub = new Food(
 const tunaMelt = new Food(
    "Tuna Melt",
    "sandwiches",
-   0,
-   "11.99",
+   "Albacore tuna, Swiss, grilled rye",
+   "9.99",
    function() {
        foodArray.push(this);
    }
 )
 
 
-const grilledCheese = new Food(
-   "Grilled Cheese",
+const hamSwiss = new Food(
+   "Ham & Swiss",
    "sandwiches",
-   "add bacon, ham, or tomato $9.99",
-   "8.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const chiliDogs = new Food(
-   "Chili Cheese Dogs (2)",
-   "sandwiches",
-   0,
-   "12.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const parmHero = new Food(
-   "Parmesan Hero",
-   "sandwiches",
-   "chicken, meatball or eggplant",
-   "14.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const cheesesteak = new Food(
-   "Philly Cheesesteak",
-   "sandwiches",
-   "with peppers, onions & mushrooms $1.00 extra",
-   "13.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const buffChxWrap = new Food(
-   "Buffalo Chicken Wrap",
-   "specialty-sandwiches",
-   "hot, medium or mild with lettuce, tomato and ranch or bleu cheese",
-   "13.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const vegMozzWrap = new Food(
-   "Grilled Vegetable & Fresh Mozzarella Wrap",
-   "specialty-sandwiches",
-   "grilled eggplant, squash and peppers with fresh mozzarella",
-   "12.99",
+   "Dijon mustard, lettuce, tomato",
+   "10.49",
    function() {
        foodArray.push(this);
    }
@@ -870,31 +736,82 @@ const vegMozzWrap = new Food(
 
 
 const chxCaesarWrap = new Food(
-   "Classic Chicken Caesar Wrap",
+   "Chicken Caesar Wrap",
+   "sandwiches",
+   "Grilled chicken, romaine, Caesar dressing",
+   "10.99",
+   function() {
+       foodArray.push(this);
+   }
+)
+
+const chzSteak = new Food(
+   "Philly Cheesesteak",
    "specialty-sandwiches",
-   0,
-   "13.99",
+   "Shaved steak, onions, provolone",
+   "12.99",
    function() {
        foodArray.push(this);
    }
 )
 
 
-const bbqChxWrap = new Food(
-   "BBQ Chicken Wrap",
+const bfChxWrap = new Food(
+   "Buffalo Chicken Wrap",
    "specialty-sandwiches",
-   "breaded barbeque chicken with bacon and cheddar cheese",
-   "13.99",
+   "Spicy tenders, ranch, lettuce",
+   "11.49",
+   function() {
+       foodArray.push(this);
+   }
+)
+
+const bbqPPork = new Food(
+   "BBQ Pulled Pork",
+   "specialty-sandwiches",
+   "Slow-roasted, house BBQ sauce, pickles",
+   "11.99",
    function() {
        foodArray.push(this);
    }
 )
 
 
-const grilledChxSandwich = new Food(
-   "Grilled Chicken Sandwich",
+const capPanini = new Food(
+   "Caprese Panini",
    "specialty-sandwiches",
-   "grilled chicken with roasted peppers, fresh mozzarella & arugula on a brioche roll",
+   "Fresh mozzarella, tomato, basil pesto",
+   "10.49",
+   function() {
+       foodArray.push(this);
+   }
+)
+
+const cubanSand = new Food(
+   "Cuban Sandwich",
+   "specialty-sandwiches",
+   "Pork, ham, Swiss, pickles, mustard",
+   "11.99",
+   function() {
+       foodArray.push(this);
+   }
+)
+
+const ribeye = new Food(
+   "Ribeye Steak (12 oz)",
+   "meats",
+   "Grilled to order with garlic herb butter",
+   "22.99",
+   function() {
+       foodArray.push(this);
+   }
+)
+
+
+const gChxBreast = new Food(
+   "Grilled Chicken Breast",
+   "meats",
+   "Marinated and served with vegetables",
    "14.99",
    function() {
        foodArray.push(this);
@@ -902,34 +819,31 @@ const grilledChxSandwich = new Food(
 )
 
 
-
-const nyStripSteak = new Food(
-   "New York Strip Steak (12 oz)",
+const bBackRibs = new Food(
+   "Baby Back Ribs (Half Rack)",
    "meats",
-   0,
-   "29.99",
+   "House BBQ glaze, fall-off-the-bone tender",
+   "17.99",
    function() {
        foodArray.push(this);
    }
 )
 
-
-const slicedSteakSandwich = new Food(
-   "Sliced Steak Sandwich",
+const meatLoaf = new Food(
+   "Meatloaf Dinner",
    "meats",
-   "add mushrooms and onions OR served on garlic bread parmesan $1.00 extra",
-   "23.99",
+   "Classic style with brown gravy",
+   "13.99",
    function() {
        foodArray.push(this);
    }
 )
 
-
-const chickenCaprese = new Food(
-   "Chicken Caprese",
+const porkChops = new Food(
+   "Pork Chops",
    "meats",
-   "tomato, fresh mozzarella & balsamic glaze",
-   "21.99",
+   "Pan-seared and seasoned",
+   "15.49",
    function() {
        foodArray.push(this);
    }
@@ -938,118 +852,104 @@ const chickenCaprese = new Food(
 const fishChips = new Food(
    "Fish & Chips",
    "fish",
-   0,
-   "21.99",
+   "Beer-battered cod, tartar sauce",
+   "14.99",
    function() {
        foodArray.push(this);
    }
 )
 
 
-const broiledSalmon = new Food(
-   "Broiled Salmon",
+const grilledSalmon = new Food(
+   "Grilled Salmon",
    "fish",
-   0,
-   "24.99",
+   "Lemon dill sauce, served with rice",
+   "17.99",
    function() {
        foodArray.push(this);
    }
 )
 
 
-const cavatelliSausageBroc = new Food(
-   "Cavatelli, Sausage & Broccoli",
-   "italian",
-   0,
-   "20.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const eggplantParm = new Food(
-   "Eggplant Parmesan",
-   "italian",
-   "with linguini",
-   "20.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-const spaghettiMeatballs = new Food(
-   "Spagetti & Meatballs",
-   "italian",
-   "marsala, francasie, vodka, plum tomato basil or broccoli scampi sauce with linguini",
+const shrimpScampi = new Food(
+   "Shrimp Scampi",
+   "fish",
+   "Garlic butter, linguine pasta",
    "16.99",
    function() {
        foodArray.push(this);
    }
 )
 
+const blackTilapia = new Food(
+   "Blackened Tilapia",
+   "fish",
+   "Cajun spice, fresh lime",
+   "15.49",
+   function() {
+       foodArray.push(this);
+   }
+)
 
 
-const penneVodkaBasil = new Food(
-   "Penne with Vodka",
+const seafoodPlatter = new Food(
+   "Seafood Platter",
+   "fish",
+   "Shrimp, scallops, cod, hush puppies",
+   "19.99",
+   function() {
+       foodArray.push(this);
+   }
+)
+
+const spaghettiMarinara = new Food(
+   "Spagetti Marinara",
    "italian",
-   0,
-   "16.99",
+   "House tomato sauce, fresh basil",
+   "11.49",
    function() {
        foodArray.push(this);
    }
 )
 
 
-const bakedPotato = new Food(
-   "Baked Potato",
-   "sides",
-   0,
-   "4.49",
+const chxParm = new Food(
+   "Chicken Parmesan ",
+   "italian",
+   "Breaded cutlet, mozzarella, spaghetti",
+   "15.99",
    function() {
        foodArray.push(this);
    }
 )
 
 
-const cajunFries = new Food(
-   "Cajun Fries",
-   "sides",
-   0,
-   "6.99",
+const fettAlfredo = new Food(
+   "Fettuccine Alfredo ",
+   "italian",
+   "Creamy Alfredo, optional chicken or shrimp",
+   "13.99",
    function() {
        foodArray.push(this);
    }
 )
 
 
-const sweetPotatoFries = new Food(
-   "Sweet Potato Fries",
-   "sides",
-   0,
-   "7.49",
+const lasagna = new Food(
+   "Lasagna",
+   "italian",
+   "Layered pasta with beef and ricotta",
+   "14.99",
    function() {
        foodArray.push(this);
    }
 )
 
-
-const onionRings = new Food(
-   "Onion Rings",
-   "sides",
-   0,
-   "7.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const potatoChips = new Food(
-   "Homemade Potato Chips",
-   "sides",
-   0,
-   "7.99",
+const eggRollatini = new Food(
+   "Eggplant Rollatini",
+   "italian",
+   "Stuffed with cheese, baked in sauce",
+   "13.99",
    function() {
        foodArray.push(this);
    }
@@ -1060,7 +960,29 @@ const frenchFries = new Food(
    "French Fries",
    "sides",
    0,
-   "6.99",
+   "3.99",
+   function() {
+       foodArray.push(this);
+   }
+)
+
+
+const onionRings = new Food(
+   "Onion Rings",
+   "sides",
+   0,
+   "4.49",
+   function() {
+       foodArray.push(this);
+   }
+)
+
+
+const sideCaesar = new Food(
+   "Side Caesar Salad",
+   "sides",
+   0,
+   "4.99",
    function() {
        foodArray.push(this);
    }
@@ -1071,18 +993,28 @@ const coleslaw = new Food(
    "Coleslaw",
    "sides",
    0,
-   "3.99",
+   "3.49",
+   function() {
+       foodArray.push(this);
+   }
+)
+
+const sweetPoFries = new Food(
+   "Sweet Potato Fries",
+   "sides",
+   0,
+   "4.49",
    function() {
        foodArray.push(this);
    }
 )
 
 
-const barPie = new Food(
+const mediumPie = new Food(
    `12” Medium Pie`,
    "pizza",
    0,
-   "12.00",
+   "11.99",
    function() {
        foodArray.push(this);
    }
@@ -1090,43 +1022,54 @@ const barPie = new Food(
 
 
 const largePie = new Food(
-   `14” Large Pie`,
+   `16” Large Pie`,
    "pizza",
    0,
-   "13.00",
+   "14.99",
    function() {
        foodArray.push(this);
    }
 )
 
 
-const california = new Food(
-   "California",
+const meatLovers = new Food(
+   "Meat Lovers",
    "specialty-pie",
-   "Canadian bacon and pineapple",
-   "17.00",
+   "Pepperoni, sausage, bacon, ham",
+   "17.99",
    function() {
        foodArray.push(this);
    }
 )
 
 
-const greekSaladPizza = new Food(
-   "Greek Salad Pizza",
+const margherita = new Food(
+   "Margherita",
    "specialty-pie",
-   "our plain cheese pie topped with iceberg lettuce, tomato, cucumber, onion, peppers, feta cheese and anchovies with vinaigrette dressing",
-   "20.00",
+   "Fresh mozzarella, basil, tomato",
+   "15.99",
    function() {
        foodArray.push(this);
    }
 )
 
 
-const grilledChickenPizza = new Food(
-   "Grilled Chicken",
+const vegSupreme = new Food(
+   "Veggie Supreme",
    "specialty-pie",
-   "BBQ, buffalo sauce or with basil",
-   "18.00",
+   "Peppers, onions, mushrooms, olives",
+   "16.49",
+   function() {
+       foodArray.push(this);
+   }
+)
+
+
+const bbqChxPiz = new Food(
+   "BBQ Chicken",
+   "specialty-pie",
+   "Grilled chicken, BBQ sauce, red onion",
+   "17.49",
    function() {
        foodArray.push(this);
    }
@@ -1134,139 +1077,81 @@ const grilledChickenPizza = new Food(
 
 
 const whitePizza = new Food(
-   "White Pizza",
+   "White Pie",
    "specialty-pie",
-   0,
-   "16.50",
+   "Ricotta, garlic, mozzarella, spinach",
+   "16.99",
    function() {
        foodArray.push(this);
    }
 )
-
-
-const vegetablePizza = new Food(
-   "Vegetable",
-   "specialty-pie",
-   "broccoli, onion, black olives, green peppers & mushrooms",
-   "21.00",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const margarita = new Food(
-   "Margarita",
-   "specialty-pie",
-   "fresh tomato, basil, and fresh mozzarella",
-   "20.50",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const buffChxSpecial = new Food(
-   "Buffalo Chicken",
-   "specialty-pie",
-   "breaded chicken, hot sauce, ranch dressing and celery",
-   "22.00",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const chxBaconRanch = new Food(
-   "Chicken, Bacon & Ranch",
-   "specialty-pie",
-   0,
-   "22.00",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const vodkaMargherita = new Food(
-   "Vodka Margherita",
-   "specialty-pie",
-   "pink vodka sauce, tomato, basil and fresh mozzarella",
-   "21.00",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const arugulaSaladPie = new Food(
-   "Arugula Salad Pie",
-   "specialty-pie",
-   "arugula with crumbled bleu cheese, red onion & tomato",
-   "22.00",
-   function() {
-       foodArray.push(this);
-   }
-)
-
 
 const gfCheesePizza = new Food(
-   "Gluten Free Cheese Pizza",
+   `GF Cheese Pizza (10")`,
    "gluten-free",
-   "toppings priced same as above",
-   "17.00",
+   0,
+   "13.99",
    function() {
        foodArray.push(this);
    }
 )
 
 
-const gfChickenParm = new Food(
-   "Gluten Free Chicken Parmesan",
+const gChxPlate = new Food(
+   "Grilled Chicken Plate",
    "gluten-free",
-   "served with gluten free pasta",
-   "26.99",
+   0,
+   "14.49",
+   function() {
+       foodArray.push(this);
+   }
+)
+
+const gfpasta = new Food(
+   "GF Pasta with Marinara",
+   "gluten-free",
+   0,
+   "12.49",
    function() {
        foodArray.push(this);
    }
 )
 
 
-const kidsChxParm = new Food(
-   "Chicken Parmesan",
+const gfMixSalad = new Food(
+   "Mixed Green Salad",
+   "gluten-free",
+   0,
+   "7.99",
+   function() {
+       foodArray.push(this);
+   }
+)
+
+const bunlessBrgr = new Food(
+   "Bunless Burger",
+   "gluten-free",
+   0,
+   "10.99",
+   function() {
+       foodArray.push(this);
+   }
+)
+
+
+const kidsPizza = new Food(
+   "Kids Cheese Pizza",
    "kids",
    0,
-   "8.99",
+   "7.49",
    function() {
        foodArray.push(this);
    }
 )
 
 
-const kidsChxFingers = new Food(
-   "Chicken Fingers",
-   "kids",
-   0,
-   "8.49",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const kidsBurger = new Food(
-   "Cheeseburger",
-   "kids",
-   0,
-   "8.99",
-   function() {
-       foodArray.push(this);
-   }
-)
-
-
-const kidsHotDog = new Food(
-   "Hot Dog",
+const kidsChxTendsFries = new Food(
+   "Chicken Tenders & Fries",
    "kids",
    0,
    "6.99",
@@ -1280,7 +1165,27 @@ const kidsMacChz = new Food(
    "Mac & Cheese",
    "kids",
    0,
-   "7.99",
+   "5.99",
+   function() {
+       foodArray.push(this);
+   }
+)
+
+const kidsBurger = new Food(
+   "Kids Burger",
+   "kids",
+   0,
+   "6.99",
+   function() {
+       foodArray.push(this);
+   }
+)
+
+const kidsSpgMtballs = new Food(
+   "Spaghetti & Meatballs",
+   "kids",
+   0,
+   "7.49",
    function() {
        foodArray.push(this);
    }

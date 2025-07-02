@@ -17,12 +17,12 @@ export default function homePage(container) {
    const a = document.createElement("a");
 
 
-   p1.textContent = bizDscrptn1;
+   p1.innerHTML = bizDscrptn1;
    p2.id = "para2";
    a.href = "#contact";
    a.className = "cta-button";
    a.setAttribute("aria-label", "Call us at " + phone);
-   a.textContent = bizDscrptn2;
+   a.innerHTML = bizDscrptn2;
 
 
    p2.appendChild(a);
@@ -43,16 +43,16 @@ export default function homePage(container) {
        if (i === 0 || i === 3 || i === 6 || i === 8) {
            contactInfo.innerHTML = space;
        } else if (i === 1) {
-           contactInfo.textContent = address1;
+           contactInfo.innerHTML = address1;
        } else if (i === 2) {
-           contactInfo.textContent = address2;
+           contactInfo.innerHTML = address2;
        } else if (i === 4) {
-           contactInfo.textContent = hoursOp
+           contactInfo.innerHTML = hoursOp
        } else if (i === 5) {
-           contactInfo.textContent = hoursOp2;
+           contactInfo.innerHTML = hoursOp2;
        } else {
            const contactRef = document.createElement("a");
-           contactRef.textContent = cta;
+           contactRef.innerHTML = cta;
            contactRef.id = "contactRef";
            contactRef.href = contactLink;
            contactInfo.appendChild(contactRef);
@@ -113,20 +113,20 @@ export default function homePage(container) {
    for (let i = 0; i < 5; i++) {
        const p = document.createElement("p");
        if (i === 0) {
-           p.textContent = "Web Developer";
+           p.innerHTML = "Web Developer";
        } else if (i === 1) {
            p.innerHTML = "Hawthorne, NJ 07506";
        } else if (i === 2) {
-           p.textContent = "Monday - Friday from 8:00am to 11:00pm";
+           p.innerHTML = "Monday - Friday from 8:00am to 11:00pm";
        } else if (i === 3) {
            p.innerHTML = "Saturday - Sunday from 8:00am to 12:00am";
        } else {
            const a = document.createElement("a");
            a.href="tel:347.857.9661";
-           a.textContent = cta;
+           a.innerHTML = cta;
            p.style.marginTop = "50px";
            p.style.fontWeight = "600";
-           p.textContent = "Contact Me: ";
+           p.innerHTML = "Contact Me: ";
            p.appendChild(a);
        }
        contactInfo.appendChild(p);
@@ -154,11 +154,11 @@ export default function homePage(container) {
    for (let i = 0; i < 3; i++) {
        const h2 = document.createElement("h2");
        if (i === 0) {
-           h2.textContent = famousText1;
+           h2.innerHTML = famousText1;
        } else if (i === 1) {
-           h2.textContent = famousText2;
+           h2.innerHTML = famousText2;
        } else {
-           h2.textContent = famousText3;
+           h2.innerHTML = famousText3;
        }
        textContainer.appendChild(h2);
    };

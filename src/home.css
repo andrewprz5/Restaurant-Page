@@ -207,7 +207,7 @@
    }
 
 
-   #nelliesName {
+   #pizzaBarName {
        font-size: 3.5rem;
    }
 
@@ -291,7 +291,7 @@
 
 @media (max-width: 480px) {
   
-   #nelliesName {
+   #pizzaBarName {
        font-size: 2rem;
    }
 

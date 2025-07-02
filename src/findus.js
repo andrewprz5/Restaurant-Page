@@ -39,9 +39,7 @@ export default function findUs(container) {
    iframe.setAttribute("aria-hidden", "false");
    iframe.setAttribute("tabindex", "0");
    iframe.setAttribute("referrerpolicy", "no-referrer-when-downgrade");
-   iframe.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.7640645905285!2d-74.12016968420164!3d41.00853697930085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2e4872c7e400f%3A0x208d89c32db990b3!2sNellie's%20Place!5e0!3m2!1sen!2sus!4v1599767199545!5m2!1sen!2sus";
-
-
+   iframe.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48208.35694428197!2d-74.19751767293621!3d40.959090117213044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2fcc25ed8261f%3A0xe68146bde22147cd!2sHawthorne%2C%20NJ%2007506!5e0!3m2!1sen!2sus!4v1751424448797!5m2!1sen!2sus";
 
 
    const ownersFigure = document.createElement("figure");
@@ -49,17 +47,13 @@ export default function findUs(container) {
    const ownersImg = document.createElement("img");
    ownersImg.id = "ownersImg";
    const ownersCaption = document.createElement("figcaption");
-   ownersCaption.textContent = "Owners Karen & Chris - Proudly Serving Our Community."
+   ownersCaption.textContent = "Pizza Owners - Proudly Serving Our Community."
    ownersImg.setAttribute("fetchpriority", "high");
    ownersImg.setAttribute("decoding", "async");
-   ownersImg.src = "https://nelliesplacenj.com/wp-content/uploads/2020/09/Karen-Chris-2.jpg";
-   ownersImg.alt = "Karen & Chris Martini - Nellie's Place";
+   ownersImg.src = "https://media.istockphoto.com/id/1407528932/photo/restaurant-owners-looking-at-camera-with-a-freshly-baked-pepperoni-pizza.jpg?s=612x612&w=0&k=20&c=pmgD4hWMJr6ZYEjYiG5IasTrfGUNYz2k_PrXHqBPxSY=";
+   ownersImg.alt = "Pizza Owners - Pizza & Bar";
    ownersImg.setAttribute("itemprop", "image");
-   ownersImg.setAttribute("height", "1616");
-   ownersImg.setAttribute("width", "702");
-   ownersImg.srcset = "https://nelliesplacenj.com/wp-content/uploads/2020/09/Karen-Chris-2.jpg 702w, https://nelliesplacenj.com/wp-content/uploads/2020/09/Karen-Chris-2-130x300.jpg 130w, https://nelliesplacenj.com/wp-content/uploads/2020/09/Karen-Chris-2-445x1024.jpg 445w, https://nelliesplacenj.com/wp-content/uploads/2020/09/Karen-Chris-2-667x1536.jpg 667w";
-   ownersImg.setAttribute("sizes", "(max-width: 702px) 100vw, 702px");
-   ownersImg.title = "Karen & Chris";
+   ownersImg.title = "Pizza Owners";
 
 
 
@@ -168,7 +162,7 @@ export default function findUs(container) {
    viewMenuDiv.className = "b-flex-item";
   
    const placeOrderText = document.createElement("p");
-   placeOrderText.textContent = `${bizDscrptn2}${phone}`;
+   placeOrderText.textContent = `${bizDscrptn2}: ${phone}`;
    placeOrderText.id = "placeOrderPara";
    placeOrderDiv.appendChild(placeOrderText);
   

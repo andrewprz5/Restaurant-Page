@@ -68,6 +68,7 @@ function switchTab(container) {
    // Render page
    render(content);
    updateNavMenu();
+   
    if (afterRender) afterRender();
 
 
@@ -96,11 +97,11 @@ focusElement();
 
 
 function goIntoContent() {
-    const nelliesPic = document.getElementById("imageBox");
+    const pizzaBarPic = document.getElementById("imageBox");
     const header = document.querySelector("header");
-   if (header.contains(nelliesPic)) {
+   if (header.contains(pizzaBarPic)) {
         if (window.innerWidth > 768) {
-            nelliesPic.style.cssText = `
+            pizzaBarPic.style.cssText = `
             background-image: url('https://www.franciscosegarra.com/wp-content/uploads/2021/06/interior-design-of-pizzerias.jpg');
             background-size: cover;
             background-repeat: no-repeat;
@@ -111,7 +112,7 @@ function goIntoContent() {
             justify-content: center;
         `;
         } else {
-        nelliesPic.style.cssText = `
+        pizzaBarPic.style.cssText = `
             background-image: url('https://www.franciscosegarra.com/wp-content/uploads/2021/06/interior-design-of-pizzerias.jpg');
             background-size: cover;
             background-repeat: no-repeat;
@@ -124,9 +125,9 @@ function goIntoContent() {
         }
        
        const span = document.querySelector("#imageBox span");
-       span.textContent = `Pizza & Bar`;
-       header.removeChild(nelliesPic);
-       header.after(nelliesPic);
+       span.innerHTML = `Pizza & Bar`;
+       header.removeChild(pizzaBarPic);
+       header.after(pizzaBarPic);
    }
 };
 

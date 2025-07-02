@@ -316,7 +316,7 @@ a {
 }
 
 
-a[title="Nellie's Place"] {
+a[title="Pizza & Bar"] {
    letter-spacing: 0.1ch;
 }
 
@@ -372,7 +372,7 @@ a span {
 }
 
 
-#nelliesName {
+#pizzaBarName {
    font-size: 5rem;
    font-weight: 600;
    text-shadow: 7px 5px 4px black;

@@ -15,7 +15,7 @@ const address2 = "Hawthorne, NJ 07506";
 const hoursOp = "Sunday - Wednesday from 11:00am to 10:00pm";
 const hoursOp2 = "Thursday - Saturday from 11:00am to 11:00pm";
 const cta = "347.857.9661";
-const contactLink = "https://nelliesplacenj.com/find-us/";
+const contactLink = "https://pizza-bar-redesign.netlify.app";
 
 
 const pizzaImage = "https://static.vecteezy.com/system/resources/thumbnails/048/776/002/small_2x/restaurant-table-with-pizzas-and-fries-photo";
@@ -64,11 +64,9 @@ const viewMenuText2 = "View Our Menu";
 const containerFee = "There is a 20¢ per item container fee for takeout orders.";
 
 
-
-
 export function goIntoHeader() {
-   const nelliesPic = document.getElementById("imageBox");
-   nelliesPic.style.cssText = `
+   const pizzaBarPic = document.getElementById("imageBox");
+   pizzaBarPic.style.cssText = `
        background-position: center 30%;
        background-attachment: scroll;
        background-size: cover;
@@ -79,7 +77,7 @@ export function goIntoHeader() {
    const span = document.querySelector("#imageBox span");
    span.textContent = '';
    const header = document.querySelector("header");
-   header.appendChild(nelliesPic);
+   header.appendChild(pizzaBarPic);
 }
 
 

@@ -10,8 +10,6 @@
 }
 
 
-
-
 #findUsContainer {
    display: flex;
    flex-wrap: wrap;
@@ -34,8 +32,11 @@ figcaption {
 
 
 #ownersImg {
-   height: 650px;
-   width: 300px;
+   height: auto;
+   width: 100%;
+   display: block;
+   object-fit: cover;
+   max-width: 500px;
    margin: 25px auto;
 }
 
@@ -148,8 +149,6 @@ input[type="submit"]:hover {
 
 
 @media (max-width: 768px) {
-
-
    .h1-tab {
        font-size: 1.5rem;
    }
@@ -177,13 +176,6 @@ input[type="submit"]:hover {
        text-align: center;
        margin-top: 20px;
    }
-
-
-   #ownersImg {
-       height: 700px;
-       width: 325px;
-   }
-
 
    figcaption {
        font-size: 1rem;
